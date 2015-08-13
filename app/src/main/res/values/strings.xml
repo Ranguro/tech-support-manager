@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Technical Support Manager</string>
+    <string name="action_settings">Settings</string>
+    <string name="btn_sign_in">Sign in</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="title_activity_sign_up">SignUpActivity</string>
+    <string name="firstname">Firstname</string>
+    <string name="lastname">Lastname</string>
+    <string name="email">Email</string>
+
+
+    <string name="functionary">Functionary</string>
+    <string name="admin">Administrador</string>
+    <string name="assistant">Assistant</string>
+    <string name="create_account">Create your account</string>
+
+</resources>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="permissions">
+        <item>@string/admin</item>
+        <item>@string/assistant</item>
+        <item>@string/functionary</item>
+    </string-array>
+
+</resources>
