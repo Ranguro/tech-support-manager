@@ -14,5 +14,13 @@
     <string name="admin">Administrador</string>
     <string name="assistant">Assistant</string>
     <string name="create_account">Create your account</string>
+    <string name="btn_create_account">Create account</string>
+    <string name="btn_next_sign_up">Next</string>
+
+
+    <string name="title_activity_next_sign_up">NextSignUpActivity</string>
+    <string name="phone">Phone number</string>
+    <string name="accessType">Access type</string>
+
 
 </resources>

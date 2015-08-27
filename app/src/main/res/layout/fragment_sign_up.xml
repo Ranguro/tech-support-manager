@@ -22,14 +22,14 @@
         android:layout_height="wrap_content" />
 
     <EditText
-        android:id="@+id/email"
+        android:id="@+id/field_email"
         android:hint="@string/email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <EditText
         android:id="@+id/field_phone"
-        android:hint="Phone number"
+        android:hint="@string/phone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="phone" />
@@ -52,6 +52,15 @@
         <!--android:hint="@string/password"-->
         <!--android:layout_width="match_parent"-->
         <!--android:layout_height="wrap_content" />-->
+
+    <Button
+        android:id="@+id/btn_next_sign_up"
+        android:text="@string/btn_next_sign_up"
+        android:background="@color/dark_blue"
+        android:textColor="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="nextSignUp"/>
 
 
 
