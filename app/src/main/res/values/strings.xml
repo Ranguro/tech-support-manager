@@ -5,8 +5,8 @@
     <string name="username">Username</string>
     <string name="password">Password</string>
     <string name="title_activity_sign_up">SignUpActivity</string>
-    <string name="firstname">Firstname</string>
-    <string name="lastname">Lastname</string>
+    <string name="firstname">First name</string>
+    <string name="lastname">Last name</string>
     <string name="email">Email</string>
 
 
@@ -21,6 +21,9 @@
     <string name="title_activity_next_sign_up">NextSignUpActivity</string>
     <string name="phone">Phone number</string>
     <string name="accessType">Access type</string>
+    <string name="title_activity_task_manager">TaskManager</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_task_manager_details">TaskManagerDetailsActivity</string>
 
 
 </resources>

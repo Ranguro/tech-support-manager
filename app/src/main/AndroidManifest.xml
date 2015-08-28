@@ -24,6 +24,14 @@
             android:name=".NextSignUpActivity"
             android:label="@string/title_activity_next_sign_up" >
         </activity>
+        <activity
+            android:name=".TaskManagerActivity"
+            android:label="@string/title_activity_task_manager" >
+        </activity>
+        <activity
+            android:name=".TaskManagerDetailsActivity"
+            android:label="@string/title_activity_task_manager_details" >
+        </activity>
     </application>
 
 </manifest>

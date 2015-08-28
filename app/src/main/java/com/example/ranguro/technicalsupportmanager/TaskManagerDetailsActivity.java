@@ -1,28 +1,23 @@
 package com.example.ranguro.technicalsupportmanager;
 
-import android.content.Intent;
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 
-public class MainActivity extends AppCompatActivity {
-
-    private final String LOG_TAG = MainActivity.class.getSimpleName();
+public class TaskManagerDetailsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        int x = 1;
+        setContentView(R.layout.activity_task_manager_details);
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_task_manager_details, menu);
         return true;
     }
 
@@ -39,15 +34,5 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    public void signIn(View view) {
-        Intent taskManagerIntent = new Intent(this, TaskManagerActivity.class);
-        startActivity(taskManagerIntent);
-    }
-
-    public void signUp(View view) {
-        Intent signUpIntent = new Intent(this,SignUpActivity.class);
-        startActivity(signUpIntent);
     }
 }

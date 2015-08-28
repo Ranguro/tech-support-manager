@@ -13,14 +13,13 @@
         android:id="@+id/username"
         android:hint="@string/username"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        />
+        android:layout_height="wrap_content"/>
 
     <EditText
         android:id="@+id/password"
         android:hint="@string/password"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"/>
 
 
     <Button
@@ -28,18 +27,19 @@
         android:text="@string/btn_sign_in"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/dark_blue"
-        android:textColor="@color/white"/>
-        <!--android:onClick="signIn"/>-->
+        android:background="@drawable/roundedbutton"
+        android:textColor="@color/white"
+        android:onClick="signIn"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textAppearance="?android:attr/textAppearanceButton"
         android:text="@string/create_account"
         android:id="@+id/sign_up"
         android:textColor="@color/dark_blue"
+        android:paddingTop="16dp"
         android:onClick="signUp"
         />
 
