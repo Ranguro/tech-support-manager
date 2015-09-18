@@ -46,7 +46,7 @@
     <Button
         android:id="@+id/btn_next_sign_up"
         android:text="@string/btn_next_sign_up"
-        android:background="@drawable/roundedbutton"
+        android:background="@drawable/rounded_button"
         android:textColor="@color/white"
         android:layout_gravity="center"
         android:layout_width="match_parent"

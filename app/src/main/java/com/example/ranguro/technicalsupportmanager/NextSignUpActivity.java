@@ -1,33 +1,38 @@
 package com.example.ranguro.technicalsupportmanager;
 
+import android.app.Dialog;
+import android.app.ProgressDialog;
+import android.app.TaskStackBuilder;
 import android.content.Intent;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
-import org.apache.http.NameValuePair;
-import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.entity.UrlEncodedFormEntity;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.message.BasicNameValuePair;
+import com.example.ranguro.technicalsupportmanager.classes.Users;
+import com.parse.FindCallback;
+import com.parse.GetCallback;
+import com.parse.Parse;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
+import com.parse.ParseUser;
+import com.parse.SaveCallback;
+import com.parse.SignUpCallback;
 
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-import java.util.ArrayList;
+import java.text.ParseException;
 import java.util.List;
+
 
 public class NextSignUpActivity extends AppCompatActivity {
 
     private EditText username;
     private EditText password;
+    private boolean userExist = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,25 +65,111 @@ public class NextSignUpActivity extends AppCompatActivity {
     }
     public void createAccount(View view) {
         //Working in the insertion
-        Intent intent = getIntent();
-        String firstnameText = intent.getExtras().getString(getString(R.string.firstname));
-        String lastNameText = intent.getExtras().getString(getString(R.string.lastname));
-        String emailText = intent.getExtras().getString(getString(R.string.email));
-        String phoneText = intent.getExtras().getString(getString(R.string.phone));
-        String accessTypeText = intent.getExtras().getString(getString(R.string.accessType));
-        String usernameText = username.getText().toString();
-        String passwordText = password.getText().toString();
-        if (usernameText.equals("") || passwordText.equals("")){
+        if (isEmpty(username) || isEmpty(password)){
             Toast.makeText(this, "Complete all the fields", Toast.LENGTH_SHORT).show();
         }
         else{
-            //Add account to database
-            Toast.makeText(this, "Creating a fcking account", Toast.LENGTH_LONG).show();
+            ParseUser user = generateNewParseUser();
+            signUpNewAccount(user);
         }
     }
 
-    public void insertAccount(){
-        //Makes the insertion in the database
+    public ParseUser generateNewParseUser(){
+
+        ParseUser user = new ParseUser();
+        user.put("firstName", getStringFromBundle(R.string.firstname));
+        user.put("lastName", getStringFromBundle(R.string.lastname));
+        user.setEmail(getStringFromBundle(R.string.email));
+        user.put("phoneNumber", getStringFromBundle(R.string.phone));
+        user.put("permission", getStringFromBundle(R.string.accessType));
+        user.setUsername(username.getText().toString());
+        user.setPassword(password.getText().toString());
+        return user;
     }
 
+    public String getStringFromBundle(int id){
+        Intent intent = getIntent();
+        Bundle intentBundle = intent.getExtras();
+        return intentBundle.getString(getString(id));
     }
+
+    public boolean isEmpty(EditText field){
+        return field.getText().toString().trim().length() == 0;
+    }
+
+    public void signUpNewAccount(ParseUser user) {
+        //ParseUser user = new ParseUser();
+        final ProgressDialog dlg = new ProgressDialog(NextSignUpActivity.this);
+        dlg.setTitle("Please wait...");
+        dlg.setMessage("Signing up. Please wait.");
+        dlg.show();
+        dlg.dismiss();
+        if(accountExists(user.getUsername())){
+            dlg.setMessage("USERNAME IS NOT AVAILABLE");
+        }
+        else {
+            user.signUpInBackground(new SignUpCallback() {
+                public void done(com.parse.ParseException e) {
+                    if (e != null) {
+                        dlg.setMessage(e.getMessage());
+                    } else {
+                        dlg.setMessage("Account successfully created.");
+                        Intent signInIntent = new Intent(NextSignUpActivity.this, MainActivity.class);
+                        signInIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                        startActivity(signInIntent);
+                    }
+
+                }
+            });
+        }
+        timerDelayRemoveDialog(1800, dlg);
+    }
+
+    public boolean accountExists(final String usernameText){
+        ParseQuery<ParseObject> query = ParseQuery.getQuery("_User");
+        query.whereEqualTo("username", usernameText);
+        query.findInBackground(new FindCallback<ParseObject>() {
+            @Override
+            public void done(List<ParseObject> list, com.parse.ParseException e) {
+                if (e == null) {
+                    userExist = true;
+                } else {
+                    userExist = false;
+                }
+            }
+        });
+        return userExist;
+    }
+
+    public void timerDelayRemoveDialog(long time, final ProgressDialog d){
+        new Handler().postDelayed(new Runnable() {
+            public void run() {
+                d.dismiss();
+            }
+        }, time);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
