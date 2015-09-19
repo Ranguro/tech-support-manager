@@ -15,7 +15,6 @@ public class TaskManagerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_task_manager);
     }
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -41,5 +40,6 @@ public class TaskManagerActivity extends AppCompatActivity {
     public void displayDetails(View view){
         Intent taskManagerDetailsIntent = new Intent(this, TaskManagerDetailsActivity.class);
         startActivity(taskManagerDetailsIntent);
+        this.overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
     }
 }
