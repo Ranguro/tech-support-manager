@@ -1,46 +1,17 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
     android:orientation="vertical"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="com.example.ranguro.technicalsupportmanager.TaskManagerFragment">
 
-    <android.support.v7.widget.CardView
-        android:id="@+id/cardList"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/tasks_list"
+        android:layout_height="match_parent"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation = "vertical"
-            android:background="@color/dark_blue"
-            android:onClick="displayDetails"
-            android:padding="16dp">
+        android:scrollbars="vertical" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/person_name"
-                android:textColor="@color/white"
-                android:text="Mi titulo"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/person_age"
-                android:textColor="@color/white"
-                android:text="Mi deadline"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/person_a22"
-                android:textColor="@color/white"
-                android:text="Mi creador :D"
-                />
-        </LinearLayout>
-    </android.support.v7.widget.CardView>
 </LinearLayout>
