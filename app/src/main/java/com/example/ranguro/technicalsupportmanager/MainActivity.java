@@ -4,7 +4,6 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.annotation.MainThread;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -12,15 +11,13 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.ranguro.technicalsupportmanager.classes.ParseObjectProgress;
+import com.example.ranguro.technicalsupportmanager.classes.ParseObjectTask;
 import com.parse.LogInCallback;
 import com.parse.Parse;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseUser;
-import com.parse.SaveCallback;
-import com.parse.SignUpCallback;
-
-import org.xml.sax.Parser;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -35,8 +32,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         username = (EditText) findViewById(R.id.username);
         password = (EditText) findViewById(R.id.password);
+        username.setText("Jonathan");
+        password.setText("jonathan");
         // Enable Local Datastore.
         Parse.enableLocalDatastore(this);
+        ParseObject.registerSubclass(ParseObjectTask.class);
+        ParseObject.registerSubclass(ParseObjectProgress.class);
         Parse.initialize(this, "SIWiSHubCFLzS5Pub6ll75vpGivZ1Eg4mgpePp6G", "oC9umnr8EQLRp12Puso4Idditm4oSAQAJyg0NG2i");
     }
 
@@ -72,11 +73,11 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public boolean isEmpty(EditText field){
+    private boolean isEmpty(EditText field){
         return field.getText().toString().trim().length() == 0;
     }
 
-    public void verifyAccount(String usernameText, final String passwordText){
+    private void verifyAccount(String usernameText, final String passwordText){
         final ProgressDialog dlg = new ProgressDialog(MainActivity.this);
         dlg.setTitle("Please wait...");
         dlg.setMessage("Signing in. Please wait.");
@@ -88,22 +89,22 @@ public class MainActivity extends AppCompatActivity {
                 if (e != null) {
                     dlg.setMessage(e.getMessage());
                 } else {
+                    dlg.setMessage("Login successful");
                     username.setText("");
                     Intent taskManagerIntent = new Intent(MainActivity.this, TaskManagerActivity.class);
                     startActivity(taskManagerIntent);
-                    dlg.setMessage("Login successful");
                 }
-                timerDelayRemoveDialog(1800, dlg);
+                timerDelayRemoveDialog(dlg);
             }
         });
     }
 
-    public void timerDelayRemoveDialog(long time, final ProgressDialog d){
+    private void timerDelayRemoveDialog(final ProgressDialog d){
         new Handler().postDelayed(new Runnable() {
             public void run() {
                 d.dismiss();
             }
-        }, time);
+        }, (long) 1800);
     }
 
     public void signUp(View view) {

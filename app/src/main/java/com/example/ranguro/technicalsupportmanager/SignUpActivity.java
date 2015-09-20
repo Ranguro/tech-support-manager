@@ -1,8 +1,8 @@
 package com.example.ranguro.technicalsupportmanager;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -10,13 +10,6 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
-
-import com.example.ranguro.technicalsupportmanager.classes.Users;
-
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 public class SignUpActivity extends AppCompatActivity {
     private EditText firstname;
@@ -38,15 +31,7 @@ public class SignUpActivity extends AppCompatActivity {
         phone.setOnKeyListener(new View.OnKeyListener() {
             @Override
             public boolean onKey(View v, int keyCode, KeyEvent event) {
-                List<String> invalidInputs = new ArrayList<String>();
-                invalidInputs.add("70");
-                invalidInputs.add("69");
-                invalidInputs.add("76");
-                invalidInputs.add("56");
-                invalidInputs.add("59");
-                boolean result = invalidInputs.contains(String.valueOf(keyCode));
-                if((phone.getText().length() == 8 && keyCode != 67) || result){
-                    keyCode = 0;
+                if((phone.getText().length() == 8 && keyCode != 67)){
                     return true;
                 }
                 return false;

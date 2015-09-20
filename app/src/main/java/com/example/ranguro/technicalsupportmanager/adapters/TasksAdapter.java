@@ -8,17 +8,21 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.ranguro.technicalsupportmanager.R;
-import com.example.ranguro.technicalsupportmanager.classes.ParcelableTask;
+import com.example.ranguro.technicalsupportmanager.classes.ParseObjectTask;
 
-import java.util.ArrayList;
+import java.text.DateFormat;
+import java.util.List;
 
 /**
  * Created by Randall on 31/08/2015.
  */
 public class TasksAdapter extends RecyclerView.Adapter<TasksAdapter.ViewHolder>{
 
-    private ArrayList<ParcelableTask> assignedTasks;
+    private List<ParseObjectTask> assignedTasks;
 
+    public TasksAdapter(List<ParseObjectTask> assignedTasks) {
+        this.assignedTasks = assignedTasks;
+    }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -49,23 +53,25 @@ public class TasksAdapter extends RecyclerView.Adapter<TasksAdapter.ViewHolder>{
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        public TextView taskTitle;
-        public TextView taskAuthor;
-        public TextView taskDeadline;
+        public final TextView taskTitle;
+        public final TextView taskCreator;
+        public final TextView taskDeadline;
 
 
         public ViewHolder(View itemView) {
             super(itemView);
 
             taskTitle = (TextView) itemView.findViewById(R.id.task_title);
-            taskAuthor = (TextView) itemView.findViewById(R.id.task_author);
+            taskCreator = (TextView) itemView.findViewById(R.id.task_author);
             taskDeadline = (TextView) itemView.findViewById(R.id.task_deadline);
         }
 
-        public void setTask(ParcelableTask task){
-            taskTitle.setText(task.title);
-            taskAuthor.setText(task.author);
-            taskDeadline.setText(task.deadline);
+        public void setTask(ParseObjectTask task){
+            String deadline = DateFormat.getDateInstance().format(task.getDeadline());;
+            String creator = task.getCreatorID().get("firstName") + " " + task.getCreatorID().get("lastName");
+            taskTitle.setText(task.getTitle());
+            taskCreator.setText(creator);
+            taskDeadline.setText(deadline);
         }
 
     }

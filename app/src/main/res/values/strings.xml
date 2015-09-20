@@ -22,8 +22,11 @@
     <string name="phone">Phone number</string>
     <string name="accessType">Access type</string>
     <string name="title_activity_task_manager">TaskManager</string>
-    <string name="hello_world">Hello world!</string>
     <string name="title_activity_task_manager_details">TaskManagerDetailsActivity</string>
+    <string name="title_activity_add_task">AddTaskActivity</string>
+    <string name="task_title">Task title</string>
+    <string name="task_description">Description</string>
+    <string name="task_deadline">Deadline</string>
 
 
 </resources>

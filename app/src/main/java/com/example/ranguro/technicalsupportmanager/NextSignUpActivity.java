@@ -1,30 +1,22 @@
 package com.example.ranguro.technicalsupportmanager;
 
-import android.app.Dialog;
 import android.app.ProgressDialog;
-import android.app.TaskStackBuilder;
 import android.content.Intent;
+import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.ranguro.technicalsupportmanager.classes.Users;
 import com.parse.FindCallback;
-import com.parse.GetCallback;
-import com.parse.Parse;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
-import com.parse.SaveCallback;
 import com.parse.SignUpCallback;
 
-import java.text.ParseException;
 import java.util.List;
 
 
@@ -74,7 +66,7 @@ public class NextSignUpActivity extends AppCompatActivity {
         }
     }
 
-    public ParseUser generateNewParseUser(){
+    private ParseUser generateNewParseUser(){
 
         ParseUser user = new ParseUser();
         user.put("firstName", getStringFromBundle(R.string.firstname));
@@ -87,17 +79,17 @@ public class NextSignUpActivity extends AppCompatActivity {
         return user;
     }
 
-    public String getStringFromBundle(int id){
+    private String getStringFromBundle(int id){
         Intent intent = getIntent();
         Bundle intentBundle = intent.getExtras();
         return intentBundle.getString(getString(id));
     }
 
-    public boolean isEmpty(EditText field){
+    private boolean isEmpty(EditText field){
         return field.getText().toString().trim().length() == 0;
     }
 
-    public void signUpNewAccount(ParseUser user) {
+    private void signUpNewAccount(ParseUser user) {
         //ParseUser user = new ParseUser();
         final ProgressDialog dlg = new ProgressDialog(NextSignUpActivity.this);
         dlg.setTitle("Please wait...");
@@ -125,23 +117,19 @@ public class NextSignUpActivity extends AppCompatActivity {
         timerDelayRemoveDialog(1800, dlg);
     }
 
-    public boolean accountExists(final String usernameText){
+    private boolean accountExists(final String usernameText){
         ParseQuery<ParseObject> query = ParseQuery.getQuery("_User");
         query.whereEqualTo("username", usernameText);
         query.findInBackground(new FindCallback<ParseObject>() {
             @Override
             public void done(List<ParseObject> list, com.parse.ParseException e) {
-                if (e == null) {
-                    userExist = true;
-                } else {
-                    userExist = false;
-                }
+                userExist = !list.isEmpty();
             }
         });
         return userExist;
     }
 
-    public void timerDelayRemoveDialog(long time, final ProgressDialog d){
+    private void timerDelayRemoveDialog(long time, final ProgressDialog d){
         new Handler().postDelayed(new Runnable() {
             public void run() {
                 d.dismiss();

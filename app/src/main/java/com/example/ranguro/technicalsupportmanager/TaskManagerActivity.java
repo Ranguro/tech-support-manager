@@ -1,11 +1,9 @@
 package com.example.ranguro.technicalsupportmanager;
 
-import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 
 public class TaskManagerActivity extends AppCompatActivity {
 
@@ -37,9 +35,5 @@ public class TaskManagerActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void displayDetails(View view){
-        Intent taskManagerDetailsIntent = new Intent(this, TaskManagerDetailsActivity.class);
-        startActivity(taskManagerDetailsIntent);
-        this.overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
-    }
+
 }

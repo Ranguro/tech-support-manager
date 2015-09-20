@@ -35,7 +35,10 @@
             android:name=".TaskManagerDetailsActivity"
             android:label="@string/title_activity_task_manager_details" >
         </activity>
+        <activity
+            android:name=".AddTaskActivity"
+            android:label="@string/title_activity_add_task" >
+        </activity>
     </application>
-
 
 </manifest>
