@@ -95,38 +95,19 @@ public class NextSignUpActivity extends AppCompatActivity {
         dlg.setTitle("Please wait...");
         dlg.setMessage("Signing up. Please wait.");
         dlg.show();
-        dlg.dismiss();
-        if(accountExists(user.getUsername())){
-            dlg.setMessage("USERNAME IS NOT AVAILABLE");
-        }
-        else {
-            user.signUpInBackground(new SignUpCallback() {
-                public void done(com.parse.ParseException e) {
-                    if (e != null) {
-                        dlg.setMessage(e.getMessage());
-                    } else {
-                        dlg.setMessage("Account successfully created.");
-                        Intent signInIntent = new Intent(NextSignUpActivity.this, MainActivity.class);
-                        signInIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-                        startActivity(signInIntent);
-                    }
-
+        user.signUpInBackground(new SignUpCallback() {
+            public void done(com.parse.ParseException e) {
+                if (e != null) {
+                    dlg.setMessage(e.getMessage());
+                } else {
+                    dlg.setMessage("Account successfully created.");
+                    Intent signInIntent = new Intent(NextSignUpActivity.this, MainActivity.class);
+                    signInIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(signInIntent);
                 }
-            });
-        }
-        timerDelayRemoveDialog(1800, dlg);
-    }
-
-    private boolean accountExists(final String usernameText){
-        ParseQuery<ParseObject> query = ParseQuery.getQuery("_User");
-        query.whereEqualTo("username", usernameText);
-        query.findInBackground(new FindCallback<ParseObject>() {
-            @Override
-            public void done(List<ParseObject> list, com.parse.ParseException e) {
-                userExist = !list.isEmpty();
             }
         });
-        return userExist;
+        timerDelayRemoveDialog(1800, dlg);
     }
 
     private void timerDelayRemoveDialog(long time, final ProgressDialog d){

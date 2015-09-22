@@ -2,25 +2,38 @@ package com.example.ranguro.technicalsupportmanager;
 
 import android.app.DatePickerDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.EventLogTags;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
+import com.example.ranguro.technicalsupportmanager.classes.ParseObjectTask;
+import com.parse.ParseUser;
+import com.parse.SaveCallback;
+
+import java.lang.ref.PhantomReference;
+import java.lang.reflect.Array;
+import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.Locale;
 
 /**
  * A placeholder fragment containing a simple view.
  */
 public class AddTaskActivityFragment extends Fragment {
-
 
     private EditText titleView;
     private EditText descriptionView;
@@ -29,19 +42,73 @@ public class AddTaskActivityFragment extends Fragment {
     private Calendar myCalendar;
     private ArrayAdapter priorityAdapter;
 
-
+    private final String DEFAULT_STATUS = "Not started";
+    private final String ERROR_INVALID_DATE = "Deadline is invalid";
+    private final String ERROR_FIELD_EMPTY = "Please, complete all the fields";
 
     public AddTaskActivityFragment() {
 
     }
 
-
-
-
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.add_task_option){
+            try {
+                if(isFieldEmpty(titleView) || isFieldEmpty(descriptionView)){
+                    Toast.makeText(getActivity().getApplicationContext(), ERROR_FIELD_EMPTY, Toast.LENGTH_SHORT).show();
+                }
+                else {
+                addNewTask();
+                }
+            } catch (ParseException e) {
+                Toast.makeText(getActivity().getApplicationContext(), ERROR_INVALID_DATE, Toast.LENGTH_SHORT).show();
+            }
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    private boolean isFieldEmpty(EditText field) {
+        return field.getText().toString().trim().length() == 0;
+    }
+
+    private void addNewTask() throws ParseException {
+        final ParseObjectTask newTask = new ParseObjectTask();
+        String title = titleView.getText().toString();
+        String description = descriptionView.getText().toString();
+        String deadlineText = deadlineView.getText().toString();
+        String priority = priorityView.getSelectedItem().toString();
+        ParseUser creator = ParseUser.getCurrentUser();
+
+        SimpleDateFormat myFormat = new SimpleDateFormat("MM/dd/yy");
+        Date deadline = myFormat.parse(deadlineText);
+        Date todayDate = new Date();
+
+        if (deadline.before(todayDate)){
+            throw new ParseException("", 0);
+        }
+
+        newTask.setTitle(title);
+        newTask.setDescription(description);
+        newTask.setDeadline(deadline);
+        newTask.setPriority(priority);
+        newTask.setCreatorId(creator);
+        newTask.setStatus(DEFAULT_STATUS);
+        newTask.put(ParseObjectTask.COLUMN_TASK_ATTENDATS, new ArrayList<String>());
+        newTask.saveInBackground(new SaveCallback() {
+            @Override
+            public void done(com.parse.ParseException e) {
+                if (e == null) {
+                    Intent taskManagerIntent = new Intent(getActivity().getApplication(), TaskManagerActivity.class);
+                    startActivity(taskManagerIntent);
+                }
+            }
+        });
     }
 
     @Override
@@ -58,7 +125,6 @@ public class AddTaskActivityFragment extends Fragment {
         priorityAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         return rootView;
     }
-
 
     private void setUpDatePicker() {
         final Context context = getActivity();
