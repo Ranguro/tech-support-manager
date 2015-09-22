@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.ranguro.technicalsupportmanager.classes.ParseObjectAsset;
 import com.example.ranguro.technicalsupportmanager.classes.ParseObjectProgress;
 import com.example.ranguro.technicalsupportmanager.classes.ParseObjectTask;
 import com.parse.LogInCallback;
@@ -38,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         Parse.enableLocalDatastore(this);
         ParseObject.registerSubclass(ParseObjectTask.class);
         ParseObject.registerSubclass(ParseObjectProgress.class);
+        ParseObject.registerSubclass(ParseObjectAsset.class);
         Parse.initialize(this, "SIWiSHubCFLzS5Pub6ll75vpGivZ1Eg4mgpePp6G", "oC9umnr8EQLRp12Puso4Idditm4oSAQAJyg0NG2i");
     }
 

@@ -9,6 +9,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -35,7 +36,17 @@ public class TaskManagerActivityFragment extends Fragment implements TasksAdapte
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
         fetchAllTasks();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.action_assset_manager) {
+            Intent assetManagerActivity = new Intent(getActivity().getApplication(), AssetManagerActivity.class);
+            startActivity(assetManagerActivity);
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
@@ -60,8 +71,6 @@ public class TaskManagerActivityFragment extends Fragment implements TasksAdapte
                 startActivity(addTaskIntent);
             }
         });
-
-
         return rootView;
     }
 

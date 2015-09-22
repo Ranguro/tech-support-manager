@@ -20,18 +20,18 @@
         tools:context="com.example.ranguro.technicalsupportmanager.AssetManagerActivityFragment">
 
         <android.support.v7.widget.RecyclerView
-            android:id="@+id/recyclerview_tasks"
+            android:id="@+id/recyclerview_assets"
             android:layout_height="wrap_content"
             android:layout_width="match_parent" />
 
         <android.support.design.widget.FloatingActionButton
-            android:id="@+id/fab_add_task"
+            android:id="@+id/fab_add_asset"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|right"
             android:layout_margin="16dp"
             android:src="@drawable/ic_action_content_new"
-            app:layout_anchor="@id/recyclerview_tasks"
+            app:layout_anchor="@id/recyclerview_assets"
             app:fab_type="normal"
             app:fab_shadow="true"
             app:layout_anchorGravity="bottom|right|end"

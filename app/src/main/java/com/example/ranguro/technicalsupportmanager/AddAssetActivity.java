@@ -5,19 +5,19 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class TaskManagerDetailsActivity extends AppCompatActivity {
+public class AddAssetActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_task_manager_details);
+        setContentView(R.layout.activity_add_asset);
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_task_manager_details, menu);
+        getMenuInflater().inflate(R.menu.menu_add_asset, menu);
         return true;
     }
 
@@ -29,7 +29,7 @@ public class TaskManagerDetailsActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_assset_manager) {
+        if (id == R.id.action_settings) {
             return true;
         }
 
