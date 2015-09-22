@@ -30,6 +30,7 @@ public class AssetManagerActivityFragment extends Fragment {
 
     private FloatingActionButton addAssetFabView;
     private RecyclerView assetRecyclerView;
+    private AssetsAdapter assetsAdapter;
 
     public AssetManagerActivityFragment() {
     }
@@ -46,7 +47,8 @@ public class AssetManagerActivityFragment extends Fragment {
         getAllAssetsQuery.findInBackground(new FindCallback<ParseObjectAsset>() {
             @Override
             public void done(List<ParseObjectAsset> list, ParseException e) {
-                assetRecyclerView.setAdapter(new AssetsAdapter(list));
+                assetsAdapter = new AssetsAdapter(list);
+                assetRecyclerView.setAdapter(assetsAdapter);
             }
         });
     }
@@ -72,5 +74,11 @@ public class AssetManagerActivityFragment extends Fragment {
             }
         });
         return rootView;
+    }
+
+    @Override
+    public void onResume() {
+        fetchAllAssets();
+        super.onResume();
     }
 }

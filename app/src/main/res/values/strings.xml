@@ -36,6 +36,8 @@
     <string name="asset_description">Description</string>
     <string name="asset_location">Location</string>
     <string name="asset_note">Note</string>
+    <string name="toast_error_asset_empty_field_msg">Please, add at least an asset number</string>
+    <string name="toast_success_asset_insertion_msg">New asset created</string>
 
 
 </resources>
