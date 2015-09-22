@@ -27,6 +27,8 @@
     <string name="task_title">Task title</string>
     <string name="task_description">Description</string>
     <string name="task_deadline">Deadline</string>
+    <string name="title_activity_asset_manager">AssetManagerActivity</string>
+    <string name="hello_world">Hello world!</string>
 
 
 </resources>

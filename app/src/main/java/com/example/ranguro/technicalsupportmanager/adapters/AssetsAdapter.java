@@ -8,26 +8,29 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.ranguro.technicalsupportmanager.R;
-import com.example.ranguro.technicalsupportmanager.classes.ParseObjectTask;
+import com.example.ranguro.technicalsupportmanager.classes.ParseObjectAsset;
 import com.parse.ParseObject;
 
 import java.text.DateFormat;
 import java.util.List;
 
-public class TasksAdapter extends RecyclerView.Adapter<TasksAdapter.ViewHolder>{
+/**
+ * Created by Proyecto on 22/09/2015.
+ */
+public class AssetsAdapter extends RecyclerView.Adapter<AssetsAdapter.ViewHolder> {
 
-    private List<ParseObjectTask> assignedTasks;
+    private List<ParseObjectAsset> assetList;
+
 
     private clickListener clickListener;
 
-    public TasksAdapter(List<ParseObjectTask> assignedTasks) {
-        this.assignedTasks = assignedTasks;
+    public AssetsAdapter(List<ParseObjectAsset> assetList) {
+        this.assetList = assetList;
     }
-
 
     public interface clickListener {
 
-        void onTaskSelected(View view, ParseObject task, int position);
+        void onTaskSelected(View view, ParseObject asset, int position);
 
     }
 
@@ -38,7 +41,7 @@ public class TasksAdapter extends RecyclerView.Adapter<TasksAdapter.ViewHolder>{
         LayoutInflater inflater = LayoutInflater.from(context);
 
         // Inflate the custom layout
-        View contactView = inflater.inflate(R.layout.list_item_task, parent, false);
+        View contactView = inflater.inflate(R.layout.list_item_asset, parent, false);
 
         // Return a new holder instance
         ViewHolder viewHolder = new ViewHolder(contactView);
@@ -47,53 +50,53 @@ public class TasksAdapter extends RecyclerView.Adapter<TasksAdapter.ViewHolder>{
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.setTask(assignedTasks.get(position));
+        holder.setAsset(assetList.get(position));
         holder.setPosition(position);
     }
 
     @Override
     public int getItemCount() {
-        return assignedTasks.size();
+        return assetList.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener  {
 
-        public final TextView taskTitle;
-        public final TextView taskCreator;
-        public final TextView taskDeadline;
+        public final TextView assetAssetNumber;
+        public final TextView assetCategory;
+        public final TextView assetLocation;
 
 
-        private ParseObjectTask task;
+        private ParseObjectAsset asset;
         private int position;
 
 
         public ViewHolder(View itemView) {
             super(itemView);
 
-            taskTitle = (TextView) itemView.findViewById(R.id.task_title);
-            taskCreator = (TextView) itemView.findViewById(R.id.task_author);
-            taskDeadline = (TextView) itemView.findViewById(R.id.task_deadline);
+            assetAssetNumber = (TextView) itemView.findViewById(R.id.asset_assetnumber);
+            assetCategory = (TextView) itemView.findViewById(R.id.asset_category);
+            assetLocation = (TextView) itemView.findViewById(R.id.asset_location);
         }
 
-        public void setTask(ParseObjectTask task){
-            this.task = task;
-            String deadline = DateFormat.getDateInstance().format(task.getDeadline());
-            String creator = task.getCreatorID().get("firstName") + " " + task.getCreatorID().get("lastName");
-            taskTitle.setText(task.getTitle());
-            taskCreator.setText(creator);
-            taskDeadline.setText(deadline);
+        public void setAsset(ParseObjectAsset asset){
+            this.asset = asset;
+            assetAssetNumber.setText(asset.getAssetNumber());
+            assetCategory.setText(asset.getCategory());
+            assetLocation.setText(asset.getLocation());
         }
 
         @Override
         public void onClick(View view) {
             if (clickListener == null) return;
 
-            clickListener.onTaskSelected(view, task, position);
+            clickListener.onTaskSelected(view, asset, position);
 
         }
-
         public void setPosition(int position) {
             this.position = position;
         }
+
     }
+
+
 }

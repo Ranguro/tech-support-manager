@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -13,6 +14,7 @@ import android.view.ViewGroup;
 
 import com.example.ranguro.technicalsupportmanager.adapters.TasksAdapter;
 import com.example.ranguro.technicalsupportmanager.classes.ParseObjectTask;
+import com.example.ranguro.technicalsupportmanager.decorators.DividerItemDecoration;
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
@@ -45,6 +47,9 @@ public class TaskManagerActivityFragment extends Fragment implements TasksAdapte
         addTaskFabView = (FloatingActionButton) rootView.findViewById(R.id.fab_add_task);
 
         taskRecyclerView.setLayoutManager(new LinearLayoutManager(taskRecyclerView.getContext()));
+        taskRecyclerView.addItemDecoration(new DividerItemDecoration(getActivity(), DividerItemDecoration.VERTICAL_LIST));
+        taskRecyclerView.setHasFixedSize(true);
+        taskRecyclerView.setItemAnimator(new DefaultItemAnimator());
 
 
 

@@ -39,6 +39,10 @@
             android:name=".AddTaskActivity"
             android:label="@string/title_activity_add_task" >
         </activity>
+        <activity
+            android:name=".AssetManagerActivity"
+            android:label="@string/title_activity_asset_manager" >
+        </activity>
     </application>
 
 </manifest>
