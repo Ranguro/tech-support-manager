@@ -9,23 +9,31 @@ import android.widget.TextView;
 
 import com.example.ranguro.technicalsupportmanager.R;
 import com.example.ranguro.technicalsupportmanager.classes.ParseObjectTask;
+import com.parse.ParseObject;
 
 import java.text.DateFormat;
 import java.util.List;
 
-/**
- * Created by Randall on 31/08/2015.
- */
 public class TasksAdapter extends RecyclerView.Adapter<TasksAdapter.ViewHolder>{
 
     private List<ParseObjectTask> assignedTasks;
+
+
+    private clickListener clickListener;
 
     public TasksAdapter(List<ParseObjectTask> assignedTasks) {
         this.assignedTasks = assignedTasks;
     }
 
+
+    public interface clickListener {
+
+        void onTaskSelected(View view, ParseObject task, int position);
+
+    }
+
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
 
         Context context = parent.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
@@ -41,6 +49,7 @@ public class TasksAdapter extends RecyclerView.Adapter<TasksAdapter.ViewHolder>{
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         holder.setTask(assignedTasks.get(position));
+        holder.setPosition(position);
     }
 
     @Override
@@ -51,11 +60,15 @@ public class TasksAdapter extends RecyclerView.Adapter<TasksAdapter.ViewHolder>{
 
 
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener  {
 
         public final TextView taskTitle;
         public final TextView taskCreator;
         public final TextView taskDeadline;
+
+
+        private ParseObjectTask task;
+        private int position;
 
 
         public ViewHolder(View itemView) {
@@ -67,12 +80,26 @@ public class TasksAdapter extends RecyclerView.Adapter<TasksAdapter.ViewHolder>{
         }
 
         public void setTask(ParseObjectTask task){
-            String deadline = DateFormat.getDateInstance().format(task.getDeadline());;
+            this.task = task;
+            String deadline = DateFormat.getDateInstance().format(task.getDeadline());
             String creator = task.getCreatorID().get("firstName") + " " + task.getCreatorID().get("lastName");
             taskTitle.setText(task.getTitle());
             taskCreator.setText(creator);
             taskDeadline.setText(deadline);
         }
+        
+        
 
+        @Override
+        public void onClick(View view) {
+            if (clickListener == null) return;
+
+            clickListener.onTaskSelected(view, task, position);
+
+        }
+
+        public void setPosition(int position) {
+            this.position = position;
+        }
     }
 }

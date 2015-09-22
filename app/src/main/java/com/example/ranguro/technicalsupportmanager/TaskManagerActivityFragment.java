@@ -14,18 +14,15 @@ import android.view.ViewGroup;
 import com.example.ranguro.technicalsupportmanager.adapters.TasksAdapter;
 import com.example.ranguro.technicalsupportmanager.classes.ParseObjectTask;
 import com.parse.FindCallback;
-import com.parse.Parse;
 import com.parse.ParseException;
+import com.parse.ParseObject;
 import com.parse.ParseQuery;
 
 import java.util.List;
 
-/**
- * Created by Proyecto on 28/08/2015.
- */
-public class TaskManagerActivityFragment extends Fragment {
+public class TaskManagerActivityFragment extends Fragment implements TasksAdapter.clickListener {
 
-    private static final String LOG_TAG = TaskManagerActivity.class.getSimpleName();
+    private static final String LOG_TAG = TaskManagerActivityFragment.class.getSimpleName();
 
     private FloatingActionButton addTaskFabView;
     private RecyclerView taskRecyclerView;
@@ -64,7 +61,7 @@ public class TaskManagerActivityFragment extends Fragment {
     }
 
     private void fetchAllTasks(){
-        ParseQuery<ParseObjectTask> getAllTaskQuery = new ParseQuery<ParseObjectTask>(ParseObjectTask.class);
+        ParseQuery<ParseObjectTask> getAllTaskQuery = new ParseQuery<>(ParseObjectTask.class);
         getAllTaskQuery.findInBackground(new FindCallback<ParseObjectTask>() {
             @Override
             public void done(List<ParseObjectTask> list, ParseException e) {
@@ -74,4 +71,9 @@ public class TaskManagerActivityFragment extends Fragment {
         });
     }
 
+    @Override
+    public void onTaskSelected(View view, ParseObject task, int position) {
+
+
+    }
 }

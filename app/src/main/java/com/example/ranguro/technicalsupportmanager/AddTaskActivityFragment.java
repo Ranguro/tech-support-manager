@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.EventLogTags;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -20,9 +19,6 @@ import com.example.ranguro.technicalsupportmanager.classes.ParseObjectTask;
 import com.parse.ParseUser;
 import com.parse.SaveCallback;
 
-import java.lang.ref.PhantomReference;
-import java.lang.reflect.Array;
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
