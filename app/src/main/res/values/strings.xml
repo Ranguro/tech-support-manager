@@ -38,6 +38,9 @@
     <string name="asset_note">Note</string>
     <string name="toast_error_asset_empty_field_msg">Please, add at least an asset number</string>
     <string name="toast_success_asset_insertion_msg">New asset created</string>
+    <string name="toast_info_login_title">Please wait...</string>
+    <string name="toast_info_login_message">Signing in. Please wait.</string>
+    <string name="toast_info_login_success">Login successful</string>
 
 
 </resources>

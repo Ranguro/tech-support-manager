@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -37,6 +38,7 @@ public class AssetManagerActivityFragment extends Fragment {
     private RecyclerView assetRecyclerView;
     private AssetsAdapter assetsAdapter;
     private SearchView searchAssetView;
+    private SwipeRefreshLayout mSwipeRefreshLayout;
     private List<ParseObjectAsset> assetsList;
 
     public AssetManagerActivityFragment() {
@@ -68,6 +70,8 @@ public class AssetManagerActivityFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_asset_manager, container, false);
         assetRecyclerView = (RecyclerView) rootView.findViewById(R.id.recyclerview_assets);
         addAssetFabView = (FloatingActionButton) rootView.findViewById(R.id.fab_add_asset);
+        searchAssetView = (SearchView) rootView.findViewById(R.id.searchview_assets);
+        mSwipeRefreshLayout = (SwipeRefreshLayout) rootView.findViewById(R.id.swiperefreshlayout_assets);
 
         assetRecyclerView.setLayoutManager(new LinearLayoutManager(assetRecyclerView.getContext()));
         assetRecyclerView.addItemDecoration(new DividerItemDecoration(getActivity(), DividerItemDecoration.VERTICAL_LIST));
@@ -81,7 +85,7 @@ public class AssetManagerActivityFragment extends Fragment {
                 startActivity(addAssetIntent);
             }
         });
-        searchAssetView = (SearchView) rootView.findViewById(R.id.searchview_assets);
+
         searchAssetView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -97,6 +101,13 @@ public class AssetManagerActivityFragment extends Fragment {
                 assetsAdapter = new AssetsAdapter(queryList);
                 assetRecyclerView.setAdapter(assetsAdapter);
                 return false;
+            }
+        });
+
+        mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                refreshAssetsList();
             }
         });
 
@@ -124,4 +135,12 @@ public class AssetManagerActivityFragment extends Fragment {
     }
 
 
+    private void refreshAssetsList() {
+        fetchAllAssets();
+        onItemsLoadComplete();
+    }
+
+    private void onItemsLoadComplete() {
+        mSwipeRefreshLayout.setRefreshing(false);
+    }
 }

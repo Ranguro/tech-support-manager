@@ -79,20 +79,21 @@ public class MainActivity extends AppCompatActivity {
         return field.getText().toString().trim().length() == 0;
     }
 
-    private void verifyAccount(String usernameText, final String passwordText){
+    private void verifyAccount(String usernameText, String passwordText){
+        usernameText = usernameText.trim();
         final ProgressDialog dlg = new ProgressDialog(MainActivity.this);
-        dlg.setTitle("Please wait...");
-        dlg.setMessage("Signing in. Please wait.");
+        dlg.setTitle(R.string.toast_info_login_title);
+        dlg.setMessage(getString(R.string.toast_info_login_message));
         dlg.show();
         ParseUser.logInInBackground(usernameText, passwordText, new LogInCallback() {
             @Override
             public void done(ParseUser parseUser, ParseException e) {
-                password.setText("");
+                password.setText(new String());
                 if (e != null) {
                     dlg.setMessage(e.getMessage());
                 } else {
-                    dlg.setMessage("Login successful");
-                    username.setText("");
+                    dlg.setMessage(getString(R.string.toast_info_login_success));
+                    username.setText(new String());
                     Intent taskManagerIntent = new Intent(MainActivity.this, TaskManagerActivity.class);
                     startActivity(taskManagerIntent);
                 }

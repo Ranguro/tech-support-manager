@@ -18,11 +18,17 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         tools:context="com.example.ranguro.technicalsupportmanager.AssetManagerActivityFragment">
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/swiperefreshlayout_assets"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/recyclerview_assets"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent" />
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerview_assets"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent" />
+
+        </android.support.v4.widget.SwipeRefreshLayout>
 
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/fab_add_asset"
@@ -38,6 +44,7 @@
             app:fab_colorNormal="@color/accent"
             app:fab_colorPressed="@color/accent_pressed"
             app:fab_colorRipple="@color/ripple" />
+
 
     </FrameLayout>
 
