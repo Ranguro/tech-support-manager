@@ -55,6 +55,10 @@
             android:name=".AssetManagerDetailsActivity"
             android:label="@string/title_activity_asset_manager_details" >
         </activity>
+        <activity
+            android:name=".EditTaskActivity"
+            android:label="@string/title_activity_edit_task" >
+        </activity>
     </application>
 
 </manifest>

@@ -44,6 +44,15 @@
     <string name="title_activity_edit_asset">EditAssetActivity</string>
     <string name="title_activity_asset_manager_details">AssetManagerDetailsActivity</string>
     <string name="action_edit_asset">Edit</string>
+    <string name="toast_success_asset_modification_msg">Asset was modified successfully</string>
+    <string name="toast_success_task_modification_msg">Task was modified successfully</string>
+    <string name="title_activity_edit_task">EditTaskActivity</string>
+    <string name="toast_error_task_empty_field_msg">Please complete all the fields</string>
+    <string name="toast_error_task_invalid_date_msg">Deadline is invalid</string>
+    <string name="default_task_status">Not started</string>
+
+    <string name="computer">Computer</string>
+
 
 
 </resources>

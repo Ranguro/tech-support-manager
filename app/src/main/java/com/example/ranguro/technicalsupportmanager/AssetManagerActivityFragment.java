@@ -15,6 +15,7 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.SearchView;
 
 import com.example.ranguro.technicalsupportmanager.adapters.AssetsAdapter;
@@ -54,6 +55,14 @@ public class AssetManagerActivityFragment extends Fragment {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            Intent editAssetIntent = new Intent(getActivity().getApplicationContext(), EditTaskActivity.class);
+            startActivity(editAssetIntent);
+            return true;
+        }
         return super.onOptionsItemSelected(item);
     }
 

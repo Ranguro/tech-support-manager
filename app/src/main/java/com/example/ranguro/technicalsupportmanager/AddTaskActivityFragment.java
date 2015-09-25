@@ -38,10 +38,6 @@ public class AddTaskActivityFragment extends Fragment {
     private Calendar myCalendar;
     private ArrayAdapter priorityAdapter;
 
-    private final String DEFAULT_STATUS = "Not started";
-    private final String ERROR_INVALID_DATE = "Deadline is invalid";
-    private final String ERROR_FIELD_EMPTY = "Please, complete all the fields";
-
     public AddTaskActivityFragment() {
 
     }
@@ -57,13 +53,13 @@ public class AddTaskActivityFragment extends Fragment {
         if (item.getItemId() == R.id.add_task_option){
             try {
                 if(isFieldEmpty(titleView) || isFieldEmpty(descriptionView)){
-                    Toast.makeText(getActivity().getApplicationContext(), ERROR_FIELD_EMPTY, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity().getApplicationContext(), R.string.toast_error_task_empty_field_msg, Toast.LENGTH_SHORT).show();
                 }
                 else {
                 addNewTask();
                 }
             } catch (ParseException e) {
-                Toast.makeText(getActivity().getApplicationContext(), ERROR_INVALID_DATE, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity().getApplicationContext(), R.string.toast_error_task_invalid_date_msg, Toast.LENGTH_SHORT).show();
             }
         }
         return super.onOptionsItemSelected(item);
@@ -94,7 +90,7 @@ public class AddTaskActivityFragment extends Fragment {
         newTask.setDeadline(deadline);
         newTask.setPriority(priority);
         newTask.setCreatorId(creator);
-        newTask.setStatus(DEFAULT_STATUS);
+        newTask.setStatus(getString(R.string.default_task_status));
         newTask.put(ParseObjectTask.COLUMN_TASK_ATTENDATS, new ArrayList<String>());
         newTask.saveInBackground(new SaveCallback() {
             @Override

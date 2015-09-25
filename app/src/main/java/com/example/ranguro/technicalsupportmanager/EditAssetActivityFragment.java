@@ -1,7 +1,6 @@
 package com.example.ranguro.technicalsupportmanager;
 
 import android.content.Intent;
-import android.content.res.AssetManager;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,7 +13,6 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.ranguro.technicalsupportmanager.classes.ParseObjectAsset;
-import com.example.ranguro.technicalsupportmanager.classes.ParseObjectTask;
 import com.parse.ParseException;
 import com.parse.ParseQuery;
 
@@ -41,14 +39,6 @@ public class EditAssetActivityFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
-        Bundle bundle = getArguments();
-        String assetID = bundle.getString(ParseObjectAsset.COLUMN_ASSET_KEY);
-        ParseQuery<ParseObjectAsset> getAssetByIDQuery = new ParseQuery<>(ParseObjectAsset.class);
-        try{
-            selectedAsset = getAssetByIDQuery.get(assetID);
-        }catch (ParseException e){
-
-        }
     }
 
     @Override
@@ -72,18 +62,36 @@ public class EditAssetActivityFragment extends Fragment {
         categoryView.setAdapter(categoryAdapter);
         categoryAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
+        //get asset from details activity CHANGE FOR BUNDLE ARGUMENT FROM FATHER
+        String assetID = "nDAGfQNTt0";
+        ParseQuery<ParseObjectAsset> getAssetByIDQuery = new ParseQuery<>(ParseObjectAsset.class);
+        try{
+            selectedAsset = getAssetByIDQuery.get(assetID);
+            assetNumberView.setText(selectedAsset.getAssetNumber());
+            descriptionView.setText(selectedAsset.getDescription());
+            locationView.setText(selectedAsset.getLocation());
+            noteView.setText(selectedAsset.getNote());
+            categoryView.setSelection(categoryAdapter.getPosition(selectedAsset.getCategory()));
+            statusView.setSelection(statusAdapter.getPosition(selectedAsset.getStatus()));
+        }catch (ParseException e){
+
+        }
+
         return rootView;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == R.id.action_add_asset){
+        if (item.getItemId() == R.id.add_task_option){
             if(isFieldEmpty(assetNumberView)){
                 Toast.makeText(getActivity().getApplicationContext(), R.string.toast_error_asset_empty_field_msg, Toast.LENGTH_SHORT).show();
             }
             else {
                 try{
                     editAsset();
+                    Intent assetManagerActivity = new Intent(getActivity().getApplication(), AssetManagerActivity.class);
+                    startActivity(assetManagerActivity);
+                    Toast.makeText(getActivity().getApplication(), R.string.toast_success_asset_modification_msg, Toast.LENGTH_LONG).show();
                 }
                 catch (ParseException pe){
 

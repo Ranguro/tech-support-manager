@@ -14,7 +14,7 @@
     </string-array>
     
     <string-array name="category_array">
-        <item>Computer</item>
+        <item>@string/computer</item>
         <item>Monitor</item>
         <item>Laptop</item>
         <item>Camera</item>
@@ -24,8 +24,7 @@
     <string-array name="status_array">
         <item>Excellent</item>
         <item>Good</item>
-        <item>defective</item>
-        <item>obsolete</item>
+        <item>Defective</item>
+        <item>Obsolete</item>
     </string-array>
-
 </resources>
