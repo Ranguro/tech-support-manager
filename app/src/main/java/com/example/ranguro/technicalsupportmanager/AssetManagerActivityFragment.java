@@ -12,6 +12,7 @@ import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.SearchView;
@@ -49,6 +50,11 @@ public class AssetManagerActivityFragment extends Fragment {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
         fetchAllAssets();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        return super.onOptionsItemSelected(item);
     }
 
     private void fetchAllAssets() {
@@ -133,7 +139,6 @@ public class AssetManagerActivityFragment extends Fragment {
         fetchAllAssets();
         super.onResume();
     }
-
 
     private void refreshAssetsList() {
         fetchAllAssets();

@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.ranguro.technicalsupportmanager.adapters.TasksAdapter;
 import com.example.ranguro.technicalsupportmanager.classes.ParseObjectTask;
@@ -87,6 +88,6 @@ public class TaskManagerActivityFragment extends Fragment implements TasksAdapte
 
     @Override
     public void onTaskSelected(View view, ParseObject task, int position) {
-
+        Toast.makeText(getActivity().getApplicationContext(), task.getObjectId(), Toast.LENGTH_SHORT).show();
     }
 }

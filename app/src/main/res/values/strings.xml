@@ -41,6 +41,9 @@
     <string name="toast_info_login_title">Please wait...</string>
     <string name="toast_info_login_message">Signing in. Please wait.</string>
     <string name="toast_info_login_success">Login successful</string>
+    <string name="title_activity_edit_asset">EditAssetActivity</string>
+    <string name="title_activity_asset_manager_details">AssetManagerDetailsActivity</string>
+    <string name="action_edit_asset">Edit</string>
 
 
 </resources>

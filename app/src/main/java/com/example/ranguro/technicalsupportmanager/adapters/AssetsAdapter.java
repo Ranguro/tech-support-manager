@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.ranguro.technicalsupportmanager.R;
 import com.example.ranguro.technicalsupportmanager.classes.ParseObjectAsset;
@@ -36,14 +37,9 @@ public class AssetsAdapter extends RecyclerView.Adapter<AssetsAdapter.ViewHolder
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
-
         Context context = parent.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
-
-        // Inflate the custom layout
         View contactView = inflater.inflate(R.layout.list_item_asset, parent, false);
-
-        // Return a new holder instance
         ViewHolder viewHolder = new ViewHolder(contactView);
         return viewHolder;
     }
@@ -65,10 +61,8 @@ public class AssetsAdapter extends RecyclerView.Adapter<AssetsAdapter.ViewHolder
         public final TextView assetCategory;
         public final TextView assetLocation;
 
-
         private ParseObjectAsset asset;
         private int position;
-
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -88,10 +82,9 @@ public class AssetsAdapter extends RecyclerView.Adapter<AssetsAdapter.ViewHolder
         @Override
         public void onClick(View view) {
             if (clickListener == null) return;
-
             clickListener.onTaskSelected(view, asset, position);
-
         }
+
         public void setPosition(int position) {
             this.position = position;
         }

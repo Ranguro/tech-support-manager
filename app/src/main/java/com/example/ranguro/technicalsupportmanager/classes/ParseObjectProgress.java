@@ -1,8 +1,12 @@
 package com.example.ranguro.technicalsupportmanager.classes;
 
+import android.util.EventLogTags;
+
 import com.parse.ParseClassName;
 import com.parse.ParseObject;
 import com.parse.ParseUser;
+
+import java.util.Date;
 
 /**
  * Created by Randall on 19/09/2015.
@@ -39,5 +43,21 @@ public class ParseObjectProgress extends ParseObject {
 
     public String getCreateAt(){
         return getString(COLUMN_PROGRESS_CREATED_AT);
+    }
+
+    public void setTaskID(ParseObjectTask taskID){
+        this.put(COLUMN_PROGRESS_TASK_ID, taskID);
+    }
+
+    public void setDescription(String description){
+        this.put(COLUMN_PROGRESS_DESCRIPTION, description);
+    }
+
+    public void setCreatedAt(Date createdAt){
+        this.put(COLUMN_PROGRESS_CREATED_AT, createdAt);
+    }
+
+    public void setAssistantID(ParseUser assistantID){
+        this.put(COLUMN_PROGRESS_ASSISTANT_ID, assistantID);
     }
 }

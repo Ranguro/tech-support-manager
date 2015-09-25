@@ -47,6 +47,14 @@
             android:name=".AddAssetActivity"
             android:label="@string/title_activity_add_asset" >
         </activity>
+        <activity
+            android:name=".EditAssetActivity"
+            android:label="@string/title_activity_edit_asset" >
+        </activity>
+        <activity
+            android:name=".AssetManagerDetailsActivity"
+            android:label="@string/title_activity_asset_manager_details" >
+        </activity>
     </application>
 
 </manifest>

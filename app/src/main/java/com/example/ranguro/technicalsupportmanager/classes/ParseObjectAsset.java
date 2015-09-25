@@ -12,13 +12,13 @@ import com.parse.ParseObject;
 @ParseClassName("Asset")
 public class ParseObjectAsset extends ParseObject{
 
-    private final String COLUMN_ASSET_KEY = "objectId";
-    private final String COLUMN_ASSET_ASSET_NUMBER = "assetNumber";
-    private final String COLUMN_ASSET_CATEGORY = "category";
-    private final String COLUMN_ASSET_DESCRIPTION = "description";
-    private final String COLUMN_ASSET_LOCATION = "location";
-    private final String COLUMN_ASSET_STATUS = "status";
-    private final String COLUMN_ASSET_NOTE = "note";
+    public static String COLUMN_ASSET_KEY = "objectId";
+    public static String COLUMN_ASSET_ASSET_NUMBER = "assetNumber";
+    public static String COLUMN_ASSET_CATEGORY = "category";
+    public static String COLUMN_ASSET_DESCRIPTION = "description";
+    public static String COLUMN_ASSET_LOCATION = "location";
+    public static String COLUMN_ASSET_STATUS = "status";
+    public static String COLUMN_ASSET_NOTE = "note";
 
     public ParseObjectAsset()
     {

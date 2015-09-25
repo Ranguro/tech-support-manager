@@ -8,32 +8,32 @@
     tools:context="com.example.ranguro.technicalsupportmanager.AddAssetActivityFragment">
 
     <EditText
-        android:id="@+id/field_asset_assetnumber"
+        android:id="@+id/field_edit_asset_assetnumber"
         android:hint="@string/asset_assetnumber"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <EditText
-        android:id="@+id/field_asset_description"
+        android:id="@+id/field_edit_asset_description"
         android:hint="@string/asset_description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <EditText
-        android:id="@+id/field_asset_location"
+        android:id="@+id/field_edit_asset_location"
         android:hint="@string/asset_location"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <EditText
-        android:id="@+id/field_asset_note"
+        android:id="@+id/field_edit_asset_note"
         android:hint="@string/asset_note"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <Spinner
-        android:id="@+id/spinner_asset_category"
+        android:id="@+id/spinner_edit_asset_category"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <Spinner
-        android:id="@+id/spinner_asset_status"
+        android:id="@+id/spinner_edit_asset_status"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
