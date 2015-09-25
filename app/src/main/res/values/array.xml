@@ -12,5 +12,19 @@
         <item>Medium</item>
         <item>Low</item>
     </string-array>
-
+    
+    <string-array name="category_array">
+        <item>@string/computer</item>
+        <item>Monitor</item>
+        <item>Laptop</item>
+        <item>Camera</item>
+        <item>Tablet</item>
+    </string-array>
+    
+    <string-array name="status_array">
+        <item>Excellent</item>
+        <item>Good</item>
+        <item>Defective</item>
+        <item>Obsolete</item>
+    </string-array>
 </resources>

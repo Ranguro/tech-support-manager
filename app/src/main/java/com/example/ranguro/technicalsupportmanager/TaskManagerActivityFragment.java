@@ -1,11 +1,10 @@
 package com.example.ranguro.technicalsupportmanager;
 
-import android.app.Fragment;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -13,9 +12,11 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.ranguro.technicalsupportmanager.adapters.TasksAdapter;
 import com.example.ranguro.technicalsupportmanager.classes.ParseObjectTask;
+import com.example.ranguro.technicalsupportmanager.decorators.DividerItemDecoration;
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
@@ -46,6 +47,10 @@ public class TaskManagerActivityFragment extends Fragment implements TasksAdapte
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.action_assset_manager) {
+            Intent assetManagerActivity = new Intent(getActivity().getApplication(), AssetManagerActivity.class);
+            startActivity(assetManagerActivity);
+        }
         return super.onOptionsItemSelected(item);
     }
 
@@ -56,9 +61,12 @@ public class TaskManagerActivityFragment extends Fragment implements TasksAdapte
         View rootView = inflater.inflate(R.layout.fragment_task_manager, container, false);
         taskRecyclerView = (RecyclerView) rootView.findViewById(R.id.recyclerview_tasks);
         addTaskFabView = (FloatingActionButton) rootView.findViewById(R.id.fab_add_task);
+
         taskRecyclerView.setLayoutManager(new LinearLayoutManager(taskRecyclerView.getContext()));
+        taskRecyclerView.addItemDecoration(new DividerItemDecoration(getActivity(), DividerItemDecoration.VERTICAL_LIST));
         taskRecyclerView.setHasFixedSize(true);
         taskRecyclerView.setItemAnimator(new DefaultItemAnimator());
+
 
 
         addTaskFabView.setOnClickListener(new View.OnClickListener() {
@@ -93,5 +101,11 @@ public class TaskManagerActivityFragment extends Fragment implements TasksAdapte
                 Log.i("Total tasks obtained: ", String.valueOf(taskList.size()));
             }
         });
+    }
+
+    @Override
+    public void onTaskSelected(View view, ParseObject task, int position) {
+
+
     }
 }

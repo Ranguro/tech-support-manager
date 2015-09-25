@@ -34,6 +34,32 @@
     <string name="task_title">Task title</string>
     <string name="task_description">Description</string>
     <string name="task_deadline">Deadline</string>
+    <string name="title_activity_asset_manager">AssetManagerActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="asset_manager">Asset Manager</string>
+    <string name="title_activity_add_asset">AddAssetActivity</string>
+    <string name="action_add_asset">Save</string>
+    <string name="asset_assetnumber">Asset number</string>
+    <string name="asset_description">Description</string>
+    <string name="asset_location">Location</string>
+    <string name="asset_note">Note</string>
+    <string name="toast_error_asset_empty_field_msg">Please, add at least an asset number</string>
+    <string name="toast_success_asset_insertion_msg">New asset created</string>
+    <string name="toast_info_login_title">Please wait...</string>
+    <string name="toast_info_login_message">Signing in. Please wait.</string>
+    <string name="toast_info_login_success">Login successful</string>
+    <string name="title_activity_edit_asset">EditAssetActivity</string>
+    <string name="title_activity_asset_manager_details">AssetManagerDetailsActivity</string>
+    <string name="action_edit_asset">Edit</string>
+    <string name="toast_success_asset_modification_msg">Asset was modified successfully</string>
+    <string name="toast_success_task_modification_msg">Task was modified successfully</string>
+    <string name="title_activity_edit_task">EditTaskActivity</string>
+    <string name="toast_error_task_empty_field_msg">Please complete all the fields</string>
+    <string name="toast_error_task_invalid_date_msg">Deadline is invalid</string>
+    <string name="default_task_status">Not started</string>
+
+    <string name="computer">Computer</string>
+
     <string name="attendants_label">Attendants:</string>
     <string name="priority_label">Priority:</string>
     <string name="deadline_label">Deadline:</string>

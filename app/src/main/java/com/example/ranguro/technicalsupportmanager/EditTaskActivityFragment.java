@@ -3,8 +3,8 @@ package com.example.ranguro.technicalsupportmanager;
 import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,23 +15,22 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.example.ranguro.technicalsupportmanager.classes.ParseObjectAsset;
 import com.example.ranguro.technicalsupportmanager.classes.ParseObjectTask;
-import com.parse.ParseUser;
-import com.parse.SaveCallback;
+import com.parse.ParseQuery;
 
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
+import java.util.concurrent.ExecutionException;
 
 /**
  * A placeholder fragment containing a simple view.
  */
-public class AddTaskActivityFragment extends Fragment {
-
-    private final String LOG_TAG = AddTaskActivityFragment.class.getSimpleName();
+public class EditTaskActivityFragment extends Fragment {
 
     private EditText titleView;
     private EditText descriptionView;
@@ -39,9 +38,9 @@ public class AddTaskActivityFragment extends Fragment {
     private EditText deadlineView;
     private Calendar myCalendar;
     private ArrayAdapter priorityAdapter;
+    private ParseObjectTask selectedTask;
 
-    public AddTaskActivityFragment() {
-
+    public EditTaskActivityFragment() {
     }
 
     @Override
@@ -51,6 +50,35 @@ public class AddTaskActivityFragment extends Fragment {
     }
 
     @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View rootView =  inflater.inflate(R.layout.fragment_edit_task, container, false);
+
+        titleView = (EditText) rootView.findViewById(R.id.field_edit_task_title);
+        descriptionView = (EditText) rootView.findViewById(R.id.field_edit_task_description);
+        priorityView = (Spinner) rootView.findViewById(R.id.spinner_edit_task_priority);
+        deadlineView = (EditText) rootView.findViewById(R.id.field_edit_task_deadline);
+        setUpDatePicker();
+        priorityAdapter = ArrayAdapter.createFromResource(getActivity(),R.array.priority_array,android.R.layout.simple_list_item_1);
+        priorityView.setAdapter(priorityAdapter);
+        priorityAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        //get asset from details activity CHANGE FOR BUNDLE ARGUMENT FROM FATHER
+        String taskId = "fRfT8ac10S";
+
+        ParseQuery<ParseObjectTask> getTaskByIDQuery = new ParseQuery<>(ParseObjectTask.class);
+        try{
+            selectedTask = getTaskByIDQuery.get(taskId);
+            String taskDeadline = DateFormat.getDateInstance().format(selectedTask.getDeadline());
+
+            titleView.setText(selectedTask.getTitle());
+            descriptionView.setText(selectedTask.getDescription());
+            priorityView.setSelection (priorityAdapter.getPosition(selectedTask.getPriority()));
+            deadlineView.setText(taskDeadline);
+        }catch (com.parse.ParseException e){}
+        return rootView;
+    }
+
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.add_task_option){
             try {
@@ -58,26 +86,25 @@ public class AddTaskActivityFragment extends Fragment {
                     Toast.makeText(getActivity().getApplicationContext(), R.string.toast_error_task_empty_field_msg, Toast.LENGTH_SHORT).show();
                 }
                 else {
-                addNewTask();
+                    editTask();
+                    Intent taskManagerIntent = new Intent(getActivity().getApplication(), TaskManagerActivity.class);
+                    startActivity(taskManagerIntent);
+                    Toast.makeText(getActivity().getApplication(), R.string.toast_success_task_modification_msg, Toast.LENGTH_LONG).show();
                 }
             } catch (ParseException e) {
                 Toast.makeText(getActivity().getApplicationContext(), R.string.toast_error_task_invalid_date_msg, Toast.LENGTH_SHORT).show();
+            } catch (Exception e){
+
             }
         }
         return super.onOptionsItemSelected(item);
     }
 
-    private boolean isFieldEmpty(EditText field) {
-        return field.getText().toString().trim().length() == 0;
-    }
-
-    private void addNewTask() throws ParseException {
-        final ParseObjectTask newTask = new ParseObjectTask();
+    private void editTask() throws ParseException, com.parse.ParseException {
         String title = titleView.getText().toString();
         String description = descriptionView.getText().toString();
-        String deadlineText = deadlineView.getText().toString();
         String priority = priorityView.getSelectedItem().toString();
-        ParseUser creator = ParseUser.getCurrentUser();
+        String deadlineText = deadlineView.getText().toString();
 
         SimpleDateFormat myFormat = new SimpleDateFormat("MM/dd/yy");
         Date deadline = myFormat.parse(deadlineText);
@@ -87,37 +114,11 @@ public class AddTaskActivityFragment extends Fragment {
             throw new ParseException("", 0);
         }
 
-        newTask.setTitle(title);
-        newTask.setDescription(description);
-        newTask.setDeadline(deadline);
-        newTask.setPriority(priority);
-        newTask.setCreatorId(creator);
-        newTask.setStatus(getString(R.string.default_task_status));
-        newTask.put(ParseObjectTask.COLUMN_TASK_ATTENDATS, new ArrayList<String>());
-        newTask.saveInBackground(new SaveCallback() {
-            @Override
-            public void done(com.parse.ParseException e) {
-                if (e == null) {
-                    Intent taskManagerIntent = new Intent(getActivity().getApplication(), TaskManagerActivity.class);
-                    startActivity(taskManagerIntent);
-                }
-            }
-        });
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView =  inflater.inflate(R.layout.fragment_add_task, container, false);
-
-        titleView = (EditText) rootView.findViewById(R.id.field_task_title);
-        descriptionView = (EditText) rootView.findViewById(R.id.field_task_description);
-        priorityView = (Spinner) rootView.findViewById(R.id.spinner_task_priority);
-        deadlineView = (EditText) rootView.findViewById(R.id.field_task_deadline);
-        setUpDatePicker();
-        priorityAdapter = ArrayAdapter.createFromResource(getActivity(),R.array.priority_array,android.R.layout.simple_list_item_1);
-        priorityView.setAdapter(priorityAdapter);
-        priorityAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        return rootView;
+        selectedTask.setTitle(title);
+        selectedTask.setDescription(description);
+        selectedTask.setPriority(priority);
+        selectedTask.setDeadline(deadline);
+        selectedTask.save();
     }
 
     private void setUpDatePicker() {
@@ -157,5 +158,9 @@ public class AddTaskActivityFragment extends Fragment {
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
 
         deadlineView.setText(sdf.format(myCalendar.getTime()));
+    }
+
+    private boolean isFieldEmpty(EditText field) {
+        return field.getText().toString().trim().length() == 0;
     }
 }

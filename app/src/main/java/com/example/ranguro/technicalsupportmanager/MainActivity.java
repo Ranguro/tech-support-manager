@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.ranguro.technicalsupportmanager.classes.ParseObjectAsset;
 import com.example.ranguro.technicalsupportmanager.classes.ParseObjectProgress;
 import com.example.ranguro.technicalsupportmanager.classes.ParseObjectTask;
 import com.example.ranguro.technicalsupportmanager.classes.ParseObjectUser;
@@ -41,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         ParseObject.registerSubclass(ParseObjectTask.class);
         ParseObject.registerSubclass(ParseObjectProgress.class);
         ParseObject.registerSubclass(ParseObjectUser.class);
+        ParseObject.registerSubclass(ParseObjectAsset.class);
         Parse.initialize(this, "SIWiSHubCFLzS5Pub6ll75vpGivZ1Eg4mgpePp6G", "oC9umnr8EQLRp12Puso4Idditm4oSAQAJyg0NG2i");
     }
 
@@ -80,20 +82,21 @@ public class MainActivity extends AppCompatActivity {
         return field.getText().toString().trim().length() == 0;
     }
 
-    private void verifyAccount(String usernameText, final String passwordText){
+    private void verifyAccount(String usernameText, String passwordText){
+        usernameText = usernameText.trim();
         final ProgressDialog dlg = new ProgressDialog(MainActivity.this);
-        dlg.setTitle("Please wait...");
-        dlg.setMessage("Signing in. Please wait.");
+        dlg.setTitle(R.string.toast_info_login_title);
+        dlg.setMessage(getString(R.string.toast_info_login_message));
         dlg.show();
         ParseUser.logInInBackground(usernameText, passwordText, new LogInCallback() {
             @Override
             public void done(ParseUser parseUser, ParseException e) {
-                password.setText("");
+                password.setText(new String());
                 if (e != null) {
                     dlg.setMessage(e.getMessage());
                 } else {
-                    dlg.setMessage("Login successful");
-                    username.setText("");
+                    dlg.setMessage(getString(R.string.toast_info_login_success));
+                    username.setText(new String());
                     Intent taskManagerIntent = new Intent(MainActivity.this, TaskManagerActivity.class);
                     startActivity(taskManagerIntent);
                 }
