@@ -88,6 +88,5 @@ public class TaskManagerActivityFragment extends Fragment implements TasksAdapte
     @Override
     public void onTaskSelected(View view, ParseObject task, int position) {
 
-
     }
 }
