@@ -4,8 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -13,14 +13,12 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.example.ranguro.technicalsupportmanager.adapters.TasksAdapter;
 import com.example.ranguro.technicalsupportmanager.classes.ParseObjectTask;
 import com.example.ranguro.technicalsupportmanager.decorators.DividerItemDecoration;
 import com.parse.FindCallback;
 import com.parse.ParseException;
-import com.parse.ParseObject;
 import com.parse.ParseQuery;
 
 import java.util.List;
@@ -82,10 +80,18 @@ public class TaskManagerActivityFragment extends Fragment implements TasksAdapte
 
 
     @Override
-    public void onTaskSelected(View view, ParseObject task, int position) {
+    public void onTaskSelected(View view, ParseObjectTask task, int position) {
+
         Context context = view.getContext();
         Intent intent = new Intent(context,TaskManagerDetailsActivity.class);
+
+
         intent.putExtra(TaskManagerDetailsActivityFragment.TASK_DETAIL_KEY, task.getObjectId());
+
+        String fullName = task.getCreatorID().getFirstName() + " "+task.getCreatorID().getLastName();
+        intent.putExtra(TaskManagerDetailsActivity.TASK_TITLE,task.getTitle());
+        intent.putExtra(TaskManagerDetailsActivity.TASK_CREATED_BY,fullName);
+
         startActivity(intent);
     }
 

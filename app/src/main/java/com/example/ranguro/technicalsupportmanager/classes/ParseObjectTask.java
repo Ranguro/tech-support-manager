@@ -2,7 +2,6 @@ package com.example.ranguro.technicalsupportmanager.classes;
 
 import com.parse.ParseClassName;
 import com.parse.ParseObject;
-import com.parse.ParseUser;
 
 import java.util.Date;
 import java.util.List;
@@ -33,8 +32,8 @@ public class ParseObjectTask extends ParseObject{
         return getString(COLUMN_TASK_STATUS);
     }
 
-    public ParseUser getCreatorID(){
-        return getParseUser(COLUMN_TASK_CREATOR_ID);
+    public ParseObjectUser getCreatorID(){
+        return ((ParseObjectUser) getParseUser(COLUMN_TASK_CREATOR_ID));
     }
 
     public String getPriority(){
@@ -78,7 +77,7 @@ public class ParseObjectTask extends ParseObject{
         this.put(COLUMN_TASK_PRIORITY, priority);
     }
 
-    public void setCreatorId(ParseUser creator){
+    public void setCreatorId(ParseObjectUser creator){
         this.put(COLUMN_TASK_CREATOR_ID, creator);
     }
 

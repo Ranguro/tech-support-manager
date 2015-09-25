@@ -37,5 +37,4 @@ public class TaskManagerActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-
 }
