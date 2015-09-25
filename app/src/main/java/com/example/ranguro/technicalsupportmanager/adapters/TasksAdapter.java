@@ -38,9 +38,6 @@ public class TasksAdapter extends RecyclerView.Adapter<TasksAdapter.ViewHolder>{
 
     }
 
-
-
-
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
 
@@ -77,8 +74,6 @@ public class TasksAdapter extends RecyclerView.Adapter<TasksAdapter.ViewHolder>{
         public final TextView taskCreator;
         public final TextView taskDeadline;
 
-
-
         private ParseObjectTask task;
         private int position;
 
@@ -100,8 +95,6 @@ public class TasksAdapter extends RecyclerView.Adapter<TasksAdapter.ViewHolder>{
             taskCreator.setText(creator);
             taskDeadline.setText(deadline);
         }
-        
-        
 
         @Override
         public void onClick(View view) {

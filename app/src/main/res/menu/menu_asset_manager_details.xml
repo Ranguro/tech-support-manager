@@ -3,5 +3,5 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.ranguro.technicalsupportmanager.AssetManagerDetailsActivity">
     <item android:id="@+id/action_edit_asset" android:title="@string/action_edit_asset"
-        android:orderInCategory="100" app:showAsAction="always" />
+        android:orderInCategory="100" app:showAsAction="always|withText" android:icon="@android:drawable/ic_menu_edit"/>
 </menu>

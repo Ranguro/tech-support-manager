@@ -1,5 +1,6 @@
 package com.example.ranguro.technicalsupportmanager;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -82,7 +83,6 @@ public class TaskManagerActivityFragment extends Fragment implements TasksAdapte
 
     @Override
     public void onTaskSelected(View view, ParseObject task, int position) {
-
         Context context = view.getContext();
         Intent intent = new Intent(context,TaskManagerDetailsActivity.class);
         intent.putExtra(TaskManagerDetailsActivityFragment.TASK_DETAIL_KEY, task.getObjectId());
@@ -101,11 +101,5 @@ public class TaskManagerActivityFragment extends Fragment implements TasksAdapte
                 Log.i("Total tasks obtained: ", String.valueOf(taskList.size()));
             }
         });
-    }
-
-    @Override
-    public void onTaskSelected(View view, ParseObject task, int position) {
-
-
     }
 }

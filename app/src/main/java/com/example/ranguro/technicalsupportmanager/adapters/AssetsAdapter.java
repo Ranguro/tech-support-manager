@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import com.example.ranguro.technicalsupportmanager.R;
 import com.example.ranguro.technicalsupportmanager.classes.ParseObjectAsset;
+import com.example.ranguro.technicalsupportmanager.classes.ParseObjectTask;
 import com.parse.ParseObject;
 
 import java.text.DateFormat;
@@ -21,18 +22,23 @@ import java.util.List;
 public class AssetsAdapter extends RecyclerView.Adapter<AssetsAdapter.ViewHolder> {
 
     private List<ParseObjectAsset> assetList;
-
-
-    private clickListener clickListener;
+    private ClickListener clickListener;
 
     public AssetsAdapter(List<ParseObjectAsset> assetList) {
         this.assetList = assetList;
     }
 
-    public interface clickListener {
+    public AssetsAdapter(){
 
-        void onTaskSelected(View view, ParseObject asset, int position);
+    }
 
+    public void addAll(List<ParseObjectAsset> assetsList) {
+        assetList = assetsList;
+    }
+
+
+    public interface ClickListener {
+        void onAssetSelected(View view, ParseObject asset, int position);
     }
 
     @Override
@@ -48,6 +54,10 @@ public class AssetsAdapter extends RecyclerView.Adapter<AssetsAdapter.ViewHolder
     public void onBindViewHolder(ViewHolder holder, int position) {
         holder.setAsset(assetList.get(position));
         holder.setPosition(position);
+    }
+
+    public void setClickListener(ClickListener clickListener) {
+        this.clickListener = clickListener;
     }
 
     @Override
@@ -67,6 +77,7 @@ public class AssetsAdapter extends RecyclerView.Adapter<AssetsAdapter.ViewHolder
         public ViewHolder(View itemView) {
             super(itemView);
 
+            itemView.setOnClickListener(this);
             assetAssetNumber = (TextView) itemView.findViewById(R.id.asset_assetnumber);
             assetCategory = (TextView) itemView.findViewById(R.id.asset_category);
             assetLocation = (TextView) itemView.findViewById(R.id.asset_location);
@@ -82,7 +93,7 @@ public class AssetsAdapter extends RecyclerView.Adapter<AssetsAdapter.ViewHolder
         @Override
         public void onClick(View view) {
             if (clickListener == null) return;
-            clickListener.onTaskSelected(view, asset, position);
+            clickListener.onAssetSelected(view, asset, position);
         }
 
         public void setPosition(int position) {
