@@ -6,10 +6,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-/**
- * Created by Proyecto on 27/08/2015.
- */
 public class NextSignUpActivityFragment extends Fragment {
+
+    private final String LOG_TAG = NextSignUpActivityFragment.class.getSimpleName();
 
     public NextSignUpActivityFragment() {
     }

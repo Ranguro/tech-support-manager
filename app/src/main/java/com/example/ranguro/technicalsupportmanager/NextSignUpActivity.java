@@ -17,6 +17,8 @@ import com.parse.SignUpCallback;
 
 public class NextSignUpActivity extends AppCompatActivity {
 
+    private final String LOG_TAG = NextSignUpActivity.class.getSimpleName();
+
     private EditText username;
     private EditText password;
     private boolean userExist = false;

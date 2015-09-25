@@ -4,9 +4,6 @@ import com.parse.ParseClassName;
 import com.parse.ParseObject;
 import com.parse.ParseUser;
 
-/**
- * Created by Randall on 19/09/2015.
- */
 @ParseClassName("Progress")
 public class ParseObjectProgress extends ParseObject {
 

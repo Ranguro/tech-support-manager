@@ -7,10 +7,14 @@ import android.view.MenuItem;
 
 public class TaskManagerActivity extends AppCompatActivity {
 
+    private final String LOG_TAG = TaskManagerActivity.class.getSimpleName();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_task_manager);
+
+
     }
 
     @Override

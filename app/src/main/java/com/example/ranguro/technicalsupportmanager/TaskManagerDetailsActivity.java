@@ -1,16 +1,31 @@
 package com.example.ranguro.technicalsupportmanager;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
 public class TaskManagerDetailsActivity extends AppCompatActivity {
 
+    private final String LOG_TAG = TaskManagerDetailsActivity.class.getSimpleName();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_task_manager_details);
+        if (savedInstanceState == null) {
+            Bundle args = new Bundle();
+            String detailId =  getIntent().getStringExtra(TaskManagerDetailsActivityFragment.TASK_DETAIL_KEY);
+
+            args.putString(TaskManagerDetailsActivityFragment.TASK_DETAIL_KEY,
+                   detailId);
+            TaskManagerDetailsActivityFragment fragment = new TaskManagerDetailsActivityFragment();
+            fragment.setArguments(args);
+            getSupportFragmentManager().beginTransaction()
+                    .add(R.id.task_details_container, fragment)
+                    .commit();
+        }
+
     }
 
 

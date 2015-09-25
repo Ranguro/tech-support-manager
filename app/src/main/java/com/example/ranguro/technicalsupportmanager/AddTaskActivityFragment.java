@@ -31,6 +31,8 @@ import java.util.Locale;
  */
 public class AddTaskActivityFragment extends Fragment {
 
+    private final String LOG_TAG = AddTaskActivityFragment.class.getSimpleName();
+
     private EditText titleView;
     private EditText descriptionView;
     private Spinner priorityView;

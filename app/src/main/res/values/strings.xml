@@ -10,12 +10,19 @@
     <string name="email">Email</string>
 
 
+
+
     <string name="functionary">Functionary</string>
     <string name="admin">Administrador</string>
     <string name="assistant">Assistant</string>
     <string name="create_account">Create your account</string>
     <string name="btn_create_account">Create account</string>
     <string name="btn_next_sign_up">Next</string>
+
+
+    <string name="task_status_completed">Completed</string>
+    <string name="task_status_in_progress">In Progress</string>
+    <string name="task_status_not_started">Not started</string>
 
 
     <string name="title_activity_next_sign_up">NextSignUpActivity</string>
@@ -27,6 +34,9 @@
     <string name="task_title">Task title</string>
     <string name="task_description">Description</string>
     <string name="task_deadline">Deadline</string>
+    <string name="attendants_label">Attendants:</string>
+    <string name="priority_label">Priority:</string>
+    <string name="deadline_label">Deadline:</string>
 
 
 </resources>

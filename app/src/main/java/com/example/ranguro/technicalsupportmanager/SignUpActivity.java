@@ -12,6 +12,9 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 public class SignUpActivity extends AppCompatActivity {
+
+    private final String LOG_TAG = SignUpActivity.class.getSimpleName();
+
     private EditText firstname;
     private EditText lastname;
     private EditText email;

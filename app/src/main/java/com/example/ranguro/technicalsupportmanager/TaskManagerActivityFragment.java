@@ -1,13 +1,16 @@
 package com.example.ranguro.technicalsupportmanager;
 
+import android.app.Fragment;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.v4.app.Fragment;
+import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -20,12 +23,16 @@ import com.parse.ParseQuery;
 
 import java.util.List;
 
-public class TaskManagerActivityFragment extends Fragment implements TasksAdapter.clickListener {
+/**
+ * Created by Randall on 22/09/2015.
+ */
+public class TaskManagerActivityFragment extends Fragment implements TasksAdapter.ClickListener {
 
     private static final String LOG_TAG = TaskManagerActivityFragment.class.getSimpleName();
 
     private FloatingActionButton addTaskFabView;
     private RecyclerView taskRecyclerView;
+    private TasksAdapter tasksAdapter;
 
     public TaskManagerActivityFragment() {
     }
@@ -33,7 +40,13 @@ public class TaskManagerActivityFragment extends Fragment implements TasksAdapte
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
         fetchAllTasks();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
@@ -43,9 +56,9 @@ public class TaskManagerActivityFragment extends Fragment implements TasksAdapte
         View rootView = inflater.inflate(R.layout.fragment_task_manager, container, false);
         taskRecyclerView = (RecyclerView) rootView.findViewById(R.id.recyclerview_tasks);
         addTaskFabView = (FloatingActionButton) rootView.findViewById(R.id.fab_add_task);
-
         taskRecyclerView.setLayoutManager(new LinearLayoutManager(taskRecyclerView.getContext()));
-
+        taskRecyclerView.setHasFixedSize(true);
+        taskRecyclerView.setItemAnimator(new DefaultItemAnimator());
 
 
         addTaskFabView.setOnClickListener(new View.OnClickListener() {
@@ -55,25 +68,30 @@ public class TaskManagerActivityFragment extends Fragment implements TasksAdapte
                 startActivity(addTaskIntent);
             }
         });
-
-
         return rootView;
     }
 
-    private void fetchAllTasks(){
-        ParseQuery<ParseObjectTask> getAllTaskQuery = new ParseQuery<>(ParseObjectTask.class);
-        getAllTaskQuery.findInBackground(new FindCallback<ParseObjectTask>() {
-            @Override
-            public void done(List<ParseObjectTask> list, ParseException e) {
-                taskRecyclerView.setAdapter(new TasksAdapter(list));
-                Log.i("Total tasks obtained: ", String.valueOf(list.size()));
-            }
-        });
-    }
 
     @Override
     public void onTaskSelected(View view, ParseObject task, int position) {
 
+        Context context = view.getContext();
+        Intent intent = new Intent(context,TaskManagerDetailsActivity.class);
+        intent.putExtra(TaskManagerDetailsActivityFragment.TASK_DETAIL_KEY, task.getObjectId());
+        startActivity(intent);
+    }
 
+    private void fetchAllTasks(){
+        ParseQuery<ParseObjectTask> getAllTaskQuery = new ParseQuery<>(ParseObjectTask.class);
+        tasksAdapter = new TasksAdapter();
+        tasksAdapter.setClickListener(this);
+        getAllTaskQuery.findInBackground(new FindCallback<ParseObjectTask>() {
+            @Override
+            public void done(List<ParseObjectTask> taskList, ParseException e) {
+                tasksAdapter.addAll(taskList);
+                taskRecyclerView.setAdapter(tasksAdapter);
+                Log.i("Total tasks obtained: ", String.valueOf(taskList.size()));
+            }
+        });
     }
 }

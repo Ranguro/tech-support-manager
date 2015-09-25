@@ -17,20 +17,29 @@ import java.util.List;
 public class TasksAdapter extends RecyclerView.Adapter<TasksAdapter.ViewHolder>{
 
     private List<ParseObjectTask> assignedTasks;
-
-
-    private clickListener clickListener;
+    private ClickListener clickListener;
 
     public TasksAdapter(List<ParseObjectTask> assignedTasks) {
         this.assignedTasks = assignedTasks;
     }
 
+    public TasksAdapter() {
 
-    public interface clickListener {
+    }
+
+    public void addAll(List<ParseObjectTask> taskList) {
+        assignedTasks = taskList;
+    }
+
+
+    public interface ClickListener {
 
         void onTaskSelected(View view, ParseObject task, int position);
 
     }
+
+
+
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
@@ -52,12 +61,14 @@ public class TasksAdapter extends RecyclerView.Adapter<TasksAdapter.ViewHolder>{
         holder.setPosition(position);
     }
 
+    public void setClickListener(ClickListener clickListener) {
+        this.clickListener = clickListener;
+    }
+
     @Override
     public int getItemCount() {
         return assignedTasks.size();
     }
-
-
 
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener  {
@@ -67,6 +78,7 @@ public class TasksAdapter extends RecyclerView.Adapter<TasksAdapter.ViewHolder>{
         public final TextView taskDeadline;
 
 
+
         private ParseObjectTask task;
         private int position;
 
@@ -74,6 +86,7 @@ public class TasksAdapter extends RecyclerView.Adapter<TasksAdapter.ViewHolder>{
         public ViewHolder(View itemView) {
             super(itemView);
 
+            itemView.setOnClickListener(this);
             taskTitle = (TextView) itemView.findViewById(R.id.task_title);
             taskCreator = (TextView) itemView.findViewById(R.id.task_author);
             taskDeadline = (TextView) itemView.findViewById(R.id.task_deadline);
@@ -93,9 +106,7 @@ public class TasksAdapter extends RecyclerView.Adapter<TasksAdapter.ViewHolder>{
         @Override
         public void onClick(View view) {
             if (clickListener == null) return;
-
             clickListener.onTaskSelected(view, task, position);
-
         }
 
         public void setPosition(int position) {

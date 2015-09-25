@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.example.ranguro.technicalsupportmanager.classes.ParseObjectProgress;
 import com.example.ranguro.technicalsupportmanager.classes.ParseObjectTask;
+import com.example.ranguro.technicalsupportmanager.classes.ParseObjectUser;
 import com.parse.LogInCallback;
 import com.parse.Parse;
 import com.parse.ParseException;
@@ -22,6 +23,7 @@ import com.parse.ParseUser;
 public class MainActivity extends AppCompatActivity {
 
     private final String LOG_TAG = MainActivity.class.getSimpleName();
+
     private EditText username;
     private EditText password;
 
@@ -38,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         Parse.enableLocalDatastore(this);
         ParseObject.registerSubclass(ParseObjectTask.class);
         ParseObject.registerSubclass(ParseObjectProgress.class);
+        ParseObject.registerSubclass(ParseObjectUser.class);
         Parse.initialize(this, "SIWiSHubCFLzS5Pub6ll75vpGivZ1Eg4mgpePp6G", "oC9umnr8EQLRp12Puso4Idditm4oSAQAJyg0NG2i");
     }
 

@@ -6,6 +6,8 @@ import android.view.Menu;
 
 public class AddTaskActivity extends AppCompatActivity {
 
+    private final String LOG_TAG = AddTaskActivity.class.getSimpleName();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

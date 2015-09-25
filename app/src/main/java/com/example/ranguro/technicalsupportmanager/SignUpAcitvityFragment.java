@@ -11,6 +11,8 @@ import android.view.ViewGroup;
  */
 public class SignUpAcitvityFragment extends Fragment {
 
+    private final String LOG_TAG = SignUpAcitvityFragment.class.getSimpleName();
+
     public SignUpAcitvityFragment() {
     }
 

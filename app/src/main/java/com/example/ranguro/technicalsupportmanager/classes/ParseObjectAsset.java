@@ -4,9 +4,6 @@ import com.parse.ParseClassName;
 import com.parse.ParseObject;
 
 
-/**
- * Created by Randall on 19/09/2015.
- */
 @ParseClassName("Asset")
 public class ParseObjectAsset extends ParseObject{
 

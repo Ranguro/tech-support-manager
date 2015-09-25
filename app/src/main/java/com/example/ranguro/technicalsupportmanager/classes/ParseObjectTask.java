@@ -7,9 +7,7 @@ import com.parse.ParseUser;
 import java.util.Date;
 import java.util.List;
 
-/**
- * Created by Randall on 03/09/2015.
- */
+
 @ParseClassName("Task")
 public class ParseObjectTask extends ParseObject{
 
@@ -21,7 +19,7 @@ public class ParseObjectTask extends ParseObject{
     public static String COLUMN_TASK_CREATOR_ID = "creatorID";
     public static String COLUMN_TASK_PRIORITY = "priority";
     public static String COLUMN_TASK_STATUS  = "status";
-    public static String COLUMN_TASK_ATTENDATS = "attendats";
+    public static String COLUMN_TASK_ATTENDATS = "attendants";
 
     public ParseObjectTask() {
 
