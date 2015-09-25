@@ -110,7 +110,11 @@ public class TaskManagerDetailsActivityFragment extends Fragment {
     }
 
     private void loadAttendantsOnView() {
-        taskAttendantsRecyclerView.setAdapter(new TaskAttendantsAdapter(taskAttendants));
+
+        if (!taskAttendants.isEmpty()){
+            taskAttendantsRecyclerView.setAdapter(new TaskAttendantsAdapter(taskAttendants));
+        }
+
     }
 
     private void loadDetailsOnView() {
