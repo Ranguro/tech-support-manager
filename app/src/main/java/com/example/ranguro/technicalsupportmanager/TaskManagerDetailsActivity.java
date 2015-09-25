@@ -1,11 +1,17 @@
 package com.example.ranguro.technicalsupportmanager;
 
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
 public class TaskManagerDetailsActivity extends AppCompatActivity {
+
+    private final String CREATED_BY = "Created by, ";
+
+    public static final String TASK_TITLE = "task_title";
+    public static final String TASK_CREATED_BY = "task_created_by";
 
     private final String LOG_TAG = TaskManagerDetailsActivity.class.getSimpleName();
 
@@ -14,6 +20,14 @@ public class TaskManagerDetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_task_manager_details);
         if (savedInstanceState == null) {
+            String subtitleCreatedBy = CREATED_BY+" "+getIntent().getStringExtra(TASK_CREATED_BY);
+            String titleTaskTitle = getIntent().getStringExtra(TASK_TITLE);
+
+            ActionBar ab = getSupportActionBar();
+            ab.setTitle(titleTaskTitle);
+            ab.setSubtitle(subtitleCreatedBy);
+            ab.setDisplayHomeAsUpEnabled(true);
+
             Bundle args = new Bundle();
             String detailId =  getIntent().getStringExtra(TaskManagerDetailsActivityFragment.TASK_DETAIL_KEY);
 

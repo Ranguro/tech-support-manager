@@ -16,6 +16,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.ranguro.technicalsupportmanager.classes.ParseObjectTask;
+import com.example.ranguro.technicalsupportmanager.classes.ParseObjectUser;
 import com.parse.ParseUser;
 import com.parse.SaveCallback;
 
@@ -77,7 +78,7 @@ public class AddTaskActivityFragment extends Fragment {
         String description = descriptionView.getText().toString();
         String deadlineText = deadlineView.getText().toString();
         String priority = priorityView.getSelectedItem().toString();
-        ParseUser creator = ParseUser.getCurrentUser();
+        ParseObjectUser creator = ((ParseObjectUser) ParseUser.getCurrentUser());
 
         SimpleDateFormat myFormat = new SimpleDateFormat("MM/dd/yy");
         Date deadline = myFormat.parse(deadlineText);

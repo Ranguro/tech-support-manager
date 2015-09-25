@@ -27,10 +27,11 @@ import java.util.List;
  */
 public class TaskManagerDetailsActivityFragment extends Fragment {
 
+
     private final String LOG_TAG = TaskManagerDetailsActivityFragment.class.getSimpleName();
 
 
-    public static final String TASK_DETAIL_KEY = "task_id";
+    public static final String TASK_DETAIL_KEY = "task_detail_id";
 
 
     private String taskDetailId;

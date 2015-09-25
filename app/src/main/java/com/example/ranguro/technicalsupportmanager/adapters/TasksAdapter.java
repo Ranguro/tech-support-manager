@@ -9,7 +9,6 @@ import android.widget.TextView;
 
 import com.example.ranguro.technicalsupportmanager.R;
 import com.example.ranguro.technicalsupportmanager.classes.ParseObjectTask;
-import com.parse.ParseObject;
 
 import java.text.DateFormat;
 import java.util.List;
@@ -34,7 +33,7 @@ public class TasksAdapter extends RecyclerView.Adapter<TasksAdapter.ViewHolder>{
 
     public interface ClickListener {
 
-        void onTaskSelected(View view, ParseObject task, int position);
+        void onTaskSelected(View view, ParseObjectTask task, int position);
 
     }
 
