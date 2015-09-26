@@ -9,6 +9,7 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.helper.ItemTouchHelper;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -18,6 +19,7 @@ import android.view.ViewGroup;
 import com.example.ranguro.technicalsupportmanager.adapters.TasksAdapter;
 import com.example.ranguro.technicalsupportmanager.classes.ParseObjectTask;
 import com.example.ranguro.technicalsupportmanager.decorators.DividerItemDecoration;
+import com.example.ranguro.technicalsupportmanager.swipe_helper.SimpleItemTouchHelperCallback;
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseQuery;
@@ -35,6 +37,7 @@ public class TaskManagerActivityFragment extends Fragment implements TasksAdapte
     private RecyclerView taskRecyclerView;
     private TasksAdapter tasksAdapter;
     private SwipeRefreshLayout mSwipeRefreshLayout;
+    ItemTouchHelper itemTouchHelper;
 
     public TaskManagerActivityFragment() {
     }
@@ -68,6 +71,7 @@ public class TaskManagerActivityFragment extends Fragment implements TasksAdapte
         taskRecyclerView.addItemDecoration(new DividerItemDecoration(getActivity(), DividerItemDecoration.VERTICAL_LIST));
         taskRecyclerView.setHasFixedSize(true);
         taskRecyclerView.setItemAnimator(new DefaultItemAnimator());
+
 
 
 
@@ -114,6 +118,9 @@ public class TaskManagerActivityFragment extends Fragment implements TasksAdapte
             public void done(List<ParseObjectTask> taskList, ParseException e) {
                 tasksAdapter.addAll(taskList);
                 taskRecyclerView.setAdapter(tasksAdapter);
+                ItemTouchHelper.Callback callback = new SimpleItemTouchHelperCallback(tasksAdapter);
+                itemTouchHelper = new ItemTouchHelper(callback);
+                itemTouchHelper.attachToRecyclerView(taskRecyclerView);
                 Log.i("Total tasks obtained: ", String.valueOf(taskList.size()));
             }
         });

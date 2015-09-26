@@ -1,6 +1,7 @@
 package com.example.ranguro.technicalsupportmanager.adapters;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,11 +10,13 @@ import android.widget.TextView;
 
 import com.example.ranguro.technicalsupportmanager.R;
 import com.example.ranguro.technicalsupportmanager.classes.ParseObjectTask;
+import com.example.ranguro.technicalsupportmanager.swipe_helper.ItemTouchHelperAdapter;
+import com.example.ranguro.technicalsupportmanager.swipe_helper.ItemTouchHelperViewHolder;
 
 import java.text.DateFormat;
 import java.util.List;
 
-public class TasksAdapter extends RecyclerView.Adapter<TasksAdapter.ViewHolder>{
+public class TasksAdapter extends RecyclerView.Adapter<TasksAdapter.ViewHolder> implements ItemTouchHelperAdapter{
 
     private List<ParseObjectTask> assignedTasks;
     private ClickListener clickListener;
@@ -29,6 +32,14 @@ public class TasksAdapter extends RecyclerView.Adapter<TasksAdapter.ViewHolder>{
     public void addAll(List<ParseObjectTask> taskList) {
         assignedTasks = taskList;
     }
+
+    @Override
+    public void onItemDismiss(int position) {
+        assignedTasks.remove(position);
+        notifyItemRemoved(position);
+    }
+
+
 
 
     public interface ClickListener {
@@ -67,7 +78,7 @@ public class TasksAdapter extends RecyclerView.Adapter<TasksAdapter.ViewHolder>{
     }
 
 
-    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener  {
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, ItemTouchHelperViewHolder {
 
         public final TextView taskTitle;
         public final TextView taskCreator;
@@ -104,5 +115,17 @@ public class TasksAdapter extends RecyclerView.Adapter<TasksAdapter.ViewHolder>{
         public void setPosition(int position) {
             this.position = position;
         }
+
+        @Override
+        public void onItemSelected() {
+            itemView.setBackgroundColor(Color.LTGRAY);
+        }
+
+        @Override
+        public void onItemClear() {
+            itemView.setBackgroundColor(0);
+        }
+
+
     }
 }
