@@ -27,4 +27,9 @@
         <item>Defective</item>
         <item>Obsolete</item>
     </string-array>
+
+    <string-array name="task_status_array">
+        <item>@string/task_status_in_progress</item>
+        <item>@string/task_status_completed</item>
+    </string-array>
 </resources>

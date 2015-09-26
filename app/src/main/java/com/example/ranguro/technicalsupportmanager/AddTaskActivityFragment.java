@@ -93,7 +93,7 @@ public class AddTaskActivityFragment extends Fragment {
         newTask.setDeadline(deadline);
         newTask.setPriority(priority);
         newTask.setCreatorId(creator);
-        newTask.setStatus(getString(R.string.default_task_status));
+        newTask.setStatus(getString(R.string.task_status_not_started));
         newTask.setAttendants(new ArrayList<String>());
         newTask.saveInBackground(new SaveCallback() {
             @Override
