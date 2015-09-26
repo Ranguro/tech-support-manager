@@ -63,6 +63,20 @@
     <string name="attendants_label">Attendants:</string>
     <string name="priority_label">Priority:</string>
     <string name="deadline_label">Deadline:</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="title_activity_test">Test</string>
+
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_example">Example action</string>
+    <string name="title_activity_prueba">PruebaActivity</string>
+    <string name="title_activity_prueba_navigation">PruebaNavigation</string>
 
 
 </resources>

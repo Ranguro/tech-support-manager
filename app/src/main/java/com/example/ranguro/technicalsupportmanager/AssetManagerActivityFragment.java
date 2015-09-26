@@ -1,30 +1,23 @@
 package com.example.ranguro.technicalsupportmanager;
 
-import android.app.SearchableInfo;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
-import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.SearchView;
 
 import com.example.ranguro.technicalsupportmanager.adapters.AssetsAdapter;
-import com.example.ranguro.technicalsupportmanager.adapters.TasksAdapter;
 import com.example.ranguro.technicalsupportmanager.classes.ParseObjectAsset;
-import com.example.ranguro.technicalsupportmanager.classes.ParseObjectTask;
 import com.example.ranguro.technicalsupportmanager.decorators.DividerItemDecoration;
 import com.parse.FindCallback;
-import com.parse.Parse;
 import com.parse.ParseException;
 import com.parse.ParseQuery;
 
@@ -93,6 +86,7 @@ public class AssetManagerActivityFragment extends Fragment {
         assetRecyclerView.setHasFixedSize(true);
         assetRecyclerView.setItemAnimator(new DefaultItemAnimator());
 
+
         addAssetFabView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -153,6 +147,8 @@ public class AssetManagerActivityFragment extends Fragment {
         fetchAllAssets();
         onItemsLoadComplete();
     }
+
+
 
     private void onItemsLoadComplete() {
         mSwipeRefreshLayout.setRefreshing(false);
