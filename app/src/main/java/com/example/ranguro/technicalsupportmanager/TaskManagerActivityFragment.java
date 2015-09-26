@@ -36,8 +36,8 @@ public class TaskManagerActivityFragment extends Fragment implements TasksAdapte
     private FloatingActionButton addTaskFabView;
     private RecyclerView taskRecyclerView;
     private TasksAdapter tasksAdapter;
-    private SwipeRefreshLayout mSwipeRefreshLayout;
-    ItemTouchHelper itemTouchHelper;
+    private SwipeRefreshLayout swipeRefreshLayout;
+    private ItemTouchHelper itemTouchHelper;
 
     public TaskManagerActivityFragment() {
     }
@@ -65,7 +65,7 @@ public class TaskManagerActivityFragment extends Fragment implements TasksAdapte
         View rootView = inflater.inflate(R.layout.fragment_task_manager, container, false);
         taskRecyclerView = (RecyclerView) rootView.findViewById(R.id.recyclerview_tasks);
         addTaskFabView = (FloatingActionButton) rootView.findViewById(R.id.fab_add_task);
-        mSwipeRefreshLayout = (SwipeRefreshLayout) rootView.findViewById(R.id.swiperefreshlayout_tasks);
+        swipeRefreshLayout = (SwipeRefreshLayout) rootView.findViewById(R.id.swiperefreshlayout_tasks);
 
         taskRecyclerView.setLayoutManager(new LinearLayoutManager(taskRecyclerView.getContext()));
         taskRecyclerView.addItemDecoration(new DividerItemDecoration(getActivity(), DividerItemDecoration.VERTICAL_LIST));
@@ -83,7 +83,7 @@ public class TaskManagerActivityFragment extends Fragment implements TasksAdapte
             }
         });
 
-        mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
                 refreshAssetsList();
@@ -133,6 +133,6 @@ public class TaskManagerActivityFragment extends Fragment implements TasksAdapte
 
 
     private void onItemsLoadComplete() {
-        mSwipeRefreshLayout.setRefreshing(false);
+        swipeRefreshLayout.setRefreshing(false);
     }
 }

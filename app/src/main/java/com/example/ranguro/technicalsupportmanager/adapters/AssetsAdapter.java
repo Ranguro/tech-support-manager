@@ -1,25 +1,25 @@
 package com.example.ranguro.technicalsupportmanager.adapters;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.ranguro.technicalsupportmanager.R;
 import com.example.ranguro.technicalsupportmanager.classes.ParseObjectAsset;
-import com.example.ranguro.technicalsupportmanager.classes.ParseObjectTask;
+import com.example.ranguro.technicalsupportmanager.swipe_helper.ItemTouchHelperAdapter;
+import com.example.ranguro.technicalsupportmanager.swipe_helper.ItemTouchHelperViewHolder;
 import com.parse.ParseObject;
 
-import java.text.DateFormat;
 import java.util.List;
 
 /**
  * Created by Proyecto on 22/09/2015.
  */
-public class AssetsAdapter extends RecyclerView.Adapter<AssetsAdapter.ViewHolder> {
+public class AssetsAdapter extends RecyclerView.Adapter<AssetsAdapter.ViewHolder>  implements ItemTouchHelperAdapter{
 
     private List<ParseObjectAsset> assetList;
     private ClickListener clickListener;
@@ -34,6 +34,13 @@ public class AssetsAdapter extends RecyclerView.Adapter<AssetsAdapter.ViewHolder
 
     public void addAll(List<ParseObjectAsset> assetsList) {
         assetList = assetsList;
+    }
+
+    @Override
+    public void onItemDismiss(int position) {
+        assetList.remove(position);
+        notifyItemRemoved(position);
+
     }
 
 
@@ -65,7 +72,7 @@ public class AssetsAdapter extends RecyclerView.Adapter<AssetsAdapter.ViewHolder
         return assetList.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener  {
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, ItemTouchHelperViewHolder {
 
         public final TextView assetAssetNumber;
         public final TextView assetCategory;
@@ -100,6 +107,15 @@ public class AssetsAdapter extends RecyclerView.Adapter<AssetsAdapter.ViewHolder
             this.position = position;
         }
 
+        @Override
+        public void onItemSelected() {
+            itemView.setBackgroundColor(Color.LTGRAY);
+        }
+
+        @Override
+        public void onItemClear() {
+            itemView.setBackgroundColor(0);
+        }
     }
 
 

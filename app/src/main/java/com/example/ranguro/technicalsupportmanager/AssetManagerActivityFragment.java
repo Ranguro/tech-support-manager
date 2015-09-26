@@ -1,31 +1,26 @@
 package com.example.ranguro.technicalsupportmanager;
 
-import android.app.SearchableInfo;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
-import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
-import android.util.Log;
+import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.SearchView;
 
 import com.example.ranguro.technicalsupportmanager.adapters.AssetsAdapter;
-import com.example.ranguro.technicalsupportmanager.adapters.TasksAdapter;
 import com.example.ranguro.technicalsupportmanager.classes.ParseObjectAsset;
-import com.example.ranguro.technicalsupportmanager.classes.ParseObjectTask;
 import com.example.ranguro.technicalsupportmanager.decorators.DividerItemDecoration;
+import com.example.ranguro.technicalsupportmanager.swipe_helper.SimpleItemTouchHelperCallback;
 import com.parse.FindCallback;
-import com.parse.Parse;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
@@ -42,8 +37,9 @@ public class AssetManagerActivityFragment extends Fragment implements AssetsAdap
     private RecyclerView assetRecyclerView;
     private AssetsAdapter assetsAdapter;
     private SearchView searchAssetView;
-    private SwipeRefreshLayout mSwipeRefreshLayout;
     private List<ParseObjectAsset> assetsList;
+    private SwipeRefreshLayout swipeRefreshLayout;
+    private ItemTouchHelper itemTouchHelper;
 
     public AssetManagerActivityFragment() {
     }
@@ -59,8 +55,7 @@ public class AssetManagerActivityFragment extends Fragment implements AssetsAdap
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+          if (id == R.id.action_settings) {
             Intent editAssetIntent = new Intent(getActivity().getApplicationContext(), EditTaskActivity.class);
             startActivity(editAssetIntent);
             return true;
@@ -75,6 +70,9 @@ public class AssetManagerActivityFragment extends Fragment implements AssetsAdap
         getAllAssetsQuery.findInBackground(new FindCallback<ParseObjectAsset>() {
             @Override
             public void done(List<ParseObjectAsset> list, ParseException e) {
+                ItemTouchHelper.Callback callback = new SimpleItemTouchHelperCallback(assetsAdapter);
+                itemTouchHelper = new ItemTouchHelper(callback);
+                itemTouchHelper.attachToRecyclerView(assetRecyclerView);
                 assetsAdapter.addAll(list);
                 assetsList = list;
                 assetRecyclerView.setAdapter(assetsAdapter);
@@ -90,13 +88,13 @@ public class AssetManagerActivityFragment extends Fragment implements AssetsAdap
         assetRecyclerView = (RecyclerView) rootView.findViewById(R.id.recyclerview_assets);
         addAssetFabView = (FloatingActionButton) rootView.findViewById(R.id.fab_add_asset);
         searchAssetView = (SearchView) rootView.findViewById(R.id.searchview_assets);
-        mSwipeRefreshLayout = (SwipeRefreshLayout) rootView.findViewById(R.id.swiperefreshlayout_assets);
+
+        swipeRefreshLayout = (SwipeRefreshLayout) rootView.findViewById(R.id.swiperefreshlayout_assets);
 
         assetRecyclerView.setLayoutManager(new LinearLayoutManager(assetRecyclerView.getContext()));
         assetRecyclerView.addItemDecoration(new DividerItemDecoration(getActivity(), DividerItemDecoration.VERTICAL_LIST));
         assetRecyclerView.setHasFixedSize(true);
         assetRecyclerView.setItemAnimator(new DefaultItemAnimator());
-
         addAssetFabView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -122,7 +120,7 @@ public class AssetManagerActivityFragment extends Fragment implements AssetsAdap
             }
         });
 
-        mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
                 refreshAssetsList();
@@ -135,7 +133,10 @@ public class AssetManagerActivityFragment extends Fragment implements AssetsAdap
     private ArrayList<ParseObjectAsset> getAssetsWhereMatchesWith(String query) {
         ArrayList<ParseObjectAsset> queryResultList = new ArrayList<>();
         for (ParseObjectAsset asset : assetsList){
-            if(isEqualInLowerCase(asset.getAssetNumber(), query) || isEqualInLowerCase(asset.getCategory(), query) || isEqualInLowerCase(asset.getLocation(), query)){
+            if(isEqualInLowerCase(asset.getAssetNumber(), query) ||
+                    isEqualInLowerCase(asset.getCategory(), query) ||
+                    isEqualInLowerCase(asset.getLocation(), query))
+            {
                 queryResultList.add(asset);
             }
         }
@@ -158,7 +159,7 @@ public class AssetManagerActivityFragment extends Fragment implements AssetsAdap
     }
 
     private void onItemsLoadComplete() {
-        mSwipeRefreshLayout.setRefreshing(false);
+        swipeRefreshLayout.setRefreshing(false);
     }
 
     @Override
