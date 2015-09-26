@@ -71,6 +71,7 @@
     <string name="action_example">Example action</string>
     <string name="title_activity_prueba">PruebaActivity</string>
     <string name="title_activity_prueba_navigation">PruebaNavigation</string>
+    <string name="title_contextual_task_status">Select task status</string>
 
 
 </resources>

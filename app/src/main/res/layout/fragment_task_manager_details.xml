@@ -23,6 +23,7 @@
             android:id="@+id/label_task_detail_status"
             android:gravity="center"
             android:padding="@dimen/activity_horizontal_margin"
+            android:clickable="true"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />

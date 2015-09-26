@@ -4,7 +4,7 @@
     <item
         android:id="@+id/option_task_in_progress"
         android:title="@string/task_status_in_progress"/>
-    <span style="text-decoration: underline;"/>
+
     <item
         android:id="@+id/option_task_completed"
         android:title="@string/task_status_completed"/>

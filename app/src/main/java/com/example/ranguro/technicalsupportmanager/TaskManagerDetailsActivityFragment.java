@@ -82,6 +82,13 @@ public class TaskManagerDetailsActivityFragment extends Fragment {
         taskAttendantsRecyclerView.setItemAnimator(new DefaultItemAnimator());
         registerForContextMenu(taskStatusView);
 
+        taskStatusView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                v.showContextMenu();
+            }
+        });
+
         //loadDetailsOnView();
         return rootView;
     }
@@ -162,6 +169,7 @@ public class TaskManagerDetailsActivityFragment extends Fragment {
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
         super.onCreateContextMenu(menu, v, menuInfo);
         getActivity().getMenuInflater().inflate(R.menu.menu_contextual_task_status, menu);
+        menu.setHeaderTitle(R.string.title_contextual_task_status);
     }
 
     @Override
@@ -178,7 +186,8 @@ public class TaskManagerDetailsActivityFragment extends Fragment {
                 taskDetails.setStatus(result);
                 taskDetails.save();
             }catch(ParseException e){}
-            setColorAccordingToStatus(taskDetails.getStatus());
+            taskStatusView.setText(result);
+            setColorAccordingToStatus(result);
         }
         return true;
     }
