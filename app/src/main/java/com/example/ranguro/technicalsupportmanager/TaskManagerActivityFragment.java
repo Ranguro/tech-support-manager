@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -33,6 +34,7 @@ public class TaskManagerActivityFragment extends Fragment implements TasksAdapte
     private FloatingActionButton addTaskFabView;
     private RecyclerView taskRecyclerView;
     private TasksAdapter tasksAdapter;
+    private SwipeRefreshLayout mSwipeRefreshLayout;
 
     public TaskManagerActivityFragment() {
     }
@@ -60,6 +62,7 @@ public class TaskManagerActivityFragment extends Fragment implements TasksAdapte
         View rootView = inflater.inflate(R.layout.fragment_task_manager, container, false);
         taskRecyclerView = (RecyclerView) rootView.findViewById(R.id.recyclerview_tasks);
         addTaskFabView = (FloatingActionButton) rootView.findViewById(R.id.fab_add_task);
+        mSwipeRefreshLayout = (SwipeRefreshLayout) rootView.findViewById(R.id.swiperefreshlayout_tasks);
 
         taskRecyclerView.setLayoutManager(new LinearLayoutManager(taskRecyclerView.getContext()));
         taskRecyclerView.addItemDecoration(new DividerItemDecoration(getActivity(), DividerItemDecoration.VERTICAL_LIST));
@@ -73,6 +76,13 @@ public class TaskManagerActivityFragment extends Fragment implements TasksAdapte
             public void onClick(View v) {
                 Intent addTaskIntent = new Intent(getActivity(), AddTaskActivity.class);
                 startActivity(addTaskIntent);
+            }
+        });
+
+        mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                refreshAssetsList();
             }
         });
         return rootView;
@@ -89,8 +99,8 @@ public class TaskManagerActivityFragment extends Fragment implements TasksAdapte
         intent.putExtra(TaskManagerDetailsActivityFragment.TASK_DETAIL_KEY, task.getObjectId());
 
         String fullName = task.getCreatorID().getFirstName() + " "+task.getCreatorID().getLastName();
-        intent.putExtra(TaskManagerDetailsActivity.TASK_TITLE,task.getTitle());
-        intent.putExtra(TaskManagerDetailsActivity.TASK_CREATED_BY,fullName);
+        intent.putExtra(TaskManagerDetailsActivity.TASK_TITLE, task.getTitle());
+        intent.putExtra(TaskManagerDetailsActivity.TASK_CREATED_BY, fullName);
 
         startActivity(intent);
     }
@@ -107,5 +117,15 @@ public class TaskManagerActivityFragment extends Fragment implements TasksAdapte
                 Log.i("Total tasks obtained: ", String.valueOf(taskList.size()));
             }
         });
+    }
+
+    private void refreshAssetsList() {
+        fetchAllTasks();
+        onItemsLoadComplete();
+    }
+
+
+    private void onItemsLoadComplete() {
+        mSwipeRefreshLayout.setRefreshing(false);
     }
 }

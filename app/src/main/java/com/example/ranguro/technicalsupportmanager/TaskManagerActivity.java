@@ -4,6 +4,10 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
+
+import com.example.ranguro.technicalsupportmanager.classes.ParseObjectUser;
+import com.parse.ParseUser;
 
 public class TaskManagerActivity extends AppCompatActivity {
 
@@ -37,4 +41,11 @@ public class TaskManagerActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    protected void onDestroy() {
+        ParseUser.logOut();
+        invalidateOptionsMenu();
+        Toast.makeText(getApplicationContext(), "Disconnected...", Toast.LENGTH_LONG).show();
+        super.onDestroy();
+    }
 }
