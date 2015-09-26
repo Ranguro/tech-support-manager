@@ -66,7 +66,6 @@ public class TaskManagerDetailsActivityFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
         View rootView = inflater.inflate(R.layout.fragment_task_manager_details, container, false);
         descriptionView = (TextView) rootView.findViewById(R.id.field_task_detail_description);
         priorityView = (TextView) rootView.findViewById(R.id.field_task_detail_priority);
@@ -95,7 +94,6 @@ public class TaskManagerDetailsActivityFragment extends Fragment {
 
 
     public void fetchTaskDetails(){
-
         ParseQuery<ParseObjectTask> query = ParseQuery.getQuery(ParseObjectTask.class);
         query.getInBackground(taskDetailId, new GetCallback<ParseObjectTask>() {
             @Override
@@ -111,7 +109,6 @@ public class TaskManagerDetailsActivityFragment extends Fragment {
 
 
     public void fetchTaskAttendants(){
-
         ParseQuery<ParseObjectUser> query = new ParseQuery<>(ParseObjectUser.class);
         query.whereContainedIn(ParseObjectUser.COLUMN_USER_KEY,taskDetails.getAttendants());
 
@@ -126,7 +123,6 @@ public class TaskManagerDetailsActivityFragment extends Fragment {
     }
 
     private void loadAttendantsOnView() {
-
         if (!taskAttendants.isEmpty()){
             taskAttendantsRecyclerView.setAdapter(new TaskAttendantsAdapter(taskAttendants));
         }

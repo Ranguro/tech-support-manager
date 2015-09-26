@@ -3,6 +3,7 @@ package com.example.ranguro.technicalsupportmanager.classes;
 import com.parse.ParseClassName;
 import com.parse.ParseObject;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -85,7 +86,11 @@ public class ParseObjectTask extends ParseObject{
         this.put(COLUMN_TASK_STATUS, status);
     }
 
-    public void setAttendant(String attendant){
+    public void setAttendants(ArrayList<String> attendants){
+        this.put(COLUMN_TASK_ATTENDATS, attendants);
+    }
+
+    public void addAttendants(String attendant){
         this.getAttendants().add(attendant);
     }
 }
