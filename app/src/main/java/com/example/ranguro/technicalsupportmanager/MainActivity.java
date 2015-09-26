@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -110,11 +111,19 @@ public class MainActivity extends AppCompatActivity {
             public void run() {
                 d.dismiss();
             }
-        }, (long) 1800);
+        }, (long) 1000);
     }
 
     public void signUp(View view) {
         Intent signUpIntent = new Intent(this,SignUpActivity.class);
         startActivity(signUpIntent);
     }
+
+    //find better way to kill application
+    @Override
+    protected void onDestroy() {
+        android.os.Process.killProcess(android.os.Process.myPid());
+        super.onDestroy();
+    }
+
 }

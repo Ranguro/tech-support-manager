@@ -38,9 +38,6 @@ public class TaskAttendantsAdapter extends  RecyclerView.Adapter<TaskAttendantsA
 
     }
 
-
-
-
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
 

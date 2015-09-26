@@ -1,0 +1,10 @@
+.idea/
+.idea/workspace.xml
+.idea/misc.xml
+gradle/
+.gradle/
+.gradle/2.4/taskArtifacts/cache.properties.lock
+build/intermediates/gradle_project_sync_data.bin
+local.properties
+gradlew
+gradlew.bat

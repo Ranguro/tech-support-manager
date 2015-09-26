@@ -62,8 +62,7 @@ public class EditAssetActivityFragment extends Fragment {
         categoryView.setAdapter(categoryAdapter);
         categoryAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-        //get asset from details activity CHANGE FOR BUNDLE ARGUMENT FROM FATHER
-        String assetID = "nDAGfQNTt0";
+        String assetID = getArguments().getString(AssetManagerDetailsActivityFragment.ASSET_DETAIL_KEY);
         ParseQuery<ParseObjectAsset> getAssetByIDQuery = new ParseQuery<>(ParseObjectAsset.class);
         try{
             selectedAsset = getAssetByIDQuery.get(assetID);
@@ -82,7 +81,7 @@ public class EditAssetActivityFragment extends Fragment {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == R.id.add_task_option){
+        if (item.getItemId() == R.id.action_add_asset){
             if(isFieldEmpty(assetNumberView)){
                 Toast.makeText(getActivity().getApplicationContext(), R.string.toast_error_asset_empty_field_msg, Toast.LENGTH_SHORT).show();
             }

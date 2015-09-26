@@ -11,6 +11,18 @@ public class AssetManagerDetailsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_asset_manager_details);
+        if (savedInstanceState == null) {
+            Bundle args = new Bundle();
+            String detailId =  getIntent().getStringExtra(AssetManagerDetailsActivityFragment.ASSET_DETAIL_KEY);
+
+            args.putString(AssetManagerDetailsActivityFragment.ASSET_DETAIL_KEY,
+                    detailId);
+            AssetManagerDetailsActivityFragment fragment = new AssetManagerDetailsActivityFragment();
+            fragment.setArguments(args);
+            getSupportFragmentManager().beginTransaction()
+                    .add(R.id.asset_details_container, fragment)
+                    .commit();
+        }
     }
 
 

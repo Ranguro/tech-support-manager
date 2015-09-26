@@ -39,7 +39,6 @@ public class TaskManagerDetailsActivity extends AppCompatActivity {
                     .add(R.id.task_details_container, fragment)
                     .commit();
         }
-
     }
 
 

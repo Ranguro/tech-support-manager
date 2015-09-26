@@ -1,24 +1,33 @@
 package com.example.ranguro.technicalsupportmanager;
 
+import android.app.SearchableInfo;
+import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
+import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.SearchView;
 
 import com.example.ranguro.technicalsupportmanager.adapters.AssetsAdapter;
+import com.example.ranguro.technicalsupportmanager.adapters.TasksAdapter;
 import com.example.ranguro.technicalsupportmanager.classes.ParseObjectAsset;
+import com.example.ranguro.technicalsupportmanager.classes.ParseObjectTask;
 import com.example.ranguro.technicalsupportmanager.decorators.DividerItemDecoration;
 import com.parse.FindCallback;
+import com.parse.Parse;
 import com.parse.ParseException;
+import com.parse.ParseObject;
 import com.parse.ParseQuery;
 
 import java.util.ArrayList;
@@ -27,7 +36,7 @@ import java.util.List;
 /**
  * A placeholder fragment containing a simple view.
  */
-public class AssetManagerActivityFragment extends Fragment {
+public class AssetManagerActivityFragment extends Fragment implements AssetsAdapter.ClickListener {
 
     private FloatingActionButton addAssetFabView;
     private RecyclerView assetRecyclerView;
@@ -61,11 +70,13 @@ public class AssetManagerActivityFragment extends Fragment {
 
     private void fetchAllAssets() {
         ParseQuery<ParseObjectAsset> getAllAssetsQuery = new ParseQuery<>(ParseObjectAsset.class);
+        assetsAdapter = new AssetsAdapter();
+        assetsAdapter.setClickListener(this);
         getAllAssetsQuery.findInBackground(new FindCallback<ParseObjectAsset>() {
             @Override
             public void done(List<ParseObjectAsset> list, ParseException e) {
+                assetsAdapter.addAll(list);
                 assetsList = list;
-                assetsAdapter = new AssetsAdapter(assetsList);
                 assetRecyclerView.setAdapter(assetsAdapter);
             }
         });
@@ -86,7 +97,6 @@ public class AssetManagerActivityFragment extends Fragment {
         assetRecyclerView.setHasFixedSize(true);
         assetRecyclerView.setItemAnimator(new DefaultItemAnimator());
 
-
         addAssetFabView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -94,12 +104,11 @@ public class AssetManagerActivityFragment extends Fragment {
                 startActivity(addAssetIntent);
             }
         });
-
         searchAssetView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
                 ArrayList<ParseObjectAsset> queryList = getAssetsWhereMatchesWith(query);
-                assetsAdapter = new AssetsAdapter(queryList);
+                assetsAdapter.addAll(queryList);
                 assetRecyclerView.setAdapter(assetsAdapter);
                 return false;
             }
@@ -107,7 +116,7 @@ public class AssetManagerActivityFragment extends Fragment {
             @Override
             public boolean onQueryTextChange(String query) {
                 ArrayList<ParseObjectAsset> queryList = getAssetsWhereMatchesWith(query);
-                assetsAdapter = new AssetsAdapter(queryList);
+                assetsAdapter.addAll(queryList);
                 assetRecyclerView.setAdapter(assetsAdapter);
                 return false;
             }
@@ -148,9 +157,15 @@ public class AssetManagerActivityFragment extends Fragment {
         onItemsLoadComplete();
     }
 
-
-
     private void onItemsLoadComplete() {
         mSwipeRefreshLayout.setRefreshing(false);
+    }
+
+    @Override
+    public void onAssetSelected(View view, ParseObject asset, int position) {
+        Context context = view.getContext();
+        Intent intent = new Intent(context,AssetManagerDetailsActivity.class);
+        intent.putExtra(AssetManagerDetailsActivityFragment.ASSET_DETAIL_KEY, asset.getObjectId());
+        startActivity(intent);
     }
 }

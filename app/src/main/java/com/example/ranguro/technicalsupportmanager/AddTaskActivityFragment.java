@@ -20,11 +20,13 @@ import com.example.ranguro.technicalsupportmanager.classes.ParseObjectUser;
 import com.parse.ParseUser;
 import com.parse.SaveCallback;
 
+import java.lang.reflect.Array;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 
 /**
@@ -83,18 +85,16 @@ public class AddTaskActivityFragment extends Fragment {
         SimpleDateFormat myFormat = new SimpleDateFormat("MM/dd/yy");
         Date deadline = myFormat.parse(deadlineText);
         Date todayDate = new Date();
-
         if (deadline.before(todayDate)){
             throw new ParseException("", 0);
         }
-
         newTask.setTitle(title);
         newTask.setDescription(description);
         newTask.setDeadline(deadline);
         newTask.setPriority(priority);
         newTask.setCreatorId(creator);
         newTask.setStatus(getString(R.string.default_task_status));
-        newTask.put(ParseObjectTask.COLUMN_TASK_ATTENDATS, new ArrayList<String>());
+        newTask.setAttendants(new ArrayList<String>());
         newTask.saveInBackground(new SaveCallback() {
             @Override
             public void done(com.parse.ParseException e) {
