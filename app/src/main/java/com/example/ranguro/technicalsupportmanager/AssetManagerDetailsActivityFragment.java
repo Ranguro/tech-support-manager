@@ -46,7 +46,6 @@ public class AssetManagerDetailsActivityFragment extends Fragment {
             intent.putExtra(AssetManagerDetailsActivityFragment.ASSET_DETAIL_KEY, assetDetailId);
             startActivity(intent);
         }
-
         return super.onOptionsItemSelected(item);
     }
 }

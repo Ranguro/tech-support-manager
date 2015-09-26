@@ -61,13 +61,12 @@ public class EditTaskActivityFragment extends Fragment {
         priorityAdapter = ArrayAdapter.createFromResource(getActivity(),R.array.priority_array,android.R.layout.simple_list_item_1);
         priorityView.setAdapter(priorityAdapter);
         priorityAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        //get asset from details activity CHANGE FOR BUNDLE ARGUMENT FROM FATHER
-        String taskId = "fRfT8ac10S";
 
+        String taskId = getArguments().getString(TaskManagerDetailsActivityFragment.TASK_DETAIL_KEY);
         ParseQuery<ParseObjectTask> getTaskByIDQuery = new ParseQuery<>(ParseObjectTask.class);
         try{
             selectedTask = getTaskByIDQuery.get(taskId);
-            String taskDeadline = DateFormat.getDateInstance().format(selectedTask.getDeadline());
+            String taskDeadline = new SimpleDateFormat("MM/dd/yy").format(selectedTask.getDeadline());
 
             titleView.setText(selectedTask.getTitle());
             descriptionView.setText(selectedTask.getDescription());
@@ -80,7 +79,7 @@ public class EditTaskActivityFragment extends Fragment {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == R.id.add_task_option){
+        if (item.getItemId() == R.id.action_save_task){
             try {
                 if(isFieldEmpty(titleView) || isFieldEmpty(descriptionView)){
                     Toast.makeText(getActivity().getApplicationContext(), R.string.toast_error_task_empty_field_msg, Toast.LENGTH_SHORT).show();
@@ -105,7 +104,6 @@ public class EditTaskActivityFragment extends Fragment {
         String description = descriptionView.getText().toString();
         String priority = priorityView.getSelectedItem().toString();
         String deadlineText = deadlineView.getText().toString();
-
         SimpleDateFormat myFormat = new SimpleDateFormat("MM/dd/yy");
         Date deadline = myFormat.parse(deadlineText);
         Date todayDate = new Date();

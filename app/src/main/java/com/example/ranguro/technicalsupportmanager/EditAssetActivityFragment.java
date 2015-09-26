@@ -62,7 +62,6 @@ public class EditAssetActivityFragment extends Fragment {
         categoryView.setAdapter(categoryAdapter);
         categoryAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-        //get asset from details activity CHANGE FOR BUNDLE ARGUMENT FROM FATHER
         String assetID = getArguments().getString(AssetManagerDetailsActivityFragment.ASSET_DETAIL_KEY);
         ParseQuery<ParseObjectAsset> getAssetByIDQuery = new ParseQuery<>(ParseObjectAsset.class);
         try{

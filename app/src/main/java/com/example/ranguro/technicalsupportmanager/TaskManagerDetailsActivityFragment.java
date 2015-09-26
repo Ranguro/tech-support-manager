@@ -1,5 +1,7 @@
 package com.example.ranguro.technicalsupportmanager;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -7,6 +9,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -54,6 +57,7 @@ public class TaskManagerDetailsActivityFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
         taskDetailId = getArguments().getString(TASK_DETAIL_KEY);
         fetchTaskDetails();
 
@@ -75,6 +79,18 @@ public class TaskManagerDetailsActivityFragment extends Fragment {
 
         //loadDetailsOnView();
         return rootView;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if(id == R.id.action_edit_task){
+            Context context = getActivity().getApplicationContext();
+            Intent intent = new Intent(context,EditTaskActivity.class);
+            intent.putExtra(TaskManagerDetailsActivityFragment.TASK_DETAIL_KEY, taskDetailId);
+            startActivity(intent);
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 
