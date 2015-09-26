@@ -4,11 +4,15 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.ContextMenu;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,6 +27,8 @@ import com.parse.ParseException;
 import com.parse.ParseQuery;
 
 import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -47,7 +53,6 @@ public class TaskManagerDetailsActivityFragment extends Fragment {
     private TextView priorityView;
     private TextView taskStatusView;
     private RecyclerView taskAttendantsRecyclerView;
-
 
 
     public TaskManagerDetailsActivityFragment() {
@@ -75,6 +80,7 @@ public class TaskManagerDetailsActivityFragment extends Fragment {
         taskAttendantsRecyclerView.setLayoutManager(new LinearLayoutManager(taskAttendantsRecyclerView.getContext()));
         taskAttendantsRecyclerView.setHasFixedSize(false);
         taskAttendantsRecyclerView.setItemAnimator(new DefaultItemAnimator());
+        registerForContextMenu(taskStatusView);
 
         //loadDetailsOnView();
         return rootView;
@@ -126,16 +132,54 @@ public class TaskManagerDetailsActivityFragment extends Fragment {
         if (!taskAttendants.isEmpty()){
             taskAttendantsRecyclerView.setAdapter(new TaskAttendantsAdapter(taskAttendants));
         }
-
     }
 
     private void loadDetailsOnView() {
+        String status = taskDetails.getStatus();
         descriptionView.setText(taskDetails.getDescription());
         priorityView.setText(taskDetails.getPriority());
-        taskStatusView.setText(taskDetails.getStatus());
+        taskStatusView.setText(status);
         deadlineView.setText(DateFormat.getDateInstance().format(taskDetails.getDeadline()));
-
+        setColorAccordingToStatus(status);
     }
 
+    private void setColorAccordingToStatus(String status){
+        Context context = getActivity().getApplicationContext();
+        int backgroundColor = ContextCompat.getColor(context, R.color.white);
+        if(status.equals(getString(R.string.task_status_completed))){
+            backgroundColor = ContextCompat.getColor(context, R.color.green);
+        }
+        else if (status.equals(getString(R.string.task_status_in_progress))){
+            backgroundColor = ContextCompat.getColor(context, R.color.orange);
+        }
+        else if (status.equals(getString(R.string.task_status_not_started))){
+            backgroundColor = ContextCompat.getColor(context, R.color.sky_blue);
+        }
+        taskStatusView.setBackgroundColor(backgroundColor);
+    }
 
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+        getActivity().getMenuInflater().inflate(R.menu.menu_contextual_task_status, menu);
+    }
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item){
+        String result = taskDetails.getStatus();
+        if(item.getItemId() == R.id.option_task_in_progress){
+            result = getString(R.string.task_status_in_progress);
+        }
+        else if(item.getItemId() == R.id.option_task_completed){
+            result = getString(R.string.task_status_completed);
+        }
+        if (!result.equals(taskDetails.getStatus())){
+            try {
+                taskDetails.setStatus(result);
+                taskDetails.save();
+            }catch(ParseException e){}
+            setColorAccordingToStatus(taskDetails.getStatus());
+        }
+        return true;
+    }
 }
