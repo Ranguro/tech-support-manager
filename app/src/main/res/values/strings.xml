@@ -72,6 +72,9 @@
     <string name="title_activity_prueba">PruebaActivity</string>
     <string name="title_activity_prueba_navigation">PruebaNavigation</string>
     <string name="title_contextual_task_status">Select task status</string>
+    <string name="title_activity_task_manager_details_attendants">TaskManagerDetailsAttendants
+    </string>
+    <string name="assistants_label">Select an assistant</string>
 
 
 </resources>

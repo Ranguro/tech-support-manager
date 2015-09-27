@@ -31,8 +31,7 @@
             android:name=".TaskManagerActivity"
             android:label="@string/title_activity_task_manager" >
         </activity>
-        <activity
-            android:name=".TaskManagerDetailsActivity" >
+        <activity android:name=".TaskManagerDetailsActivity" >
         </activity>
         <activity
             android:name=".AddTaskActivity"
@@ -73,6 +72,14 @@
         <activity
             android:name=".PruebaNavigation"
             android:label="@string/title_activity_prueba_navigation" >
+        </activity>
+        <activity
+            android:name=".TaskManagerDetailsAttendants"
+            android:label="@string/title_activity_task_manager_details_attendants" >
+        </activity>
+        <activity
+            android:name=".TaskManagerDetailsAttendantsActivity"
+            android:label="@string/title_activity_task_manager_details_attendants" >
         </activity>
     </application>
 
