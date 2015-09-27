@@ -10,12 +10,15 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.ContextMenu;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.PopupMenu;
 import android.widget.TextView;
 
 import com.example.ranguro.technicalsupportmanager.adapters.TaskAttendantsAdapter;
@@ -23,11 +26,13 @@ import com.example.ranguro.technicalsupportmanager.classes.ParseObjectTask;
 import com.example.ranguro.technicalsupportmanager.classes.ParseObjectUser;
 import com.parse.FindCallback;
 import com.parse.GetCallback;
+import com.parse.Parse;
 import com.parse.ParseException;
 import com.parse.ParseQuery;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -47,11 +52,13 @@ public class TaskManagerDetailsActivityFragment extends Fragment {
 
     private ParseObjectTask taskDetails;
     private List<ParseObjectUser> taskAttendants;
+    private List<ParseObjectUser> taskFreeAssistants;
 
     private TextView descriptionView;
     private TextView deadlineView;
     private TextView priorityView;
     private TextView taskStatusView;
+    private EditText taskAttendantAddView;
     private RecyclerView taskAttendantsRecyclerView;
 
 
@@ -65,7 +72,6 @@ public class TaskManagerDetailsActivityFragment extends Fragment {
         setHasOptionsMenu(true);
         taskDetailId = getArguments().getString(TASK_DETAIL_KEY);
         fetchTaskDetails();
-
     }
 
     @Override
@@ -76,6 +82,7 @@ public class TaskManagerDetailsActivityFragment extends Fragment {
         priorityView = (TextView) rootView.findViewById(R.id.field_task_detail_priority);
         deadlineView = (TextView) rootView.findViewById(R.id.field_task_detail_deadline);
         taskStatusView = (TextView) rootView.findViewById(R.id.label_task_detail_status);
+        taskAttendantAddView = (EditText) rootView.findViewById(R.id.field_task_attendant_add);
         taskAttendantsRecyclerView = (RecyclerView) rootView.findViewById(R.id.recyclerview_task_attendants);
         taskAttendantsRecyclerView.setLayoutManager(new LinearLayoutManager(taskAttendantsRecyclerView.getContext()));
         taskAttendantsRecyclerView.setHasFixedSize(false);
@@ -89,8 +96,36 @@ public class TaskManagerDetailsActivityFragment extends Fragment {
             }
         });
 
+        taskAttendantAddView.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                String searchText = taskAttendantAddView.getText().toString();
+                if (searchText.trim().length() > 0) {
+                    PopupMenu menu = new PopupMenu(getActivity().getApplicationContext(), v);
+                    Menu popMenu = menu.getMenu();
+                    fillMenu(popMenu, searchText);
+                    menu.show();
+                }
+                return false;
+            }
+        });
+
+
+
         //loadDetailsOnView();
         return rootView;
+    }
+
+    private void fillMenu(Menu popMenu, String searchText) {
+        for(ParseObjectUser assistant: taskFreeAssistants){
+            if(isEqualInLowerCase(assistant.getFirstName(), searchText)){
+                popMenu.add(assistant.getFirstName() + " " + assistant.getLastName());
+            }
+        }
+    }
+
+    private boolean isEqualInLowerCase(String firstText, String secondText){
+        return firstText.toLowerCase().contains(secondText.toLowerCase());
     }
 
     @Override
@@ -105,7 +140,6 @@ public class TaskManagerDetailsActivityFragment extends Fragment {
         return super.onOptionsItemSelected(item);
     }
 
-
     public void fetchTaskDetails(){
         ParseQuery<ParseObjectTask> query = ParseQuery.getQuery(ParseObjectTask.class);
         query.getInBackground(taskDetailId, new GetCallback<ParseObjectTask>() {
@@ -113,24 +147,33 @@ public class TaskManagerDetailsActivityFragment extends Fragment {
             public void done(ParseObjectTask parseObjectTask, ParseException e) {
                 taskDetails = parseObjectTask;
                 loadDetailsOnView();
-                if (!taskDetails.getAttendants().isEmpty()) {
-                    fetchTaskAttendants();
-                }
+                fetchAllAssistant();
             }
         });
     }
 
-
-    public void fetchTaskAttendants(){
+    public void fetchAllAssistant(){
         ParseQuery<ParseObjectUser> query = new ParseQuery<>(ParseObjectUser.class);
-        query.whereContainedIn(ParseObjectUser.COLUMN_USER_KEY,taskDetails.getAttendants());
-
+        query.whereEqualTo(ParseObjectUser.COLUMN_USER_PERMISSION, getString(R.string.assistant));
         query.findInBackground(new FindCallback<ParseObjectUser>() {
             @Override
-            public void done(List<ParseObjectUser> listAttendants, ParseException e) {
-                taskAttendants = listAttendants;
-                Log.i("Total attendants:", String.valueOf(taskAttendants.size()));
+            public void done(List<ParseObjectUser> listAssistants, ParseException e) {
+                taskFreeAssistants = listAssistants;
+                taskAttendants = new ArrayList<>();
+                taskFreeAssistants = new ArrayList<>();
+                List<String> taskAttendantsAssigned = taskDetails.getAttendants();
+                    for (int i = 0; i < listAssistants.size(); i++){
+                        ParseObjectUser assistant = listAssistants.get(i);
+                        if (taskAttendantsAssigned.contains(assistant.getObjectId())){
+                            taskAttendants.add(assistant);
+                        }
+                        else{
+                            taskFreeAssistants.add(assistant);
+                        }
+                    }
                 loadAttendantsOnView();
+                Log.i("Total assign:", String.valueOf(taskAttendants.size()));
+                Log.i("Total free:", String.valueOf(taskFreeAssistants.size()));
             }
         });
     }
