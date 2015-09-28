@@ -75,6 +75,8 @@
     <string name="title_activity_task_manager_details_attendants">TaskManagerDetailsAttendants
     </string>
     <string name="assistants_label">Select an assistant</string>
+    <string name="task_assistants_hint">Type name of the assistant</string>
+    <string name="task_assistants_label">Add assistant to task</string>
 
 
 </resources>

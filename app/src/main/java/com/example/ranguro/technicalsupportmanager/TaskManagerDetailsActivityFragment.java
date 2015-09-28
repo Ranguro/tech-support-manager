@@ -131,7 +131,8 @@ public class TaskManagerDetailsActivityFragment extends Fragment {
                 final int DRAWABLE_RIGHT = 2;
                 if (event.getAction() == MotionEvent.ACTION_UP) {
                     if (event.getRawX() >= (taskAttendantAddView.getRight() - taskAttendantAddView.getCompoundDrawables()[DRAWABLE_RIGHT].getBounds().width())) {
-                        // Add functionality
+                        Intent taskManagerDetailsAttendantsIntent = new Intent(getActivity().getApplicationContext(), TaskManagerDetailsAttendantsActivity.class);
+                        startActivity(taskManagerDetailsAttendantsIntent);
                         return false;
                     }
                 }
