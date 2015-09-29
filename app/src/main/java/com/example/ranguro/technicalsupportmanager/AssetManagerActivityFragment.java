@@ -51,18 +51,6 @@ public class AssetManagerActivityFragment extends Fragment implements AssetsAdap
         fetchAllAssets();
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-
-          if (id == R.id.action_settings) {
-            Intent editAssetIntent = new Intent(getActivity().getApplicationContext(), EditTaskActivity.class);
-            startActivity(editAssetIntent);
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
     private void fetchAllAssets() {
         ParseQuery<ParseObjectAsset> getAllAssetsQuery = new ParseQuery<>(ParseObjectAsset.class);
         assetsAdapter = new AssetsAdapter();

@@ -20,6 +20,12 @@ public class TaskManagerDetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_task_manager_details);
         if (savedInstanceState == null) {
+            String subtitleCreatedBy = CREATED_BY+" "+getIntent().getStringExtra(TASK_CREATED_BY);
+            String titleTaskTitle = getIntent().getStringExtra(TASK_TITLE);
+            ActionBar ab = getSupportActionBar();
+            ab.setTitle(titleTaskTitle);
+            ab.setSubtitle(subtitleCreatedBy);
+            ab.setDisplayHomeAsUpEnabled(true);
             Bundle args = new Bundle();
             String detailId =  getIntent().getStringExtra(TaskManagerDetailsActivityFragment.TASK_DETAIL_KEY);
 

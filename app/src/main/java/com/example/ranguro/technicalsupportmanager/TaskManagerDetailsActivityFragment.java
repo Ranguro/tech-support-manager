@@ -70,6 +70,7 @@ public class TaskManagerDetailsActivityFragment extends Fragment {
     private TextView taskStatusView;
     private AutoCompleteTextView taskAttendantAddView;
     private RecyclerView taskAttendantsRecyclerView;
+    private TaskAttendantsAdapter taskAttendantsAdapter;
 
 
     public TaskManagerDetailsActivityFragment() {
@@ -103,6 +104,12 @@ public class TaskManagerDetailsActivityFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 v.showContextMenu();
+            }
+        });
+        taskAttendantAddView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                initAutocompleteAttendants();
             }
         });
         taskAttendantAddView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -143,6 +150,8 @@ public class TaskManagerDetailsActivityFragment extends Fragment {
         //loadDetailsOnView();
         return rootView;
     }
+
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -207,7 +216,11 @@ public class TaskManagerDetailsActivityFragment extends Fragment {
 
     private void loadAttendantsOnView() {
         if (!taskAttendants.isEmpty()){
-            taskAttendantsRecyclerView.setAdapter(new TaskAttendantsAdapter(taskAttendants));
+            taskAttendantsAdapter = new TaskAttendantsAdapter(taskAttendants);
+            taskAttendantsAdapter.setTask(taskDetails);
+            taskAttendantsAdapter.setFreeUsers(taskFreeAssistants);
+            taskAttendantsAdapter.setFreeUsersName(taskFreeAssistantsNames);
+            taskAttendantsRecyclerView.setAdapter(taskAttendantsAdapter);
         }
     }
 
