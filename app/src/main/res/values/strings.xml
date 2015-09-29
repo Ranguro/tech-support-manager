@@ -71,6 +71,12 @@
     <string name="action_example">Example action</string>
     <string name="title_activity_prueba">PruebaActivity</string>
     <string name="title_activity_prueba_navigation">PruebaNavigation</string>
+    <string name="drawer_open">Open</string>
+    <string name="asset_brand">Brand</string>
+    <string name="asset_model">Model</string>
+    <string name="asset_number_label">Asset Number</string>
+    <string name="asset_category_label">Category</string>
+    <string name="asset_location_label">Location</string>
 
 
 </resources>

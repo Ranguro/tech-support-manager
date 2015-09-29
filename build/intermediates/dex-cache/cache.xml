@@ -2,81 +2,81 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\jonat\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-android\1.2.1\44780c2cf98f6a3cf4e77f1234d644758b329201\bolts-android-1.2.1.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="44780c2cf98f6a3cf4e77f1234d644758b329201">
-        <dex dex="C:\Users\jonat\AndroidStudioProjects\tech-support-manager\app\build\intermediates\pre-dexed\debug\bolts-android-1.2.1-cee39b026105fb328aebb831374904e8c7f07bf4.jar" />
-    </item>
-    <item
-        jar="C:\Users\jonat\AndroidStudioProjects\tech-support-manager\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.0.1\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
-        <dex dex="C:\Users\jonat\AndroidStudioProjects\tech-support-manager\app\build\intermediates\pre-dexed\debug\classes-0a8ac7209b909fb9914d64e57b5ee868604a5e93.jar" />
-    </item>
-    <item
-        jar="C:\Program Files\Android\SDK\extras\android\m2repository\com\android\support\support-annotations\23.0.1\support-annotations-23.0.1.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
-        <dex dex="C:\Users\jonat\AndroidStudioProjects\tech-support-manager\app\build\intermediates\pre-dexed\debug\support-annotations-23.0.1-9b289dc325604f6514b1c1e40f3c80067cefbec4.jar" />
-    </item>
-    <item
-        jar="C:\Users\jonat\AndroidStudioProjects\tech-support-manager\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\23.0.1\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="39ae02ce40c3ac828abbf780ce0ff5d7a28b7d6a">
-        <dex dex="C:\Users\jonat\AndroidStudioProjects\tech-support-manager\app\build\intermediates\pre-dexed\debug\classes-5f402cdfa6d19b8669630c3976e8f3cd15635686.jar" />
-    </item>
-    <item
-        jar="C:\Users\jonat\AndroidStudioProjects\tech-support-manager\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="c31e21b53ff2f74664e498248d01453a32e32d48">
-        <dex dex="C:\Users\jonat\AndroidStudioProjects\tech-support-manager\app\build\intermediates\pre-dexed\debug\classes-7b4312072e89fe91c01598995ee692a51651e40f.jar" />
-    </item>
-    <item
-        jar="C:\Users\jonat\AndroidStudioProjects\tech-support-manager\app\libs\Parse-1.10.2.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="a859414011ce2c18187acc83319688e6bd340635">
-        <dex dex="C:\Users\jonat\AndroidStudioProjects\tech-support-manager\app\build\intermediates\pre-dexed\debug\Parse-1.10.2-ae71c79a1af3566be47f814452f9f9061118e869.jar" />
-    </item>
-    <item
-        jar="C:\Users\jonat\AndroidStudioProjects\tech-support-manager\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\jars\libs\internal_impl-23.0.1.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
-        <dex dex="C:\Users\jonat\AndroidStudioProjects\tech-support-manager\app\build\intermediates\pre-dexed\debug\internal_impl-23.0.1-a0bbf70d24093c3784e1e3cdbe21b7e6ad4da4ab.jar" />
-    </item>
-    <item
-        jar="C:\Users\jonat\.gradle\caches\modules-2\files-2.1\com.nineoldandroids\library\2.4.0\e9b63380f3a242dbdbf103a2355ad7e43bad17cb\library-2.4.0.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
-        <dex dex="C:\Users\jonat\AndroidStudioProjects\tech-support-manager\app\build\intermediates\pre-dexed\debug\library-2.4.0-282422001b4f1e441ffd24bdd4c36758ffb47071.jar" />
-    </item>
-    <item
-        jar="C:\Users\jonat\AndroidStudioProjects\tech-support-manager\app\build\intermediates\exploded-aar\com.melnykov\floatingactionbutton\1.2.0\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="65620ba5e576dcec2c86efa440b00d042a27383b">
-        <dex dex="C:\Users\jonat\AndroidStudioProjects\tech-support-manager\app\build\intermediates\pre-dexed\debug\classes-b936af526624a1cb7b436be08e02811b3db5d7d3.jar" />
-    </item>
-    <item
-        jar="C:\Users\jonat\AndroidStudioProjects\tech-support-manager\app\build\intermediates\exploded-aar\com.android.support\design\23.0.1\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="e5c61a3169221a89654ffcaaed47bba51cf071ad">
-        <dex dex="C:\Users\jonat\AndroidStudioProjects\tech-support-manager\app\build\intermediates\pre-dexed\debug\classes-b33cde68ee85e249ab7cab100b32d1ce730d995c.jar" />
-    </item>
-    <item
-        jar="C:\Users\jonat\AndroidStudioProjects\tech-support-manager\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.0.1\jars\classes.jar"
+        jar="C:\Users\Randall\Desktop\Android Nanodegree\tech-support-manager\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.0.1\jars\classes.jar"
         jumboMode="false"
         revision="23.0.1"
         sha1="4356e230a981d1bbf047d848b91bc0d9b7c5bacc">
-        <dex dex="C:\Users\jonat\AndroidStudioProjects\tech-support-manager\app\build\intermediates\pre-dexed\debug\classes-3f2900755f6fd8345d04b7719f714992858c99aa.jar" />
+        <dex dex="C:\Users\Randall\Desktop\Android Nanodegree\tech-support-manager\app\build\intermediates\pre-dexed\debug\classes-b40fa0261f5e6b0ce0217a4e15c96fbe48cd33ee.jar" />
+    </item>
+    <item
+        jar="C:\Users\Randall\Desktop\Android Nanodegree\tech-support-manager\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\jars\libs\internal_impl-23.0.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
+        <dex dex="C:\Users\Randall\Desktop\Android Nanodegree\tech-support-manager\app\build\intermediates\pre-dexed\debug\internal_impl-23.0.1-948fd607082a445745be4ee73f99cd79b4639622.jar" />
+    </item>
+    <item
+        jar="C:\Users\Randall\Desktop\Android Nanodegree\tech-support-manager\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="c31e21b53ff2f74664e498248d01453a32e32d48">
+        <dex dex="C:\Users\Randall\Desktop\Android Nanodegree\tech-support-manager\app\build\intermediates\pre-dexed\debug\classes-5d55a9eb71d5ef3a8412687b460f809877bb3bc4.jar" />
+    </item>
+    <item
+        jar="C:\Users\Randall\Desktop\Android Nanodegree\tech-support-manager\app\libs\Parse-1.10.2.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="a859414011ce2c18187acc83319688e6bd340635">
+        <dex dex="C:\Users\Randall\Desktop\Android Nanodegree\tech-support-manager\app\build\intermediates\pre-dexed\debug\Parse-1.10.2-7ec3080b71195e6fe7dbada6c10d949c7d65b589.jar" />
+    </item>
+    <item
+        jar="C:\Users\Randall\Desktop\Android Nanodegree\tech-support-manager\app\build\intermediates\exploded-aar\com.melnykov\floatingactionbutton\1.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="65620ba5e576dcec2c86efa440b00d042a27383b">
+        <dex dex="C:\Users\Randall\Desktop\Android Nanodegree\tech-support-manager\app\build\intermediates\pre-dexed\debug\classes-141a35e839b536a65c33f3fd0c8075871052328a.jar" />
+    </item>
+    <item
+        jar="C:\Users\Randall\Desktop\Android Nanodegree\tech-support-manager\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\23.0.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="39ae02ce40c3ac828abbf780ce0ff5d7a28b7d6a">
+        <dex dex="C:\Users\Randall\Desktop\Android Nanodegree\tech-support-manager\app\build\intermediates\pre-dexed\debug\classes-f240ef92e933e07d019aabc28d127c8b07c30894.jar" />
+    </item>
+    <item
+        jar="C:\Users\Randall\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.0.1\support-annotations-23.0.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
+        <dex dex="C:\Users\Randall\Desktop\Android Nanodegree\tech-support-manager\app\build\intermediates\pre-dexed\debug\support-annotations-23.0.1-ee13e39b1f9af2b811d11e3c43680385fc343621.jar" />
+    </item>
+    <item
+        jar="C:\Users\Randall\Desktop\Android Nanodegree\tech-support-manager\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.0.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
+        <dex dex="C:\Users\Randall\Desktop\Android Nanodegree\tech-support-manager\app\build\intermediates\pre-dexed\debug\classes-d9c7fa2d0d1f6e24ed49e7b0c159473e834e5981.jar" />
+    </item>
+    <item
+        jar="C:\Users\Randall\Desktop\Android Nanodegree\tech-support-manager\app\build\intermediates\exploded-aar\com.android.support\design\23.0.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="e5c61a3169221a89654ffcaaed47bba51cf071ad">
+        <dex dex="C:\Users\Randall\Desktop\Android Nanodegree\tech-support-manager\app\build\intermediates\pre-dexed\debug\classes-f828c641443af34a24da3a3bbdc44f1a05e147ce.jar" />
+    </item>
+    <item
+        jar="C:\Users\Randall\.gradle\caches\modules-2\files-2.1\com.nineoldandroids\library\2.4.0\e9b63380f3a242dbdbf103a2355ad7e43bad17cb\library-2.4.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
+        <dex dex="C:\Users\Randall\Desktop\Android Nanodegree\tech-support-manager\app\build\intermediates\pre-dexed\debug\library-2.4.0-c4e4f5e10db823925d8d6362cc5345baa21c4b46.jar" />
+    </item>
+    <item
+        jar="C:\Users\Randall\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-android\1.2.1\44780c2cf98f6a3cf4e77f1234d644758b329201\bolts-android-1.2.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="44780c2cf98f6a3cf4e77f1234d644758b329201">
+        <dex dex="C:\Users\Randall\Desktop\Android Nanodegree\tech-support-manager\app\build\intermediates\pre-dexed\debug\bolts-android-1.2.1-ab3a8db970b74b6c6c65cb484d9da24f78b6481b.jar" />
     </item>
 
 </items>

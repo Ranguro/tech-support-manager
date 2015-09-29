@@ -12,7 +12,6 @@ import com.example.ranguro.technicalsupportmanager.R;
 import com.example.ranguro.technicalsupportmanager.classes.ParseObjectAsset;
 import com.example.ranguro.technicalsupportmanager.swipe_helper.ItemTouchHelperAdapter;
 import com.example.ranguro.technicalsupportmanager.swipe_helper.ItemTouchHelperViewHolder;
-import com.parse.ParseObject;
 
 import java.util.List;
 
@@ -45,7 +44,7 @@ public class AssetsAdapter extends RecyclerView.Adapter<AssetsAdapter.ViewHolder
 
 
     public interface ClickListener {
-        void onAssetSelected(View view, ParseObject asset, int position);
+        void onAssetSelected(View view, ParseObjectAsset asset, int position);
     }
 
     @Override

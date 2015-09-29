@@ -1,7 +1,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.example.ranguro.technicalsupportmanager.TaskManagerActivity">
+    tools:context="com.example.ranguro.technicalsupportmanager.ui.TaskManagerActivity">
     <item android:id="@+id/action_assset_manager" android:title="@string/asset_manager"
         android:orderInCategory="100" app:showAsAction="always" />
 </menu>

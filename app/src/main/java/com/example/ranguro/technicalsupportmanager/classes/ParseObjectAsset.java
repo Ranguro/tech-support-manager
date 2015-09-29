@@ -1,7 +1,5 @@
 package com.example.ranguro.technicalsupportmanager.classes;
 
-import android.location.Location;
-
 import com.parse.ParseClassName;
 import com.parse.ParseObject;
 
@@ -11,6 +9,8 @@ public class ParseObjectAsset extends ParseObject{
 
     public static String COLUMN_ASSET_KEY = "objectId";
     public static String COLUMN_ASSET_ASSET_NUMBER = "assetNumber";
+    public static String COLUMN_ASSET_MODEL = "model";
+    public static String COLUMN_ASSET_BRAND = "brand";
     public static String COLUMN_ASSET_CATEGORY = "category";
     public static String COLUMN_ASSET_DESCRIPTION = "description";
     public static String COLUMN_ASSET_LOCATION = "location";
@@ -28,6 +28,14 @@ public class ParseObjectAsset extends ParseObject{
 
     public String getAssetNumber(){
         return getString(COLUMN_ASSET_ASSET_NUMBER);
+    }
+
+    public String getModel(){
+        return getString(COLUMN_ASSET_MODEL);
+    }
+
+    public String getBrand(){
+        return getString(COLUMN_ASSET_BRAND);
     }
 
     public String getCategory(){
@@ -60,6 +68,13 @@ public class ParseObjectAsset extends ParseObject{
 
     public void setDescription(String description){
         this.put(COLUMN_ASSET_DESCRIPTION, description);
+    }
+
+    public void setModel(String model){
+        this.put(COLUMN_ASSET_MODEL, model);
+    }
+    public void setBrand(String brand){
+        this.put(COLUMN_ASSET_BRAND, brand);
     }
 
     public void setLocation(String location){

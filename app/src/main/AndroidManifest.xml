@@ -11,7 +11,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,59 +20,43 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SignUpActivity"
+            android:name=".ui.SignUpActivity"
             android:label="@string/title_activity_sign_up" >
         </activity>
         <activity
-            android:name=".NextSignUpActivity"
+            android:name=".ui.NextSignUpActivity"
             android:label="@string/title_activity_next_sign_up" >
         </activity>
         <activity
-            android:name=".TaskManagerActivity"
+            android:name=".ui.TaskManagerActivity"
             android:label="@string/title_activity_task_manager" >
         </activity>
         <activity
-            android:name=".TaskManagerDetailsActivity" >
+            android:name=".ui.TaskManagerDetailsActivity" >
         </activity>
         <activity
-            android:name=".AddTaskActivity"
+            android:name=".ui.AddTaskActivity"
             android:label="@string/title_activity_add_task" >
         </activity>
         <activity
-            android:name=".AssetManagerActivity"
+            android:name=".ui.AssetManagerActivity"
             android:label="@string/title_activity_asset_manager" >
         </activity>
         <activity
-            android:name=".AddAssetActivity"
+            android:name=".ui.AddAssetActivity"
             android:label="@string/title_activity_add_asset" >
         </activity>
         <activity
-            android:name=".EditAssetActivity"
+            android:name=".ui.EditAssetActivity"
             android:label="@string/title_activity_edit_asset" >
         </activity>
         <activity
-            android:name=".AssetManagerDetailsActivity"
+            android:name=".ui.AssetManagerDetailsActivity"
             android:label="@string/title_activity_asset_manager_details" >
         </activity>
         <activity
-            android:name=".EditTaskActivity"
+            android:name=".ui.EditTaskActivity"
             android:label="@string/title_activity_edit_task" >
-        </activity>
-        <activity
-            android:name=".Test"
-            android:label="@string/title_activity_test" >
-        </activity>
-        <activity
-            android:name=".TestActivity"
-            android:label="@string/title_activity_test" >
-        </activity>
-        <activity
-            android:name=".PruebaActivity"
-            android:label="@string/title_activity_prueba" >
-        </activity>
-        <activity
-            android:name=".PruebaNavigation"
-            android:label="@string/title_activity_prueba_navigation" >
         </activity>
     </application>
 

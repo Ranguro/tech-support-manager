@@ -39,9 +39,6 @@ public class TasksAdapter extends RecyclerView.Adapter<TasksAdapter.ViewHolder> 
         notifyItemRemoved(position);
     }
 
-
-
-
     public interface ClickListener {
 
         void onTaskSelected(View view, ParseObjectTask task, int position);
