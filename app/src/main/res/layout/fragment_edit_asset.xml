@@ -20,7 +20,7 @@
         android:layout_height="wrap_content" />
 
     <EditText
-        android:id="@+id/field_asset_brand"
+        android:id="@+id/field_edit_asset_brand"
         android:hint="@string/asset_brand"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />

@@ -71,12 +71,17 @@
     <string name="action_example">Example action</string>
     <string name="title_activity_prueba">PruebaActivity</string>
     <string name="title_activity_prueba_navigation">PruebaNavigation</string>
-    <string name="drawer_open">Open</string>
-    <string name="asset_brand">Brand</string>
-    <string name="asset_model">Model</string>
+    <string name="title_contextual_task_status">Select task status</string>
+    <string name="title_activity_task_manager_details_attendants">TaskManagerDetailsAttendants
+    </string>
+    <string name="assistants_label">Select an assistant</string>
+    <string name="task_assistants_hint">Type name of the assistant</string>
+    <string name="task_assistants_label">Add assistant to task</string>
     <string name="asset_number_label">Asset Number</string>
     <string name="asset_category_label">Category</string>
     <string name="asset_location_label">Location</string>
+    <string name="asset_model">Model</string>
+    <string name="asset_brand">Brand</string>
 
 
 </resources>

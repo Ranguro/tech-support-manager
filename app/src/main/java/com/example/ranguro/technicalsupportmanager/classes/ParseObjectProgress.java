@@ -1,7 +1,5 @@
 package com.example.ranguro.technicalsupportmanager.classes;
 
-import android.util.EventLogTags;
-
 import com.parse.ParseClassName;
 import com.parse.ParseObject;
 import com.parse.ParseUser;

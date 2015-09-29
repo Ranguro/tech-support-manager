@@ -13,17 +13,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <EditText
-        android:id="@+id/field_asset_model"
-        android:hint="@string/asset_model"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
 
     <EditText
         android:id="@+id/field_asset_brand"
         android:hint="@string/asset_brand"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/field_asset_model"
+        android:hint="@string/asset_model"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
 
     <EditText
         android:id="@+id/field_asset_description"

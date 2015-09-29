@@ -39,7 +39,6 @@ public class AssetsAdapter extends RecyclerView.Adapter<AssetsAdapter.ViewHolder
     public void onItemDismiss(int position) {
         assetList.remove(position);
         notifyItemRemoved(position);
-
     }
 
 
