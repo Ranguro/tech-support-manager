@@ -58,6 +58,11 @@
             android:name=".ui.EditTaskActivity"
             android:label="@string/title_activity_edit_task" >
         </activity>
+        <activity
+            android:name=".ui.TaskManagerDetailsAttendantsActivity"
+            android:label="@string/title_activity_task_manager_details_attendants" >
+        </activity>
+
     </application>
 
 </manifest>

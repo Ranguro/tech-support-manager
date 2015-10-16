@@ -33,6 +33,10 @@ public class TasksAdapter extends RecyclerView.Adapter<TasksAdapter.ViewHolder> 
         assignedTasks = taskList;
     }
 
+    public List<ParseObjectTask> getassignedTasks(){
+        return assignedTasks;
+    }
+
     @Override
     public void onItemDismiss(int position) {
         assignedTasks.remove(position);

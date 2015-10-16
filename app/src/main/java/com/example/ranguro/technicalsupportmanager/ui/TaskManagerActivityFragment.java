@@ -15,9 +15,11 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.SearchView;
 
 import com.example.ranguro.technicalsupportmanager.R;
 import com.example.ranguro.technicalsupportmanager.adapters.TasksAdapter;
+import com.example.ranguro.technicalsupportmanager.classes.ParseObjectAsset;
 import com.example.ranguro.technicalsupportmanager.classes.ParseObjectTask;
 import com.example.ranguro.technicalsupportmanager.decorators.DividerItemDecoration;
 import com.example.ranguro.technicalsupportmanager.swipe_helper.SimpleItemTouchHelperCallback;
@@ -25,6 +27,7 @@ import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseQuery;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -38,6 +41,8 @@ public class TaskManagerActivityFragment extends Fragment implements TasksAdapte
     private RecyclerView taskRecyclerView;
     private TasksAdapter tasksAdapter;
     private SwipeRefreshLayout swipeRefreshLayout;
+    private List<ParseObjectTask> tasksList;
+    private SearchView searchTaskView;
     private ItemTouchHelper itemTouchHelper;
 
     public TaskManagerActivityFragment() {
@@ -67,6 +72,7 @@ public class TaskManagerActivityFragment extends Fragment implements TasksAdapte
         taskRecyclerView = (RecyclerView) rootView.findViewById(R.id.recyclerview_tasks);
         addTaskFabView = (FloatingActionButton) rootView.findViewById(R.id.fab_add_task);
         swipeRefreshLayout = (SwipeRefreshLayout) rootView.findViewById(R.id.swiperefreshlayout_tasks);
+        searchTaskView = (SearchView) rootView.findViewById(R.id.searchview_tasks);
 
         taskRecyclerView.setLayoutManager(new LinearLayoutManager(taskRecyclerView.getContext()));
         taskRecyclerView.addItemDecoration(new DividerItemDecoration(getActivity(), DividerItemDecoration.VERTICAL_LIST));
@@ -90,7 +96,42 @@ public class TaskManagerActivityFragment extends Fragment implements TasksAdapte
                 refreshAssetsList();
             }
         });
+
+        searchTaskView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                ArrayList<ParseObjectTask> queryList = getAssetsWhereMatchesWith(query);
+                tasksAdapter.addAll(queryList);
+                taskRecyclerView.setAdapter(tasksAdapter);
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String query) {
+                ArrayList<ParseObjectTask> queryList = getAssetsWhereMatchesWith(query);
+                tasksAdapter.addAll(queryList);
+                taskRecyclerView.setAdapter(tasksAdapter);
+                return false;
+            }
+        });
         return rootView;
+    }
+
+    private ArrayList<ParseObjectTask> getAssetsWhereMatchesWith(String query) {
+        ArrayList<ParseObjectTask> queryResultList = new ArrayList<>();
+        for (ParseObjectTask task : tasksList){
+            if(isEqualInLowerCase(task.getTitle(), query) ||
+                    isEqualInLowerCase(task.getStatus(), query) ||
+                    isEqualInLowerCase(task.getDescription(), query))
+            {
+                queryResultList.add(task);
+            }
+        }
+        return queryResultList;
+    }
+
+    private boolean isEqualInLowerCase(String firstText, String secondText){
+        return firstText.toLowerCase().contains(secondText.toLowerCase());
     }
 
 
@@ -114,6 +155,7 @@ public class TaskManagerActivityFragment extends Fragment implements TasksAdapte
             @Override
             public void done(List<ParseObjectTask> taskList, ParseException e) {
                 tasksAdapter.addAll(taskList);
+                tasksList = taskList;
                 taskRecyclerView.getAdapter();
                 taskRecyclerView.setAdapter(tasksAdapter);
                 ItemTouchHelper.Callback callback = new SimpleItemTouchHelperCallback(tasksAdapter);
