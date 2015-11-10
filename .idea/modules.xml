@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/tech-support-manager.iml" filepath="$PROJECT_DIR$/tech-support-manager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tech-support-manager-assistant/tech-support-manager-assistant.iml" filepath="$PROJECT_DIR$/tech-support-manager-assistant/tech-support-manager-assistant.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tech-support-manager-functionary/tech-support-manager-functionary.iml" filepath="$PROJECT_DIR$/tech-support-manager-functionary/tech-support-manager-functionary.iml" />
     </modules>
   </component>
 </project>

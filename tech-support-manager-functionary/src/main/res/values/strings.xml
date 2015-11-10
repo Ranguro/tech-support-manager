@@ -1,0 +1,87 @@
+<resources>
+    <string name="app_name">Technical Support Manager</string>
+    <string name="action_settings">Settings</string>
+    <string name="btn_sign_in">Sign in</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="title_activity_sign_up">Sign Up</string>
+    <string name="firstname">First name</string>
+    <string name="lastname">Last name</string>
+    <string name="email">Email</string>
+
+    <string name="functionary">Functionary</string>
+    <string name="admin">Administrador</string>
+    <string name="assistant">Assistant</string>
+    <string name="create_account">Create your account</string>
+    <string name="btn_create_account">Create account</string>
+    <string name="btn_next_sign_up">Next</string>
+
+    <string name="task_status_completed">Completed</string>
+    <string name="task_status_in_progress">In Progress</string>
+    <string name="task_status_not_started">Not started</string>
+
+    <string name="title_activity_next_sign_up">Sign up</string>
+    <string name="phone">Phone number</string>
+    <string name="accessType">Access type</string>
+    <string name="title_activity_task_manager">Task Manager</string>
+    <string name="title_activity_add_task">Add Task</string>
+    <string name="task_title">Task title</string>
+    <string name="task_description">Description</string>
+    <string name="task_deadline">Deadline</string>
+    <string name="title_activity_asset_manager">Asset Manager</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="asset_manager">Asset Manager</string>
+    <string name="title_activity_add_asset">Add Asset</string>
+    <string name="action_add_asset">Save</string>
+    <string name="asset_assetnumber">Asset number</string>
+    <string name="asset_description">Description</string>
+    <string name="asset_location">Location</string>
+    <string name="asset_note">Note</string>
+    <string name="toast_error_asset_empty_field_msg">Please, add at least an asset number</string>
+    <string name="toast_success_asset_insertion_msg">New asset created</string>
+    <string name="toast_info_login_title">Please wait...</string>
+    <string name="toast_info_login_message">Signing in. Please wait.</string>
+    <string name="toast_info_login_success">Login successful</string>
+    <string name="title_activity_edit_asset">Edit Asset</string>
+    <string name="title_activity_asset_manager_details">Asset Details</string>
+    <string name="action_edit_asset">Edit</string>
+    <string name="toast_success_asset_modification_msg">Asset was modified successfully</string>
+    <string name="toast_success_task_modification_msg">Task was modified successfully</string>
+    <string name="title_activity_edit_task">Edit Task</string>
+    <string name="toast_error_task_empty_field_msg">Please complete all the fields</string>
+    <string name="toast_error_task_invalid_date_msg">Deadline is invalid</string>
+    <string name="default_task_status">Not started</string>
+
+    <string name="computer">Computer</string>
+
+    <string name="attendants_label">Attendants:</string>
+    <string name="priority_label">Priority:</string>
+    <string name="deadline_label">Deadline:</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="title_activity_test">Test</string>
+
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_example">Example action</string>
+    <string name="title_activity_prueba">PruebaActivity</string>
+    <string name="title_activity_prueba_navigation">PruebaNavigation</string>
+    <string name="title_contextual_task_status">Select task status</string>
+    <string name="title_activity_task_manager_details_attendants">TaskManagerDetailsAttendants
+    </string>
+    <string name="assistants_label">Select an assistant</string>
+    <string name="task_assistants_hint">Type name of the assistant</string>
+    <string name="task_assistants_label">Add assistant to task</string>
+    <string name="asset_number_label">Asset Number</string>
+    <string name="asset_category_label">Category</string>
+    <string name="asset_location_label">Location</string>
+    <string name="asset_model">Model</string>
+    <string name="asset_brand">Brand</string>
+
+
+</resources>
