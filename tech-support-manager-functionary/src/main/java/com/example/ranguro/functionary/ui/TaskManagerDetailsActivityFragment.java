@@ -197,7 +197,7 @@ public class TaskManagerDetailsActivityFragment extends Fragment {
         String[] taskFreeAssistantsNamesArray = new String[taskFreeAssistantsNames.size()];
         taskFreeAssistantsNames.toArray(taskFreeAssistantsNamesArray);
         ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity().getApplicationContext(),
-                R.layout.list_item_assitant, taskFreeAssistantsNamesArray);
+                R.layout.list_item_assistant, taskFreeAssistantsNamesArray);
         taskAttendantAddView.setThreshold(2);
         taskAttendantAddView.setAdapter(adapter);
     }

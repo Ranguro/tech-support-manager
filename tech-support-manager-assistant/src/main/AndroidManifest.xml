@@ -26,6 +26,11 @@
             android:label="@string/title_activity_task_manager"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
+        <activity
+            android:name=".ui.AssetManagerActivity"
+            android:label="@string/title_activity_asset_manager"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
     </application>
 
 </manifest>

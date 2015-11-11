@@ -41,6 +41,9 @@ public class TaskManagerActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+
+
+
     @Override
     protected void onDestroy() {
         ParseUser.logOut();

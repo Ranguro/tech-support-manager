@@ -75,9 +75,7 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "Complete all the fields", Toast.LENGTH_SHORT).show();
         }
         else{
-            Toast.makeText(MainActivity.this, "This will launch my Task Manager Activity", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(this, TaskManagerActivity.class);
-            startActivity(intent);
+            verifyAccount(username.getText().toString(), password.getText().toString());
         }
     }
 
@@ -100,8 +98,8 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     dlg.setMessage(getString(R.string.toast_info_login_success));
                     username.setText("");
-                    //Intent taskManagerIntent = new Intent(MainActivity.this, TaskManagerActivity.class);
-                    //startActivity(taskManagerIntent);
+                    Intent taskManagerIntent = new Intent(MainActivity.this, TaskManagerActivity.class);
+                    startActivity(taskManagerIntent);
                 }
                 timerDelayRemoveDialog(dlg);
             }

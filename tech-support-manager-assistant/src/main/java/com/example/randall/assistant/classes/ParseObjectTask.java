@@ -19,14 +19,14 @@ public class ParseObjectTask extends ParseObject{
     public static String COLUMN_TASK_CREATOR_ID = "creatorID";
     public static String COLUMN_TASK_PRIORITY = "priority";
     public static String COLUMN_TASK_STATUS  = "status";
-    public static String COLUMN_TASK_ATTENDATS = "attendants";
+    public static String COLUMN_TASK_ATTENDANTS = "attendants";
 
     public ParseObjectTask() {
 
     }
 
     public List<String> getAttendants(){
-        return getList(COLUMN_TASK_ATTENDATS);
+        return getList(COLUMN_TASK_ATTENDANTS);
     }
 
     public String getStatus(){
@@ -87,7 +87,7 @@ public class ParseObjectTask extends ParseObject{
     }
 
     public void setAttendants(ArrayList<String> attendants){
-        this.put(COLUMN_TASK_ATTENDATS, attendants);
+        this.put(COLUMN_TASK_ATTENDANTS, attendants);
     }
 
     public void addAttendants(String attendant){
