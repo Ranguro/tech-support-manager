@@ -10,34 +10,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="54f17ab6-7009-460f-a3f0-ded075c01ba3" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tech-support-manager-assistant/src/main/java/com/example/randall/assistant/ui/AssetManagerActivity.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tech-support-manager-assistant/src/main/java/com/example/randall/assistant/decorators/DividerItemDecoration.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tech-support-manager-assistant/src/main/java/com/example/randall/assistant/adapters/TasksAdapter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tech-support-manager-assistant/src/main/res/layout/activity_asset_manager.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tech-support-manager-assistant/src/main/res/menu/activity_asset_manager_drawer.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tech-support-manager-assistant/src/main/res/layout/app_bar_asset_manager.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tech-support-manager-assistant/src/main/res/menu/asset_manager.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tech-support-manager-assistant/src/main/res/layout/content_asset_manager.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tech-support-manager-assistant/src/main/res/layout/list_item_task.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tech-support-manager-assistant/src/main/res/layout/nav_header_asset_manager.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tech-support-manager-assistant/src/main/res/drawable/side_nav_bar.xml" />
-      <change type="MOVED" beforePath="C:\Users\Randall\Desktop\Android Nanodegree\tech-support-manager\tech-support-manager-functionary\src\main\res\layout\list_item_assitant.xml" afterPath="$PROJECT_DIR$/tech-support-manager-functionary/src/main/res/layout/list_item_assistant.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileHashes.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileSnapshots.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/outputFileStates.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/outputFileStates.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/taskArtifacts.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tech-support-manager-assistant/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/tech-support-manager-assistant/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tech-support-manager-assistant/src/main/java/com/example/randall/assistant/ui/MainActivity.java" afterPath="$PROJECT_DIR$/tech-support-manager-assistant/src/main/java/com/example/randall/assistant/ui/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tech-support-manager-assistant/src/main/java/com/example/randall/assistant/classes/ParseObjectTask.java" afterPath="$PROJECT_DIR$/tech-support-manager-assistant/src/main/java/com/example/randall/assistant/classes/ParseObjectTask.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tech-support-manager-functionary/src/main/java/com/example/ranguro/functionary/classes/ParseObjectTask.java" afterPath="$PROJECT_DIR$/tech-support-manager-functionary/src/main/java/com/example/ranguro/functionary/classes/ParseObjectTask.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tech-support-manager-assistant/src/main/java/com/example/randall/assistant/ui/TaskManagerActivity.java" afterPath="$PROJECT_DIR$/tech-support-manager-assistant/src/main/java/com/example/randall/assistant/ui/TaskManagerActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tech-support-manager-functionary/src/main/java/com/example/ranguro/functionary/ui/TaskManagerActivity.java" afterPath="$PROJECT_DIR$/tech-support-manager-functionary/src/main/java/com/example/ranguro/functionary/ui/TaskManagerActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tech-support-manager-functionary/src/main/java/com/example/ranguro/functionary/ui/TaskManagerDetailsActivityFragment.java" afterPath="$PROJECT_DIR$/tech-support-manager-functionary/src/main/java/com/example/ranguro/functionary/ui/TaskManagerDetailsActivityFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tech-support-manager-assistant/src/main/res/layout/app_bar_task_manager.xml" afterPath="$PROJECT_DIR$/tech-support-manager-assistant/src/main/res/layout/app_bar_task_manager.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/cache.properties.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tech-support-manager-assistant/src/main/res/layout/content_task_manager.xml" afterPath="$PROJECT_DIR$/tech-support-manager-assistant/src/main/res/layout/content_task_manager.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tech-support-manager-functionary/src/main/res/layout/fragment_task_manager.xml" afterPath="$PROJECT_DIR$/tech-support-manager-functionary/src/main/res/layout/fragment_task_manager.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="tech-support-manager.iws" />
@@ -3513,7 +3485,13 @@
       <option name="project" value="LOCAL" />
       <updated>1447214729102</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="feat: Fetch tasks by user and starting assets manager.">
+      <created>1447265287508</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1447265287508</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -3565,7 +3543,8 @@
     <MESSAGE value="refactor: separated project into submodules (now assistants and functionary submodules)" />
     <MESSAGE value="refactor: Separated project into submodules (now assistants and functionary submodules)" />
     <MESSAGE value="feat: Added navigation drawer to Task Manager Assistant module." />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: Added navigation drawer to Task Manager Assistant module." />
+    <MESSAGE value="feat: Fetch tasks by user and starting assets manager." />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Fetch tasks by user and starting assets manager." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -3667,6 +3646,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -3712,6 +3692,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
