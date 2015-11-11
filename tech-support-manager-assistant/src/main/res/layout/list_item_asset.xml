@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp">
+
+    <TextView
+        android:text="6125925"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/asset_assetnumber"
+        android:textColor="@color/black"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:text="Computer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/asset_category"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:text="Sir-zee"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/asset_location"
+        android:textColor="@color/black" />
+
+</LinearLayout>

@@ -1,5 +1,6 @@
 package com.example.randall.assistant.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -58,8 +59,6 @@ public class TaskManagerActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         taskRecyclerView = (RecyclerView) findViewById(R.id.recyclerview_tasks);
-        searchTaskView = (SearchView) findViewById(R.id.searchview_tasks);
-
         taskRecyclerView.setLayoutManager(new LinearLayoutManager(taskRecyclerView.getContext()));
         taskRecyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL_LIST));
         taskRecyclerView.setHasFixedSize(true);
@@ -109,9 +108,9 @@ public class TaskManagerActivity extends AppCompatActivity
         if (id == R.id.nav_task_manager) {
 
         } else if (id == R.id.nav_asset_manager) {
-
+            Intent assetManagerIntent = new Intent(this, AssetManagerActivity.class);
+            startActivity(assetManagerIntent);
         }
-
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
@@ -145,8 +144,6 @@ public class TaskManagerActivity extends AppCompatActivity
     private void fetchAllTasks(){
 
         ParseQuery<ParseObjectTask> query = new ParseQuery<>(ParseObjectTask.class);
-        String objectid = ParseObjectUser.getCurrentUser().getObjectId();
-
         query.whereEqualTo(ParseObjectTask.COLUMN_TASK_ATTENDANTS, ParseObjectUser.getCurrentUser().getObjectId());
 
         tasksAdapter = new TasksAdapter();
