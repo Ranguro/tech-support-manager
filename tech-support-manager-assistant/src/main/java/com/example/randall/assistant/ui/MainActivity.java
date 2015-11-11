@@ -2,6 +2,7 @@ package com.example.randall.assistant.ui;
 
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -74,7 +75,9 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "Complete all the fields", Toast.LENGTH_SHORT).show();
         }
         else{
-            Toast.makeText(MainActivity.this, "This will launch my Main Activity", Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this, "This will launch my Task Manager Activity", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(this, TaskManagerActivity.class);
+            startActivity(intent);
         }
     }
 
@@ -111,11 +114,6 @@ public class MainActivity extends AppCompatActivity {
                 d.dismiss();
             }
         }, (long) 1000);
-    }
-
-    public void signUp(View view) {
-        //Intent signUpIntent = new Intent(this,SignUpActivity.class);
-        //startActivity(signUpIntent);
     }
 
     //find better way to kill application
