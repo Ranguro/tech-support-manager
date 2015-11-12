@@ -1,5 +1,6 @@
 package com.example.randall.assistant.ui;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -15,7 +16,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
 import com.example.randall.assistant.R;
 import com.example.randall.assistant.adapters.AssetsAdapter;
@@ -32,6 +32,8 @@ public class AssetManagerActivity extends AppCompatActivity
 
     private RecyclerView assetRecyclerView;
     private AssetsAdapter assetsAdapter;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -121,7 +123,12 @@ public class AssetManagerActivity extends AppCompatActivity
 
     @Override
     public void onAssetSelected(View view, ParseObjectAsset asset, int position) {
-        Toast.makeText(AssetManagerActivity.this, "This will launch an asset detail", Toast.LENGTH_SHORT).show();
+        Context context = view.getContext();
+        Intent intent = new Intent(context,AssetManagerDetailsActivity.class);
+        intent.putExtra(AssetManagerDetailsActivityFragment.ASSET_DETAIL_KEY, asset.getObjectId());
+        intent.putExtra(AssetManagerDetailsActivity.ASSET_BRAND, asset.getBrand());
+        intent.putExtra(AssetManagerDetailsActivity.ASSET_MODEL, asset.getModel());
+        startActivity(intent);
     }
 
     private void fetchAllAssets() {

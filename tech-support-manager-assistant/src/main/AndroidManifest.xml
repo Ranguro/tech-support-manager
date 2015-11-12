@@ -45,6 +45,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.randall.assistant.ui.AssetManagerActivity" />
         </activity>
+        <activity
+            android:name=".ui.AssetManagerDetailsActivity"
+            android:label="@string/title_activity_asset_manager_details"
+            android:parentActivityName=".ui.AssetManagerActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.randall.assistant.ui.AssetManagerActivity" />
+        </activity>
     </application>
 
 </manifest>

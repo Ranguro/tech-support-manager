@@ -14,6 +14,19 @@ public class EditAssetActivity extends AppCompatActivity {
         setContentView(R.layout.activity_edit_asset);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        if (savedInstanceState == null) {
+            Bundle args = new Bundle();
+            String detailId =  getIntent().getStringExtra(AssetManagerDetailsActivityFragment.ASSET_DETAIL_KEY);
+
+            args.putString(AssetManagerDetailsActivityFragment.ASSET_DETAIL_KEY,
+                    detailId);
+            EditAssetActivityFragment fragment = new EditAssetActivityFragment();
+            fragment.setArguments(args);
+            getSupportFragmentManager().beginTransaction()
+                    .add(R.id.asset_edit_container, fragment)
+                    .commit();
+        }
     }
 
 }
