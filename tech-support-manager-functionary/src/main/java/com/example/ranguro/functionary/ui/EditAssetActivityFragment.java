@@ -88,7 +88,7 @@ public class EditAssetActivityFragment extends Fragment {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == R.id.action_add_asset){
+        if (item.getItemId() == R.id.action_save_asset){
             if(isFieldEmpty(assetNumberView)){
                 Toast.makeText(getActivity().getApplicationContext(), R.string.toast_error_asset_empty_field_msg, Toast.LENGTH_SHORT).show();
             }
@@ -100,7 +100,6 @@ public class EditAssetActivityFragment extends Fragment {
                     Toast.makeText(getActivity().getApplication(), R.string.toast_success_asset_modification_msg, Toast.LENGTH_LONG).show();
                 }
                 catch (ParseException pe){
-
                 }
             }
         }

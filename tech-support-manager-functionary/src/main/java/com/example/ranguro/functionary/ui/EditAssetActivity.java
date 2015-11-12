@@ -31,7 +31,7 @@ public class EditAssetActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_add_asset, menu);
+        getMenuInflater().inflate(R.menu.menu_edit_asset, menu);
         return true;
     }
 
