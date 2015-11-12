@@ -38,4 +38,8 @@ public class AddAssetActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
+
+
 }

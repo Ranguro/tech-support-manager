@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="permissions">
+        <item>@string/admin</item>
+        <item>@string/assistant</item>
+        <item>@string/functionary</item>
+    </string-array>
+
+    <string-array name="priority_array">
+        <item>High</item>
+        <item>Medium</item>
+        <item>Low</item>
+    </string-array>
+    
+    <string-array name="category_array">
+        <item>@string/computer</item>
+        <item>Monitor</item>
+        <item>Laptop</item>
+        <item>Camera</item>
+        <item>Tablet</item>
+    </string-array>
+    
+    <string-array name="status_array">
+        <item>Excellent</item>
+        <item>Good</item>
+        <item>Defective</item>
+        <item>Obsolete</item>
+    </string-array>
+
+    <string-array name="task_status_array">
+        <item>@string/task_status_in_progress</item>
+        <item>@string/task_status_completed</item>
+    </string-array>
+</resources>

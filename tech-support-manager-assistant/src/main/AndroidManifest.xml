@@ -36,6 +36,15 @@
             android:label="@string/title_activity_edit_asset"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
+        <activity
+            android:name=".ui.AddAssetActivity"
+            android:label="@string/title_activity_add_asset"
+            android:parentActivityName=".ui.AssetManagerActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.randall.assistant.ui.AssetManagerActivity" />
+        </activity>
     </application>
 
 </manifest>
