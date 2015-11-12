@@ -55,6 +55,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.randall.assistant.ui.AssetManagerActivity" />
         </activity>
+        <activity
+            android:name=".ui.TaskManagerDetailsActivity"
+            android:label="@string/title_activity_task_manager_details"
+            android:parentActivityName=".ui.TaskManagerActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.randall.assistant.ui.TaskManagerActivity" />
+        </activity>
     </application>
 
 </manifest>

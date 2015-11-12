@@ -12,19 +12,28 @@
     <bookmark url="file://$PROJECT_DIR$/tech-support-manager-assistant/src/main/res/menu/menu_asset_manager_details.xml" description="&lt;item android:id=&quot;@+id/action_edit_asset&quot; android:..." line="4" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="54f17ab6-7009-460f-a3f0-ded075c01ba3" name="Default" comment="">
+    <list default="true" id="54f17ab6-7009-460f-a3f0-ded075c01ba3" name="Default" comment="feat: Added display task details to assistant module">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tech-support-manager-assistant/src/main/java/com/example/randall/assistant/adapters/TaskAttendantsAdapter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tech-support-manager-assistant/src/main/java/com/example/randall/assistant/ui/TaskManagerDetailsActivity.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tech-support-manager-assistant/src/main/java/com/example/randall/assistant/ui/TaskManagerDetailsActivityFragment.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tech-support-manager-assistant/src/main/res/layout/activity_task_manager_details.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tech-support-manager-assistant/src/main/res/layout/content_task_manager_details.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tech-support-manager-assistant/src/main/res/layout/fragment_task_manager_details.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tech-support-manager-assistant/src/main/res/layout/list_item_assistant.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tech-support-manager-assistant/src/main/res/layout/list_item_task_attendants.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tech-support-manager-assistant/src/main/res/menu/menu_contextual_task_status.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tech-support-manager-assistant/src/main/res/menu/menu_task_manager_details.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileSnapshots.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/taskArtifacts.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tech-support-manager-assistant/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/tech-support-manager-assistant/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tech-support-manager-assistant/src/main/java/com/example/randall/assistant/ui/EditAssetActivity.java" afterPath="$PROJECT_DIR$/tech-support-manager-assistant/src/main/java/com/example/randall/assistant/ui/EditAssetActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tech-support-manager-functionary/src/main/java/com/example/ranguro/functionary/ui/EditAssetActivity.java" afterPath="$PROJECT_DIR$/tech-support-manager-functionary/src/main/java/com/example/ranguro/functionary/ui/EditAssetActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tech-support-manager-assistant/src/main/java/com/example/randall/assistant/ui/EditAssetActivityFragment.java" afterPath="$PROJECT_DIR$/tech-support-manager-assistant/src/main/java/com/example/randall/assistant/ui/EditAssetActivityFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tech-support-manager-functionary/src/main/java/com/example/ranguro/functionary/ui/EditAssetActivityFragment.java" afterPath="$PROJECT_DIR$/tech-support-manager-functionary/src/main/java/com/example/ranguro/functionary/ui/EditAssetActivityFragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tech-support-manager-assistant/src/main/java/com/example/randall/assistant/ui/TaskManagerActivity.java" afterPath="$PROJECT_DIR$/tech-support-manager-assistant/src/main/java/com/example/randall/assistant/ui/TaskManagerActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tech-support-manager-functionary/src/main/java/com/example/ranguro/functionary/ui/TaskManagerDetailsActivity.java" afterPath="$PROJECT_DIR$/tech-support-manager-functionary/src/main/java/com/example/ranguro/functionary/ui/TaskManagerDetailsActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/cache.properties.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tech-support-manager-assistant/src/main/res/layout/content_edit_asset.xml" afterPath="$PROJECT_DIR$/tech-support-manager-assistant/src/main/res/layout/content_edit_asset.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tech-support-manager-assistant/src/main/res/menu/menu_edit_asset.xml" afterPath="$PROJECT_DIR$/tech-support-manager-assistant/src/main/res/menu/menu_edit_asset.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tech-support-manager-functionary/src/main/res/menu/menu_edit_asset.xml" afterPath="$PROJECT_DIR$/tech-support-manager-functionary/src/main/res/menu/menu_edit_asset.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tech-support-manager-functionary/src/main/res/layout/list_item_task_attendants.xml" afterPath="$PROJECT_DIR$/tech-support-manager-functionary/src/main/res/layout/list_item_task_attendants.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tech-support-manager-assistant/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/tech-support-manager-assistant/src/main/res/values/strings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tech-support-manager-assistant/tech-support-manager-assistant.iml" afterPath="$PROJECT_DIR$/tech-support-manager-assistant/tech-support-manager-assistant.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="tech-support-manager.iws" />
@@ -53,21 +62,79 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="EditAssetActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tech-support-manager-assistant/src/main/java/com/example/randall/assistant/ui/EditAssetActivity.java">
+      <file leaf-file-name="TaskManagerDetailsActivityFragment.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tech-support-manager-assistant/src/main/java/com/example/randall/assistant/ui/TaskManagerDetailsActivityFragment.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+              <caret line="40" column="43" selection-start-line="40" selection-start-column="43" selection-end-line="40" selection-end-column="43" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#3188#3341#0" expanded="true" />
+                <element signature="e#3340#3341#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="activity_task_manager_details.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tech-support-manager-assistant/src/main/res/layout/activity_task_manager_details.xml">
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-6.551724">
+              <caret line="15" column="14" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EditAssetActivityFragment.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tech-support-manager-assistant/src/main/java/com/example/randall/assistant/ui/EditAssetActivityFragment.java">
+      <file leaf-file-name="fragment_task_manager_details.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tech-support-manager-functionary/src/main/res/layout/fragment_task_manager_details.xml">
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="92" column="54" selection-start-line="92" selection-start-column="37" selection-end-line="92" selection-end-column="54" />
+            <state vertical-scroll-proportion="-9.965517">
+              <caret line="148" column="40" selection-start-line="148" selection-start-column="40" selection-end-line="148" selection-end-column="40" />
+              <folding>
+                <element signature="e#3278#3311#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="list_item_assistant.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tech-support-manager-functionary/src/main/res/layout/list_item_assistant.xml">
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-2.3448277">
+              <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="list_item_task_attendants.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tech-support-manager-functionary/src/main/res/layout/list_item_task_attendants.xml">
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.137931">
+              <caret line="17" column="46" selection-start-line="17" selection-start-column="46" selection-end-line="17" selection-end-column="46" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TaskAttendantsAdapter.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tech-support-manager-assistant/src/main/java/com/example/randall/assistant/adapters/TaskAttendantsAdapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.3325">
+              <caret line="48" column="19" selection-start-line="48" selection-start-column="19" selection-end-line="48" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -75,18 +142,33 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="menu_edit_asset.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tech-support-manager-assistant/src/main/res/menu/menu_edit_asset.xml">
+      <file leaf-file-name="fragment_task_manager_details.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tech-support-manager-assistant/src/main/res/layout/fragment_task_manager_details.xml">
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
-              <folding />
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="e#500#533#0" expanded="true" />
+                <element signature="e#843#876#0" expanded="true" />
+                <element signature="e#1218#1253#0" expanded="true" />
+                <element signature="e#1534#1567#0" expanded="true" />
+                <element signature="e#2097#2130#0" expanded="true" />
+                <element signature="e#2670#2694#0" expanded="true" />
+                <element signature="e#3444#3477#0" expanded="true" />
+                <element signature="e#3698#3722#0" expanded="true" />
+                <element signature="e#4440#4473#0" expanded="true" />
+                <element signature="e#4750#4783#0" expanded="true" />
+                <element signature="e#5315#5341#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/tech-support-manager-functionary/src/main/AndroidManifest.xml">
+      <file leaf-file-name="TaskManagerActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tech-support-manager-assistant/src/main/java/com/example/randall/assistant/ui/TaskManagerActivity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -2366,7 +2448,7 @@
                             <option value="$USER_HOME$/AppData/Local/Android/sdk/extras/android/m2repository/com/android/support/appcompat-v7/23.1.0/appcompat-v7-23.1.0.aar" />
                             <option value="$USER_HOME$/AppData/Local/Android/sdk/extras/android/m2repository/com/android/support/design/23.1.0/design-23.1.0.aar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-android/1.3.0/27cabf3558be23a89f054334dd92512645ad34d9/bolts-android-1.3.0.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.parse/parse-android/1.10.3/36366e460af2c0f224bb8f70b64e3302f638b138/parse-android-1.10.3.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.parse/parse-android/1.11.0/6592129dec2caa8791d322c7e4b6b7a30e8eadae/parse-android-1.11.0.jar" />
                             <option value="$USER_HOME$/AppData/Local/Android/sdk/extras/android/m2repository/com/android/support/cardview-v7/23.1.0/cardview-v7-23.1.0.aar" />
                             <option value="$USER_HOME$/AppData/Local/Android/sdk/extras/android/m2repository/com/android/support/support-v4/23.1.0/support-v4-23.1.0.aar" />
                             <option value="$USER_HOME$/AppData/Local/Android/sdk/extras/android/m2repository/com/android/support/recyclerview-v7/23.1.0/recyclerview-v7-23.1.0.aar" />
@@ -2787,16 +2869,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/tech-support-manager-assistant/src/main/java/com/example/randall/assistant/adapters/TasksAdapter.java" />
-        <option value="$PROJECT_DIR$/tech-support-manager-assistant/src/main/java/com/example/randall/assistant/decorators/DividerItemDecoration.java" />
-        <option value="$PROJECT_DIR$/tech-support-manager-functionary/src/main/java/com/example/ranguro/functionary/ui/TaskManagerActivity.java" />
-        <option value="$PROJECT_DIR$/tech-support-manager-assistant/src/main/java/com/example/randall/assistant/classes/ParseObjectTask.java" />
-        <option value="$PROJECT_DIR$/tech-support-manager-functionary/src/main/java/com/example/ranguro/functionary/classes/ParseObjectTask.java" />
-        <option value="$PROJECT_DIR$/tech-support-manager-assistant/src/main/res/layout/activity_task_manager.xml" />
-        <option value="$PROJECT_DIR$/tech-support-manager-assistant/src/main/java/com/example/randall/tech_support_manager_assistant/ItemFragment.java" />
-        <option value="$PROJECT_DIR$/tech-support-manager-assistant/src/main/res/menu/activity_asset_manager_drawer.xml" />
         <option value="$PROJECT_DIR$/tech-support-manager-assistant/src/main/java/com/example/randall/assistant/adapters/AssetsAdapter.java" />
-        <option value="$PROJECT_DIR$/tech-support-manager-assistant/src/main/java/com/example/randall/assistant/ui/TaskManagerActivity.java" />
         <option value="$PROJECT_DIR$/tech-support-manager-functionary/src/main/res/layout/fragment_add_task.xml" />
         <option value="$PROJECT_DIR$/tech-support-manager-functionary/src/main/java/com/example/ranguro/functionary/ui/TaskManagerActivityFragment.java" />
         <option value="$PROJECT_DIR$/tech-support-manager-functionary/src/main/res/layout/fragment_task_manager.xml" />
@@ -2838,6 +2911,15 @@
         <option value="$PROJECT_DIR$/tech-support-manager-assistant/src/main/java/com/example/randall/assistant/ui/EditAssetActivity.java" />
         <option value="$PROJECT_DIR$/tech-support-manager-assistant/src/main/java/com/example/randall/assistant/ui/EditAssetActivityFragment.java" />
         <option value="$PROJECT_DIR$/tech-support-manager-functionary/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/tech-support-manager-assistant/src/main/res/layout/activity_task_manager_details.xml" />
+        <option value="$PROJECT_DIR$/tech-support-manager-functionary/src/main/java/com/example/ranguro/functionary/ui/TaskManagerDetailsActivity.java" />
+        <option value="$PROJECT_DIR$/tech-support-manager-assistant/src/main/java/com/example/randall/assistant/ui/TaskManagerDetailsActivity.java" />
+        <option value="$PROJECT_DIR$/tech-support-manager-assistant/src/main/res/layout/content_task_manager_details.xml" />
+        <option value="$PROJECT_DIR$/tech-support-manager-assistant/src/main/java/com/example/randall/assistant/ui/TaskManagerActivity.java" />
+        <option value="$PROJECT_DIR$/tech-support-manager-assistant/src/main/java/com/example/randall/assistant/adapters/TaskAttendantsAdapter.java" />
+        <option value="$PROJECT_DIR$/tech-support-manager-assistant/src/main/java/com/example/randall/assistant/ui/TaskManagerDetailsActivityFragment.java" />
+        <option value="$PROJECT_DIR$/tech-support-manager-functionary/src/main/res/layout/list_item_task_attendants.xml" />
+        <option value="$PROJECT_DIR$/tech-support-manager-assistant/src/main/res/layout/fragment_task_manager_details.xml" />
       </list>
     </option>
   </component>
@@ -2881,7 +2963,18 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tech-support-manager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -2906,12 +2999,8 @@
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="tech-support-manager-functionary" />
+              <option name="myItemId" value="tech-support-manager-assistant" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="manifests" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidManifestsGroupNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -2923,20 +3012,53 @@
               <option name="myItemId" value="tech-support-manager-assistant" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
           </PATH>
-        </subPane>
-      </pane>
-      <pane id="ProjectPane">
-        <subPane>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="tech-support-manager" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tech-support-manager-assistant" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assistant" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ui" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tech-support-manager" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tech-support-manager-assistant" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assistant" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2954,13 +3076,14 @@
       <recent name="com.example.randall.tech_support_manager_assistant" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Randall\Desktop\Android Nanodegree\tech-support-manager\tech-support-manager-assistant\src\main\res\layout" />
+      <recent name="C:\Users\Randall\Desktop\Android Nanodegree\tech-support-manager\tech-support-manager-assistant\src\main\res\menu" />
       <recent name="C:\Users\Randall\Desktop\Android Nanodegree\tech-support-manager\tech-support-manager-assistant\src\main\res\values" />
       <recent name="C:\Users\Randall\Desktop\Android Nanodegree\tech-support-manager\tech-support-manager-assistant\src\main\java\com\example\randall\assistant\ui" />
-      <recent name="C:\Users\Randall\Desktop\Android Nanodegree\tech-support-manager\tech-support-manager-assistant\src\main\res\layout" />
       <recent name="C:\Users\Randall\Desktop\Android Nanodegree\tech-support-manager\tech-support-manager-assistant\src\main\java\com\example\randall\assistant\classes" />
-      <recent name="C:\Users\Randall\Desktop\Android Nanodegree\tech-support-manager\tech-support-manager-assistant\src\main\res\drawable" />
     </key>
     <key name="android.template.parentActivityClass">
+      <recent name="com.example.randall.assistant.ui.TaskManagerActivity" />
       <recent name="" />
       <recent name="com.example.randall.assistant.ui.AssetManagerActivity" />
     </key>
@@ -3379,7 +3502,13 @@
       <option name="project" value="LOCAL" />
       <updated>1447354647134</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="feat: Added edit assets functionality to assistants module.">
+      <created>1447364677265</created>
+      <option name="number" value="00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1447364677265</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -3387,16 +3516,16 @@
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30406505" sideWeight="0.4335878" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30406505" sideWeight="0.4274809" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284553" sideWeight="0.6061069" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30406505" sideWeight="0.57251906" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4813008" sideWeight="0.8725191" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29430893" sideWeight="0.8519084" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284553" sideWeight="0.39389312" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284553" sideWeight="0.25038168" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284553" sideWeight="0.28778625" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.4969743" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="true" content_ui="tabs" />
@@ -3436,14 +3565,16 @@
     <MESSAGE value="style: Added navigation drawer to assets manager" />
     <MESSAGE value="feat: Added recyclerview to display assetst in assistant module." />
     <MESSAGE value="feat: Added display assets details to assistants module and starting edit assets activity layout." />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: Added display assets details to assistants module and starting edit assets activity layout." />
+    <MESSAGE value="feat: Added edit assets functionality to assistants module." />
+    <MESSAGE value="feat: Added display task details to assistant module" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Added display task details to assistant module" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/tech-support-manager-assistant/src/main/java/com/example/randall/assistant/ui/TaskManagerActivity.java</url>
-          <line>145</line>
+          <line>152</line>
           <properties />
           <option name="timeStamp" value="3" />
         </line-breakpoint>
@@ -3453,188 +3584,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/tech-support-manager-assistant/src/main/res/menu/activity_task_manager_drawer.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="25" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tech-support-manager-assistant/src/main/java/com/example/randall/assistant/ui/TaskManagerActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="80" column="34" selection-start-line="80" selection-start-column="34" selection-end-line="80" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tech-support-manager-assistant/proguard-rules.pro">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/settings.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tech-support-manager-functionary/src/main/java/com/example/ranguro/functionary/ui/SignInFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tech-support-manager-functionary/src/main/java/com/example/ranguro/functionary/ui/SignUpActivityFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tech-support-manager-functionary/src/main/res/layout/fragment_asset_manager_details.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27419356">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tech-support-manager-functionary/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7562724">
-          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tech-support-manager-assistant/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.73935264">
-          <caret line="28" column="52" selection-start-line="28" selection-start-column="52" selection-end-line="28" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tech-support-manager-functionary/src/main/res/values/dimens.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23168655">
-          <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tech-support-manager-assistant/src/main/res/values/dimens.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tech-support-manager-assistant/src/main/res/layout/activity_asset_manager_details.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tech-support-manager-functionary/src/main/res/values/styles.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.6666665">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="15" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tech-support-manager-assistant/src/main/res/values/styles.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39464286">
-          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tech-support-manager-assistant/src/main/res/layout/content_asset_manager_details.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="0" column="12" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tech-support-manager-assistant/src/main/res/layout/fragment_asset_manager_details.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.862069">
-          <caret line="10" column="39" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tech-support-manager-functionary/src/main/res/menu/menu_task_manager_details.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="5" selection-end-column="75" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tech-support-manager-functionary/src/main/java/com/example/ranguro/functionary/ui/AssetManagerActivityFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="50" column="8" selection-start-line="50" selection-start-column="8" selection-end-line="50" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tech-support-manager-functionary/src/main/java/com/example/ranguro/functionary/ui/AssetManagerDetailsActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tech-support-manager-functionary/src/main/java/com/example/ranguro/functionary/ui/AssetManagerDetailsActivityFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="89" column="5" selection-start-line="89" selection-start-column="5" selection-end-line="89" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tech-support-manager-functionary/src/main/res/layout/fragment_edit_asset.xml">
       <provider editor-type-id="android-designer">
         <state />
@@ -3642,18 +3591,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5839695">
           <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="50" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tech-support-manager-assistant/src/main/res/layout/activity_edit_asset.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.41603053">
-          <caret line="17" column="47" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3661,7 +3598,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7010309">
           <caret line="103" column="0" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3669,9 +3605,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="20" column="21" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3679,29 +3612,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tech-support-manager-assistant/src/main/res/layout/fragment_edit_asset.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tech-support-manager-assistant/src/main/res/layout/content_edit_asset.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19465649">
-          <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3709,7 +3619,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="25" column="17" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3717,9 +3626,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="54" column="20" selection-start-line="54" selection-start-column="20" selection-end-line="54" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3759,9 +3665,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="5" selection-end-column="120" />
-          <folding>
-            <element signature="e#316#343#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3788,7 +3691,6 @@
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="1" column="88" selection-start-line="1" selection-start-column="68" selection-end-line="1" selection-end-column="88" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3796,7 +3698,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.29209623">
           <caret line="5" column="41" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3804,7 +3705,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3812,7 +3712,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.34020618">
           <caret line="29" column="13" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3820,9 +3719,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="43" column="25" selection-start-line="43" selection-start-column="21" selection-end-line="43" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3830,7 +3726,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.058419243">
           <caret line="31" column="1" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3838,7 +3733,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="22" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3846,9 +3740,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="56" column="24" selection-start-line="56" selection-start-column="24" selection-end-line="56" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3856,9 +3747,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="57" column="25" selection-start-line="57" selection-start-column="25" selection-end-line="57" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3874,7 +3762,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3882,9 +3769,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="92" column="54" selection-start-line="92" selection-start-column="37" selection-end-line="92" selection-end-column="54" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3899,8 +3783,271 @@
     <entry file="file://$PROJECT_DIR$/tech-support-manager-functionary/src/main/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+          <folding>
+            <element signature="e#570#588#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tech-support-manager-functionary/src/main/res/layout/activity_task_manager_details_attendants.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tech-support-manager-functionary/src/main/res/layout/activity_task_manager.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.7586207">
+          <caret line="3" column="47" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tech-support-manager-functionary/src/main/res/layout/fragment_task_manager.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.862069">
+          <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tech-support-manager-assistant/src/main/res/layout/activity_edit_asset.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.7586207">
+          <caret line="17" column="47" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tech-support-manager-assistant/src/main/res/layout/content_edit_asset.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.5172415">
+          <caret line="6" column="45" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="45" />
+          <folding>
+            <element signature="e#397#437#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tech-support-manager-assistant/src/main/res/layout/fragment_edit_asset.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.610687">
+          <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tech-support-manager-assistant/src/main/res/layout/list_item_task_attendants.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5839695">
+          <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tech-support-manager-assistant/src/main/res/menu/menu_contextual_task_status.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tech-support-manager-assistant/src/main/res/layout/list_item_assistant.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="37" selection-start-line="0" selection-start-column="37" selection-end-line="0" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tech-support-manager-assistant/src/main/java/com/example/randall/assistant/ui/TaskManagerDetailsActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tech-support-manager-functionary/src/main/java/com/example/ranguro/functionary/ui/TaskManagerDetailsActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tech-support-manager-assistant/src/main/res/layout/content_task_manager_details.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3878327">
+          <caret line="6" column="55" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tech-support-manager-functionary/src/main/res/layout/activity_task_manager_details.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.9310346">
+          <caret line="5" column="55" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tech-support-manager-assistant/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36603773">
+          <caret line="56" column="18" selection-start-line="56" selection-start-column="18" selection-end-line="56" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tech-support-manager-functionary/src/main/java/com/example/ranguro/functionary/ui/TaskManagerActivityFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tech-support-manager-functionary/src/main/java/com/example/ranguro/functionary/ui/TaskManagerDetailsActivityFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.05821918">
+          <caret line="204" column="0" selection-start-line="204" selection-start-column="0" selection-end-line="204" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tech-support-manager-functionary/src/main/res/layout/fragment_task_manager_details.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.965517">
+          <caret line="148" column="40" selection-start-line="148" selection-start-column="40" selection-end-line="148" selection-end-column="40" />
+          <folding>
+            <element signature="e#3278#3311#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tech-support-manager-functionary/src/main/res/layout/list_item_assistant.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.3448277">
+          <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tech-support-manager-functionary/src/main/res/layout/list_item_task_attendants.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.137931">
+          <caret line="17" column="46" selection-start-line="17" selection-start-column="46" selection-end-line="17" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tech-support-manager-assistant/src/main/java/com/example/randall/assistant/ui/TaskManagerDetailsActivityFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="40" column="43" selection-start-line="40" selection-start-column="43" selection-end-line="40" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3188#3341#0" expanded="true" />
+            <element signature="e#3340#3341#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tech-support-manager-assistant/src/main/res/layout/activity_task_manager_details.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.551724">
+          <caret line="15" column="14" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tech-support-manager-assistant/src/main/res/layout/fragment_task_manager_details.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#500#533#0" expanded="true" />
+            <element signature="e#843#876#0" expanded="true" />
+            <element signature="e#1218#1253#0" expanded="true" />
+            <element signature="e#1534#1567#0" expanded="true" />
+            <element signature="e#2097#2130#0" expanded="true" />
+            <element signature="e#2670#2694#0" expanded="true" />
+            <element signature="e#3444#3477#0" expanded="true" />
+            <element signature="e#3698#3722#0" expanded="true" />
+            <element signature="e#4440#4473#0" expanded="true" />
+            <element signature="e#4750#4783#0" expanded="true" />
+            <element signature="e#5315#5341#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tech-support-manager-assistant/src/main/java/com/example/randall/assistant/ui/TaskManagerActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tech-support-manager-assistant/src/main/java/com/example/randall/assistant/adapters/TaskAttendantsAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3325">
+          <caret line="48" column="19" selection-start-line="48" selection-start-column="19" selection-end-line="48" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

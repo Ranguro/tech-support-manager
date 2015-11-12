@@ -1,5 +1,6 @@
 package com.example.randall.assistant.ui;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -137,7 +138,13 @@ public class TaskManagerActivity extends AppCompatActivity
 
     @Override
     public void onTaskSelected(View view, ParseObjectTask task, int position) {
-        Toast.makeText(TaskManagerActivity.this, "Launch task details activity", Toast.LENGTH_SHORT).show();
+        Context context = view.getContext();
+        Intent intent = new Intent(context,TaskManagerDetailsActivity.class);
+        intent.putExtra(TaskManagerDetailsActivityFragment.TASK_DETAIL_KEY, task.getObjectId());
+        String fullName = task.getCreatorID().getFirstName() + " "+task.getCreatorID().getLastName();
+        intent.putExtra(TaskManagerDetailsActivity.TASK_TITLE, task.getTitle());
+        intent.putExtra(TaskManagerDetailsActivity.TASK_CREATED_BY, fullName);
+        startActivity(intent);
     }
 
 

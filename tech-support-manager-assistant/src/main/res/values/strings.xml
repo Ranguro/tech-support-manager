@@ -82,6 +82,7 @@
     <string name="asset_location_label">Location</string>
     <string name="asset_model">Model</string>
     <string name="asset_brand">Brand</string>
+    <string name="title_activity_task_manager_details">TaskManagerDetailsActivity</string>
 
 
 </resources>
