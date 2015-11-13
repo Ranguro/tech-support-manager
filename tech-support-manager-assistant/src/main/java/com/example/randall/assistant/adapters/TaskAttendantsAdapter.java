@@ -26,6 +26,7 @@ public class TaskAttendantsAdapter extends  RecyclerView.Adapter<TaskAttendantsA
 
     public TaskAttendantsAdapter() {
 
+
     }
 
     public void addAll(List<ParseObjectUser> taskAttendantsList) {
