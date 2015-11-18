@@ -20,6 +20,7 @@ import com.example.randall.assistant.classes.ParseObjectUser;
 import com.parse.LogInCallback;
 import com.parse.Parse;
 import com.parse.ParseException;
+import com.parse.ParseInstallation;
 import com.parse.ParseObject;
 import com.parse.ParseUser;
 
@@ -45,6 +46,8 @@ public class MainActivity extends AppCompatActivity {
         ParseObject.registerSubclass(ParseObjectUser.class);
         ParseObject.registerSubclass(ParseObjectAsset.class);
         Parse.initialize(this, "SIWiSHubCFLzS5Pub6ll75vpGivZ1Eg4mgpePp6G", "oC9umnr8EQLRp12Puso4Idditm4oSAQAJyg0NG2i");
+        ParseInstallation.getCurrentInstallation().saveInBackground();
+
     }
 
 

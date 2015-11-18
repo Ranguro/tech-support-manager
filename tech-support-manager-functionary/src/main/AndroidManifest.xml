@@ -10,18 +10,16 @@
         android:name="com.example.ranguro.functionary.permission.C2D_MESSAGE" />
     <uses-permission android:name="com.example.ranguro.functionary.permission.C2D_MESSAGE" />
 
-
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
+
+        <meta-data android:name="com.parse.push.notification_icon" android:resource="@mipmap/ic_launcher"/>
+
         <activity
             android:name=".ui.MainActivity"
             android:label="@string/app_name" >
@@ -75,6 +73,15 @@
             android:label="@string/title_activity_task_manager_details_attendants" >
         </activity>
 
+        <service android:name="com.parse.PushService" />
+        <receiver android:name="com.parse.ParsePushBroadcastReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.parse.push.intent.RECEIVE" />
+                <action android:name="com.parse.push.intent.DELETE" />
+                <action android:name="com.parse.push.intent.OPEN" />
+            </intent-filter>
+        </receiver>
         <receiver android:name="com.parse.GcmBroadcastReceiver"
             android:permission="com.google.android.c2dm.permission.SEND">
             <intent-filter>
@@ -83,6 +90,7 @@
                 <category android:name="com.example.ranguro.functionary" />
             </intent-filter>
         </receiver>
+
 
     </application>
 

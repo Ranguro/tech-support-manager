@@ -1,10 +1,12 @@
 package com.example.randall.assistant.adapters;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.randall.assistant.R;
@@ -76,6 +78,7 @@ public class TasksAdapter extends RecyclerView.Adapter<TasksAdapter.ViewHolder> 
         public final TextView taskTitle;
         public final TextView taskCreator;
         public final TextView taskDeadline;
+        public final ImageView taskStatusColor;
 
         private ParseObjectTask task;
         private int position;
@@ -88,6 +91,7 @@ public class TasksAdapter extends RecyclerView.Adapter<TasksAdapter.ViewHolder> 
             taskTitle = (TextView) itemView.findViewById(R.id.task_title);
             taskCreator = (TextView) itemView.findViewById(R.id.task_author);
             taskDeadline = (TextView) itemView.findViewById(R.id.task_deadline);
+            taskStatusColor = (ImageView) itemView.findViewById(R.id.task_colorStatus);
         }
 
         public void setTask(ParseObjectTask task){
@@ -97,6 +101,16 @@ public class TasksAdapter extends RecyclerView.Adapter<TasksAdapter.ViewHolder> 
             taskTitle.setText(task.getTitle());
             taskCreator.setText(creator);
             taskDeadline.setText(deadline);
+
+            if (task.getStatus().equals("Completed")) {
+                taskStatusColor.setColorFilter(Color.rgb(102, 231, 80));
+            } else if (task.getStatus().equals("In Progress")) {
+                taskStatusColor.setColorFilter(Color.rgb(255, 112, 43));
+            } else if (task.getStatus().equals("Not started")) {
+                taskStatusColor.setColorFilter(Color.rgb(111, 111, 255));
+            }
+
+
         }
 
         @Override

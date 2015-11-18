@@ -16,7 +16,10 @@ import com.example.randall.assistant.R;
 import com.example.randall.assistant.classes.ParseObjectAsset;
 import com.parse.GetCallback;
 import com.parse.ParseException;
+import com.parse.ParseInstallation;
+import com.parse.ParsePush;
 import com.parse.ParseQuery;
+import com.parse.ParseUser;
 
 /**
  * A placeholder fragment containing a simple view.
@@ -41,7 +44,6 @@ public class AssetManagerDetailsActivityFragment extends Fragment {
         setHasOptionsMenu(true);
         assetDetailId = getArguments().getString(ASSET_DETAIL_KEY);
         fetchAssetDetails();
-
     }
 
     @Override
@@ -53,6 +55,15 @@ public class AssetManagerDetailsActivityFragment extends Fragment {
         locationView =  (TextView) rootView.findViewById(R.id.asset_detail_location);
         assetNumberView =  (TextView) rootView.findViewById(R.id.asset_detail_number);
         categoryView =   (TextView) rootView.findViewById(R.id.asset_detail_category);
+
+
+        ParseInstallation installation = ParseInstallation.getCurrentInstallation();
+        installation.put("username", ParseUser.getCurrentUser().getUsername());
+        ParseQuery pQuery = ParseInstallation.getQuery();
+
+        String usuario = ParseUser.getCurrentUser().getUsername();
+        pQuery.whereEqualTo("username",ParseUser.getCurrentUser().getUsername());
+        ParsePush.sendMessageInBackground("Only for special people", pQuery);
 
         return rootView;
     }

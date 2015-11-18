@@ -165,6 +165,8 @@ public class TaskManagerActivity extends AppCompatActivity
                 Log.i("Total tasks obtained: ", String.valueOf(taskList.size()));
             }
         });
+
+
     }
 
     @Override
