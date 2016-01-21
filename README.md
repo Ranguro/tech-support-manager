@@ -7,7 +7,7 @@ Another module for functionaries was developed as well, which is intended to sen
 
 As a suggestion of the teacher in the course, an additional feature was added, which helps students and teachers, to register and search assets in this university. 
 
-For data manipulation this app uses [Parse Cloud Database](https://www.parse.com)
+For data management this app uses [Parse Cloud Database](https://www.parse.com)
 
 ## Functionalities developed: 
 
