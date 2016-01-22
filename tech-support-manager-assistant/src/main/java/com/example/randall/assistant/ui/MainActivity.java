@@ -37,15 +37,17 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         username = (EditText) findViewById(R.id.username);
         password = (EditText) findViewById(R.id.password);
-        username.setText("Jonathan");
-        password.setText("jonathan");
+
+        //Default password: jonathan
+
         // Enable Local Datastore.
         Parse.enableLocalDatastore(this);
         ParseObject.registerSubclass(ParseObjectTask.class);
         ParseObject.registerSubclass(ParseObjectProgress.class);
         ParseObject.registerSubclass(ParseObjectUser.class);
         ParseObject.registerSubclass(ParseObjectAsset.class);
-        Parse.initialize(this, "SIWiSHubCFLzS5Pub6ll75vpGivZ1Eg4mgpePp6G", "oC9umnr8EQLRp12Puso4Idditm4oSAQAJyg0NG2i");
+
+        Parse.initialize(this, getString(R.string.app_id), getString(R.string.client_key));
         ParseInstallation.getCurrentInstallation().saveInBackground();
 
     }

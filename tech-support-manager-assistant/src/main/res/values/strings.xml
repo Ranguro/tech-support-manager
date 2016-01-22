@@ -83,6 +83,8 @@
     <string name="asset_model">Model</string>
     <string name="asset_brand">Brand</string>
     <string name="title_activity_task_manager_details">TaskManagerDetailsActivity</string>
+    <string name="app_id">SIWiSHubCFLzS5Pub6ll75vpGivZ1Eg4mgpePp6G</string>
+    <string name="client_key">oC9umnr8EQLRp12Puso4Idditm4oSAQAJyg0NG2i</string>
 
 
 </resources>
