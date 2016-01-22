@@ -11,6 +11,8 @@ For data management this app uses [Parse Cloud Database](https://www.parse.com)
 
 ## Functionalities developed: 
 
+Two modules were developed since diferent permissions were needed: Functionaries module and teachers module.
+
 ###Only available on functionaries module: 
 
 * Register assistants and teachers 
